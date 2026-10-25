@@ -32,6 +32,7 @@ sonrisas y códigos de producto `JUG-XXXX` (ver `JUGA_Brief_Branding.md`).
 | `generar_enlace_config.py` | **Local** (en `.gitignore`): arma el enlace de configuración de un solo toque (token) |
 | `GitHub.txt` | **Local** (en `.gitignore`): donde vive el token de GitHub |
 | `JUGA_Brief_Branding.md` | Manual de marca y del sistema publicado |
+| `AGENTS.md` | Guía para trabajar en este repo: reglas de oro, comandos de verificación, mapa del código y gotchas |
 | `PLAN_AUDITORIA_E2E_QA.md` | Plan de auditoría E2E/QA: niveles L0–L5, severidades, calendario |
 | `logo_120.png` / `logo_512.png` / `*_light.png` | Logo JUGA transparente en tamaños web (120: horizontal; 512: emblema cuadrado) |
 | `favicon.ico`, `favicon-32/48.png`, `apple-touch-icon.png` | Emblema JUGA para navegadores |
@@ -162,6 +163,7 @@ carruseles, héroe, favoritos, buscador, upsells y footer.
 ## 6. Héroe y favoritos
 
 - **Héroe** (solo escritorio, hasta 6 juguetes): selección de la tienda con
+  el emblema JUGA (círculo blanco con las letras de color) al centro y el
   texto "Encuentra ese regalo que ilumina su día / Juguetes para imaginar,
   descubrir y jugar". Se cura desde el panel (heroIds).
 - **Favoritos del carrusel**: 14 juguetes representativos de las categorías.
@@ -195,10 +197,11 @@ y calendario). Suites:
 - **Locales** (Playwright, ajustar rutas del checkout local antes de correr):
   `qa_admin_e2e.js` (panel) y `qa_aterrizaje_precios.js` (aterrizajes,
   precios, carrito y mensaje de WhatsApp).
-- **Producción (automática)**: `qa_smoke_produccion.js` corre diario a las
-  12:00 UTC vía `qa-smoke.yml`: checks de lectura (página, catálogo,
-  configuración, imágenes, activos de marca, deploy de Pages). Falla →
-  issue `qa-smoke` con el log; se recupera → se cierra solo.
+- **Producción (automática)**: `qa_smoke_produccion.js` (25 checks, con el
+  precio final consciente del margen publicado) corre diario a las 12:00 UTC
+  vía `qa-smoke.yml`: checks de lectura (página, catálogo, configuración,
+  imágenes, activos de marca, deploy de Pages). Falla → issue `qa-smoke` con
+  el log; se recupera → se cierra solo.
 
 Verificación rápida de sintaxis del index:
 

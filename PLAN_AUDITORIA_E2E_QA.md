@@ -84,11 +84,13 @@ C0–C6, héroe/favoritos D0–D6…). Complementos NUEVOS:
 
 ### L4 — Producción (smoke después de cada deploy + 1 vez/día)
 Contra https://tiendalunaria.github.io/juga/ (solo lectura, sin comprar):
-- [ ] HTTP 200 en `/`, `/catalogo.js`, `/data/configuracion.js`, `/legal.html` y los 7 activos de marca.
-- [ ] `catalogo.js` parsea y tiene ≥ 1500 juguetes visibles; muestra de 10 precios correctos.
-- [ ] Título y meta `og:` con el eslogan oficial; favicon carga (marca nueva).
+- [ ] HTTP 200 en `/`, `/catalogo.js`, `/data/configuracion.js`, `/legal.html` y los 10 activos de marca.
+- [ ] `catalogo.js` parsea con ≥ 1500 juguetes; vitrina dentro de rango ($200–$600.000).
+- [ ] Precio FINAL (vitrina × (1+margen publicado) + redondeo) dentro de rango: el
+  techo del check 2.4b se calcula desde el margen de la config publicada.
+- [ ] Título y meta `og:` con el eslogan oficial; tipografías y favicon de la marca.
 - [ ] 20 imágenes de producto aleatorias: 0 rotas (HTTP 200).
-- [ ] QR de la tarjeta apunta al dominio correcto.
+- [ ] Config publicada sin `claveAdmin` ni token; versión numérica creciente.
 - [ ] Deploy de Pages < 5 min después del push (Actions → pages-build-deployment success).
 
 ### L5 — No funcionales (1 vez por mes y antes de cada temporada)
@@ -164,8 +166,9 @@ Decisión:           PUBLICAR / NO PUBLICAR (motivo)
 
 ## 7. Backlog de automatización (orden sugerido)
 
-1. ✅ **Hecho:** `qa_smoke_produccion.js` — L4 automático (23 checks: página,
-   catálogo, configuración, imágenes, activos, deploy de Pages).
+1. ✅ **Hecho:** `qa_smoke_produccion.js` — L4 automático (25 checks: página,
+   catálogo, precios base y finales conscientes del margen, configuración,
+   imágenes, activos, deploy de Pages).
 2. Ampliar `qa_aterrizaje_precios.js` con el bloque de checkout por fases y móvil (L2 nuevos).
 3. Ampliar `qa_admin_e2e.js` con publicación a repositorio espejo (L3).
 4. ✅ **Hecho:** workflow `qa-smoke.yml` diario (12:00 UTC) que corre L4 y
@@ -178,5 +181,6 @@ Decisión:           PUBLICAR / NO PUBLICAR (motivo)
 
 | Fecha | Corrida | Resultado | Acción |
 |---|---|---|---|
+| 25-oct-2026 | **Ajustes de tienda + estrategia de precios**: filtros en una fila (la barra pegajosa tapaba las tarjetas), héroe con el emblema al centro (placa azul retirada), orden por defecto mayor→menor, scroll instantáneo en saltos largos, margen 30 % + redondeo $100 publicado por config, base Precio 5 experimentada y revertida a Precio 2 (con P5, 32 % del catálogo quedaba por debajo de la tienda física) | **L0/L1 TODO OK · panel 47/47 · aterrizajes 45/45 · smoke L4 25/25** (producción sana tras cada deploy) | `AGENTS.md` creado; suites con expectativas dinámicas (motor de precios) |
 | 25-oct-2026 | **Rebranding JUGA** — sistema clonado de LUNARIA; catálogo de juguetes real (fuente: repo de la juguetería, ~1.938 ítems); activos de marca y URLs propios | Base lista | Correr auditoría L0–L4 tras el primer deploy |
 | 22-oct-2026 | **Auditoría de secretos** (tree + historial completo de git) | **0 fugas.** Tokens/credenciales ausentes en repo e historial; config publicada sin `claveAdmin` ni token; `.gitignore` cubre archivos locales. 2 hallazgos evaluados como aceptados: clave `sb_publishable_` del proveedor (pública por diseño) y clave de fábrica del panel en HTML (por diseño; publicar exige token, nunca en código) | Ninguna obligatoria; rotación de clave de fábrica opcional |

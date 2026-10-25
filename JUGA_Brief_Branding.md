@@ -266,6 +266,7 @@ Bebé, Térmicos y vasos, Burbujeros, Escolar, Animales, Cubos Rubik y Hogar.
 | Fuente del catálogo | github.com/jugueteriataiwanoficial/jugueteriataiwan (maestro de juguetes) |
 | Código de producto | `JUG-XXXX` (permanente por slug, jamás reutilizado) |
 | Consecutivo de pedido | `PED-YYYYMMDD-NNN` |
+| Estrategia de precios | Vitrina (Precio 2 del POS) + **margen 30 %** publicado desde el panel: JUGA queda siempre por encima de saldosjugueteriataiwan.com (que vende al Precio 2 exacto); catálogo ordenado de mayor a menor precio |
 
 ---
 
@@ -275,8 +276,9 @@ Bebé, Térmicos y vasos, Burbujeros, Escolar, Animales, Cubos Rubik y Hogar.
 
 - Header con logo horizontal y eslogan como tagline ("Regalos que
   despiertan sonrisas").
-- Héroe con galería de juguetes destacados y mensaje "Encuentra ese regalo
-  que ilumina su día".
+- Héroe con galería de juguetes destacados, el emblema (círculo blanco con
+  letras de color) al centro y el mensaje "Encuentra ese regalo que ilumina
+  su día".
 - Tarjetas de producto con marco blanco y favorito coral.
 - Barra de pago amarilla con texto `#654800`.
 - Hoja de pedido PNG (emblema, consecutivo, filas por producto).
@@ -314,6 +316,7 @@ Bebé, Térmicos y vasos, Burbujeros, Escolar, Animales, Cubos Rubik y Hogar.
 | `og.png` | Vista previa 1200×630 para redes |
 | `qa_admin_e2e.js`, `qa_aterrizaje_precios.js`, `qa_smoke_produccion.js` | Suites de QA: panel, aterrizajes/precios (locales) y smoke diario de producción (automático) |
 | `PLAN_AUDITORIA_E2E_QA.md` | Plan de auditoría E2E/QA (niveles L0–L5, severidades, registro de corridas) |
+| `AGENTS.md` | Guía para trabajar en el repo: reglas de oro, comandos de verificación, mapa del código y gotchas |
 | `JUGA_Brief_Branding.md` | Este manual |
 | `README.md` | Documento operativo del sistema |
 
@@ -321,8 +324,10 @@ Bebé, Térmicos y vasos, Burbujeros, Escolar, Animales, Cubos Rubik y Hogar.
 
 - Venta asistida por WhatsApp con checkout por fases y hoja de pedido
   descargable.
-- Precios configurables con redondeo comercial (fábrica: margen 0 — precio
-  de vitrina tal cual) y catálogo ordenado de menor a mayor precio.
+- Precios configurables con redondeo comercial: fábrica margen 0; publicado
+  desde el panel **margen 30 % + redondeo $100** sobre la vitrina (Precio 2),
+  siempre por encima de la tienda física; catálogo ordenado de **mayor a
+  menor** precio por defecto.
 - Visibilidad con una sola fuente de verdad (`prodVisible`/`catViva`).
 - Panel de administración con "Publicar para TODOS" vía API de GitHub.
 - Códigos permanentes (`JUG-XXXX`) asignados por slug y jamás reutilizados.
