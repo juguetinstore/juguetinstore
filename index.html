@@ -540,12 +540,10 @@ footer a:hover{color:var(--cr)}
 .hero-gal .hg-item:hover .hg-info{opacity:1;transform:none}
 .hero-gal .hg-info b{font:600 15px var(--fb);display:block;text-shadow:0 1px 4px #0006}
 .hero-gal .hg-info span{font:600 14px var(--ff);text-shadow:0 1px 4px #0006}
-/* El logo blanco del centro se perdía sobre las fotos claras de producto
-   (miniaturas con fondo blanco): una placa azul translúcida con desenfoque
-   garantiza que el logo y los textos blancos SIEMPRE se lean sobre cualquier
-   foto del hero. */
-.hero-tag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none;background:#24558Ad9;border:1.5px solid #F7F3E933;border-radius:34px;padding:24px 38px 28px;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 20px 60px #0006;max-width:min(86vw,640px)}
-@media(max-width:1200px){.hero-tag{padding:16px 22px 20px;border-radius:26px}}
+/* El logo del centro es el EMBLEMA JUGA: circulo blanco con las letras
+   JUGA de color. El disco blanco es opaco, asi que el logo se lee sobre
+   cualquier foto del hero (clara u oscura) sin necesidad de placa detras. */
+.hero-tag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none}
 .hero-tag span{font:700 clamp(48px,7vw,84px) var(--ff);letter-spacing:-.03em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45);display:block;line-height:1}
 .hero-tag b{font:600 clamp(14px,2vw,20px) var(--fb);color:#fff;text-shadow:0 2px 12px #0008;display:block;margin:8px 0 4px}
 .hero-tag small{font:400 clamp(12px,1.5vw,15px) var(--fb);color:#ffffffcc;text-shadow:0 1px 8px #0008;display:block}
@@ -681,7 +679,7 @@ footer a:hover{color:var(--cr)}
 <section class="hero">
 <div class="hero-gal" id="heroGal"></div>
 <div class="hero-tag">
-  <img src="logo_512_light.png" alt="JUGA" style="height:clamp(60px,8vw,110px);display:block;margin:0 auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,.6))" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font:700 clamp(48px,7vw,84px) 'Baloo 2',cursive;letter-spacing:.06em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45)">JUGA</span>
+  <img src="logo_512.png" alt="JUGA" style="height:clamp(64px,9vw,120px);display:block;margin:0 auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,.55))" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font:700 clamp(48px,7vw,84px) 'Baloo 2',cursive;letter-spacing:.06em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45)">JUGA</span>
   <b>Encuentra ese regalo que ilumina su día</b>
   <small>Juguetes para imaginar, descubrir y jugar</small>
 </div>
