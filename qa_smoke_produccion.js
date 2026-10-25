@@ -52,7 +52,7 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
   check(ps.every(x => x.p >= 100), "2.3", "sin precios base fuera de rango (<$100; base = Precio 5, respaldo Precio 2)", ps.filter(x => x.p < 100).slice(0, 3).map(x => x.id + ":" + x.p));
   check(ps.every(x => x.p <= 600000), "2.4", "sin precios fuera de rango (> $600.000)", ps.filter(x => x.p > 600000).slice(0, 3).map(x => x.id + ":" + x.p));
   const fueraRango = ps.filter(x => { const fin = precioFinalSmoke(x.p); return fin < 200 || fin > techo; });
-  check(fueraRango.length === 0, "2.4b", "precio final (vitrina + margen " + Math.round(margenCfg * 100) + "%) dentro de rango: $200 – $" + techo.toLocaleString("es-CO"), fueraRango.slice(0, 3).map(x => x.id + ":" + precioFinalSmoke(x.p)));
+  check(fueraRango.length === 0, "2.4b", "precio final (base Precio 5 + margen " + Math.round(margenCfg * 100) + "%) dentro de rango: $200 – $" + techo.toLocaleString("es-CO"), fueraRango.slice(0, 3).map(x => x.id + ":" + precioFinalSmoke(x.p)));
   check(ps.every(x => /^JUG-\d{4}$/.test(x.cid)), "2.5", "todos con codigo JUG-XXXX");
   const conImg = ps.filter(x => x.img);
   check(conImg.length >= ps.length * 0.95, "2.6", ">=95% con imagen propia", conImg.length + "/" + ps.length);

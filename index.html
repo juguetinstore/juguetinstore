@@ -2310,7 +2310,12 @@ function scrollToProduct(id){
   setTimeout(()=>{
     const card=$("product-"+id);if(!card)return;
     toggleQty(id,true);
-    card.scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"});
+    /* Con el orden por defecto mayor->menor, los favoritos del carrusel
+       quedan MUY separados en el grid: el scroll suave de Chrome tarda
+       varios segundos en cubrir ~100.000px (viaje mareante y la tarjeta
+       tarda en llegar). Salto largo = instantaneo; corto = suave. */
+    const dist=Math.abs(card.getBoundingClientRect().top-window.innerHeight/2);
+    card.scrollIntoView({behavior:dist>4000?"auto":"smooth",block:"center",inline:"nearest"});
     card.style.boxShadow="0 0 0 3px var(--y),var(--shh)";
     setTimeout(()=>{card.style.boxShadow="";},2600);
   },480);
