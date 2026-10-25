@@ -3,9 +3,9 @@
    Ejecutar:  node qa_aterrizaje_precios.js
    Verificaciones: los 14 favoritos, primero y ultimo de cada carrusel de
    categoria, los 6 juguetes del heroe, buscador y enlace ?art= aterrizan en
-   SU tarjeta con el panel de cantidad abierto; todos los precios = precio de
-   vitrina tal cual (margen 0); carrito con lineas, unidades, totales, mensaje
-   de WhatsApp y hoja de pedido exactos. */
+   SU tarjeta con el panel de cantidad abierto; todos los precios = formula
+   configurada (precioFinal sobre la vitrina del POS); carrito con lineas,
+   unidades, totales, mensaje de WhatsApp y hoja de pedido exactos. */
 const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/playwright");
 const BASE = process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/";
 
@@ -108,21 +108,22 @@ const BASE = process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/
     await page2.close();
   }
 
-  /* ============ 6. PRECIOS: todos los visibles = precio de vitrina tal cual ============ */
+  /* ============ 6. PRECIOS: todos los visibles = formula configurada ============ */
   grupo = "6-Precios";
   const precios = await page.evaluate(() => {
     const malos = [];
     let n = 0;
     const base = {};
-    CATALOGO_BASE_JUGA.forEach(p => { base[p.id] = p.p; });
+    CATALOGO_BASE_JUGA.forEach(p => { base[p.id] = p; });
     PRODUCTOS.forEach(p => {
       if (!prodVisible(p)) return;
       n++;
-      if (p.p !== base[p.id]) malos.push({ id: p.id, n: p.n, esperado: base[p.id], real: p.p });
+      const esperado = base[p.id] ? precioFinal(base[p.id]) : null;
+      if (esperado === null || p.p !== esperado) malos.push({ id: p.id, n: p.n, esperado, real: p.p });
     });
-    return { n, malos };
+    return { n, malos, margen: PRECIOS.margenGlobal, redondeo: PRECIOS.redondeo };
   });
-  check("6.1 los " + precios.n + " juguetes visibles al precio de vitrina tal cual (margen 0)", precios.n > 1500 && precios.malos.length === 0, precios.malos.slice(0, 5));
+  check("6.1 los " + precios.n + " juguetes visibles al precio de la formula (margen " + (precios.margen * 100) + "%, redondeo $" + precios.redondeo + ")", precios.n > 1500 && precios.malos.length === 0, precios.malos.slice(0, 5));
 
   /* ============ 7. CARRITO: matematica completa ============ */
   grupo = "7-Carrito";

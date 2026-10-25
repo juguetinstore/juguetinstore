@@ -198,13 +198,19 @@ section[id]{scroll-margin-top:88px}
 /* ============ Banda oscura de joyas ============ */
 /* ============ Catálogo ============ */
 #tienda{padding-top:62px}
-.tbar{position:sticky;top:var(--hh,86px);z-index:45;background:#F7F3E9f2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:12px 0 10px;border-bottom:1px solid var(--bd);margin-bottom:22px}
+.tbar{position:sticky;top:var(--hh,86px);z-index:45;background:#F7F3E9f2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 0 8px;border-bottom:1px solid var(--bd);margin-bottom:22px}
 .tbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .tcount{font:600 13px var(--fb);color:var(--mu);letter-spacing:.06em;text-transform:uppercase}
 .sortw{display:flex;align-items:center;gap:8px;font:500 13px var(--fb);color:var(--mu)}
 .sortw select{border:1px solid var(--bd);background:#fff;border-radius:999px;padding:8px 14px;font:500 12.5px var(--fb);color:var(--c);cursor:pointer}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.chip{border:1px solid var(--bd);background:transparent;border-radius:999px;padding:8px 16px;font:500 13px var(--fb);cursor:pointer;color:var(--c);transition:.2s;display:inline-flex;align-items:center}
+/* Chips de categoria en UNA sola fila deslizable: con 17 categorias la fila
+   envuelta ocupaba 2-3 lineas y la barra pegajosa tapaba gran parte de las
+   tarjetas al navegar. Ahora la barra es compacta y la fila se desliza con
+   snap entre chips y degradado al borde derecho (mismo patron del subnav). */
+.chips{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-top:8px;padding:2px 2px 6px;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
+.chips::-webkit-scrollbar{display:none}
+.chips.is-desb::after{content:"";position:sticky;right:0;flex:0 0 auto;margin-left:-58px;width:58px;height:40px;background:linear-gradient(90deg,#F7F3E900,#F7F3E9);pointer-events:none}
+.chip{border:1px solid var(--bd);background:transparent;border-radius:999px;padding:8px 16px;font:500 13px var(--fb);cursor:pointer;color:var(--c);transition:.2s;display:inline-flex;align-items:center;flex:none;white-space:nowrap;scroll-snap-align:start}
 .chip:hover{border-color:var(--c)}
 .chip.on{background:var(--c);color:var(--cr);border-color:var(--c)}
 .chip small{opacity:.55;font-size:11px;margin-left:4px}
@@ -534,7 +540,12 @@ footer a:hover{color:var(--cr)}
 .hero-gal .hg-item:hover .hg-info{opacity:1;transform:none}
 .hero-gal .hg-info b{font:600 15px var(--fb);display:block;text-shadow:0 1px 4px #0006}
 .hero-gal .hg-info span{font:600 14px var(--ff);text-shadow:0 1px 4px #0006}
-.hero-tag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none}
+/* El logo blanco del centro se perdía sobre las fotos claras de producto
+   (miniaturas con fondo blanco): una placa azul translúcida con desenfoque
+   garantiza que el logo y los textos blancos SIEMPRE se lean sobre cualquier
+   foto del hero. */
+.hero-tag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none;background:#24558Ad9;border:1.5px solid #F7F3E933;border-radius:34px;padding:24px 38px 28px;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);box-shadow:0 20px 60px #0006;max-width:min(86vw,640px)}
+@media(max-width:1200px){.hero-tag{padding:16px 22px 20px;border-radius:26px}}
 .hero-tag span{font:700 clamp(48px,7vw,84px) var(--ff);letter-spacing:-.03em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45);display:block;line-height:1}
 .hero-tag b{font:600 clamp(14px,2vw,20px) var(--fb);color:#fff;text-shadow:0 2px 12px #0008;display:block;margin:8px 0 4px}
 .hero-tag small{font:400 clamp(12px,1.5vw,15px) var(--fb);color:#ffffffcc;text-shadow:0 1px 8px #0008;display:block}
@@ -1351,8 +1362,10 @@ function redondearPrecio(n){
   if(!r||r<=0)return Math.round(n);
   /* Redondeo COMERCIAL hacia ARRIBA: nunca quedan colas tipo $2.400 o
      $2.600 — el precio SIEMPRE sube al multiplo limpio ($3.000). Los
-     precios ya exactos (fijados por el admin en miles) no se mueven. */
-  return Math.ceil(n/r)*r;
+     precios ya exactos (fijados por el admin en miles) no se mueven.
+     El epsilon evita que un resto flotante (ej: 100000×1.12 = 112000.000…01)
+     suba el precio un multiplo completo de mas. */
+  return Math.ceil((n-0.001)/r)*r;
 }
 /* Temporada navidena automatica: entre temporadaInicio y temporadaFin
    (formato MM-DD, cruza el ano) las categorias de regalo suman
@@ -1459,6 +1472,7 @@ function renderSubnav(){
   ajustarSubnav();
 }
 function ajustarSubnav(){const t=$("subnavTrack");if(t)t.classList.toggle("is-desb",t.scrollWidth>t.clientWidth+1);}
+function ajustarChips(){const c=$("chips");if(c)c.classList.toggle("is-desb",c.scrollWidth>c.clientWidth+1);}
 function scrollSubnav(d){const t=$("subnavTrack");if(t)t.scrollBy({left:d*260,behavior:"smooth"});}
 function renderBubbles(){
   /* Precio "desde" y foto solo de productos VISIBLES: una linea oculta
@@ -1485,6 +1499,7 @@ function renderChips(){
   let h='<button type="button" class="chip" data-c="todo" onclick="filterProducts(\'todo\')">Todo <small>'+total+'</small></button>';
   CATS.filter(c=>catViva(c.id)).forEach(c=>h+='<button type="button" class="chip" data-c="'+c.id+'" onclick="filterProducts(\''+escJs(c.id)+'\')">'+esc(c.n)+' <small>'+(counts[c.id]||0)+'</small></button>');
   $("chips").innerHTML=h;
+  ajustarChips();
 }
 function renderMobileMenu(){
   let h='<li><button onclick="toggleMenu();scrollToSection(\'tienda\')"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>Todos los productos</button></li>';
@@ -2577,6 +2592,7 @@ function measureHeader(){
   const h=$("hdr");
   if(h)document.documentElement.style.setProperty("--hh",h.offsetHeight+"px");
   ajustarSubnav();
+  ajustarChips();
 }
 let ultimoY=0;
 /* El header pliega la barra de categorias en movil al bajar, y la despliega

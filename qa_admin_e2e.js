@@ -120,17 +120,17 @@ async function entrar(page) {
     await ctx.close();
   }
 
-  /* ============ C. PRECIOS (margen 0 de fábrica: el margen se enciende desde el panel) ============ */
+  /* ============ C. PRECIOS (base = vitrina del POS + config publicada: margen 30%, redondeo $100) ============ */
   grupo = "C-Precios";
   {
     const { ctx, page } = await nuevaPagina(browser);
     await entrar(page);
     const antes = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C0 base: pinza-la-bubu al precio de vitrina tal cual ($4.000)", antes === 4000, antes);
+    check("C0 base: pinza-la-bubu al precio configurado (vitrina $4.000 ×1.3 → $5.200)", antes === 5200, antes);
     await page.fill('#adminCats input[data-cat="cacharro"]', "100");
     await page.evaluate(() => aplicarPanelAdmin());
     const c1 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C1 margen cacharros 100%: pinza = $8.000", c1 === 8000, c1);
+    check("C1 margen cacharros 100% (reemplaza al global): pinza = $8.000", c1 === 8000, c1);
     await page.fill("#adminBuscarPrecio", "pinza la bubu");
     await page.waitForTimeout(200);
     await page.evaluate(() => fijarPrecioAdmin("pinza-la-bubu", "50000"));
@@ -142,14 +142,14 @@ async function entrar(page) {
     await page.selectOption("#adminRedondeo", "500");
     await page.evaluate(() => aplicarPanelAdmin());
     const c4 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C4 redondeo 500: 4000×1.6=6400 sube a $6.500", c4 === 6500, c4);
+    check("C4 redondeo 500: 4000×2(cat 100%)=8.000 ya es múltiplo → $8.000", c4 === 8000, c4);
     await page.fill("#adminMultiplicador", "2");
     await page.evaluate(() => aplicarPanelAdmin());
     const c5 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C5 multiplicador x2: 4000×2×1.6=12800 red500 = $13.000", c5 === 13000, c5);
+    check("C5 multiplicador x2: 4000×2×2=16.000 red500 → $16.000", c5 === 16000, c5);
     await page.evaluate(() => restaurarPanelAdmin());
     const c6 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C6 restaurar: pinza vuelve a $4.000", c6 === 4000, c6);
+    check("C6 restaurar: pinza vuelve al precio configurado $5.200", c6 === 5200, c6);
     await ctx.close();
   }
 

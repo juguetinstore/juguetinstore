@@ -33,6 +33,16 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
   check(/fonts\.googleapis\.com[^"]*Baloo\+2/.test(home.t) && /fonts\.googleapis\.com[^"]*Nunito/.test(home.t), "1.5", "tipografias oficiales cargadas");
   check(/wa\.me\/573132434760|573132434760/.test(home.t), "1.6", "WhatsApp de pedidos presente");
 
+  /* 1.5 Configuración publicada: el margen vigente define el techo de los
+     precios FINALES (vitrina × (1+margen) + redondeo). Se usa en 2.4b. */
+  const cfg = await texto(BASE + "data/configuracion.js?t=" + Date.now());
+  let conf = null;
+  try { conf = JSON.parse(cfg.t.replace(/^[\s\S]*?window\.CONFIG_PUBLICADA\s*=\s*/, "").replace(/;\s*$/, "")); } catch (e) { conf = null; }
+  const margenCfg = (conf && conf.precios && Number(conf.precios.margenGlobal)) || 0;
+  const redCfg = (conf && conf.precios && Number(conf.precios.redondeo)) || 0;
+  const precioFinalSmoke = p => redCfg > 0 ? Math.ceil((p * (1 + margenCfg) - 0.001) / redCfg) * redCfg : Math.round(p * (1 + margenCfg));
+  const techo = Math.ceil(600000 * (1 + margenCfg) / 1000) * 1000;
+
   /* 2. catalogo.js */
   const cat = await texto(BASE + "catalogo.js?t=" + Date.now());
   check(cat.st === 200, "2.1", "catalogo.js HTTP 200", cat.st);
@@ -41,6 +51,8 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
   check(ps.length >= 1500, "2.2", "catalogo con >=1500 juguetes visibles", ps.length);
   check(ps.every(x => x.p >= 200), "2.3", "sin precios fuera de rango (<$200)", ps.filter(x => x.p < 200).slice(0, 3).map(x => x.id + ":" + x.p));
   check(ps.every(x => x.p <= 600000), "2.4", "sin precios fuera de rango (> $600.000)", ps.filter(x => x.p > 600000).slice(0, 3).map(x => x.id + ":" + x.p));
+  const fueraRango = ps.filter(x => { const fin = precioFinalSmoke(x.p); return fin < 200 || fin > techo; });
+  check(fueraRango.length === 0, "2.4b", "precio final (vitrina + margen " + Math.round(margenCfg * 100) + "%) dentro de rango: $200 – $" + techo.toLocaleString("es-CO"), fueraRango.slice(0, 3).map(x => x.id + ":" + precioFinalSmoke(x.p)));
   check(ps.every(x => /^JUG-\d{4}$/.test(x.cid)), "2.5", "todos con codigo JUG-XXXX");
   const conImg = ps.filter(x => x.img);
   check(conImg.length >= ps.length * 0.95, "2.6", ">=95% con imagen propia", conImg.length + "/" + ps.length);
@@ -53,10 +65,7 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
   check(rotas.length === 0, "3.1", "muestra de 20 imagenes sin rotas", rotas);
 
   /* 4. data/configuracion.js */
-  const cfg = await texto(BASE + "data/configuracion.js?t=" + Date.now());
   check(cfg.st === 200, "4.1", "configuracion HTTP 200", cfg.st);
-  let conf = null;
-  try { conf = JSON.parse(cfg.t.replace(/^[\s\S]*?window\.CONFIG_PUBLICADA\s*=\s*/, "").replace(/;\s*$/, "")); } catch (e) { conf = null; }
   check(!!conf, "4.2", "configuracion parsea como JSON");
   if (conf) {
     check(!/"claveAdmin"/.test(cfg.t), "4.3", "sin claveAdmin publicada");

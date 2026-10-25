@@ -59,8 +59,9 @@ Ante el cliente nunca aparece el nombre de la fuente: una sola marca (JUGA).
 ### 2.2 Conversión y curación
 
 - **Precio final de vitrina tal cual**: la fuente ya publica el precio real de
-  venta (Precio 2 del POS); JUGA arranca con margen 0 y redondeo 0. Si algún
-  día se quiere ganancia extra, se sube desde el panel sin tocar código.
+  venta (Precio 2 del POS); el catálogo base arranca con margen 0 y redondeo 0.
+  Si algún día se quiere ganancia extra, se sube desde el panel sin tocar
+  código (publicado desde oct-2026 — ver §3).
 - Nombres en formato Título (la fuente viene en mayúsculas), con SKU por
   producto para el buscador y los pedidos.
 - Precio tachado (`antes`) solo si la fuente trae un `comparePrice` real por
@@ -98,8 +99,16 @@ Cada 6 horas: checkout con historial completo → clonar la fuente → sync →
 Prioridad: **1)** precio exacto fijado en el panel → **2)** margen de
 temporada → **3)** margen de categoría → **4)** margen global.
 
-- **Fábrica: margen 0 y redondeo 0** — el precio que ve el cliente es el de
-  vitrina de la juguetería, tal cual.
+- **Fábrica: margen 0 y redondeo 0.** Publicado desde el panel (25-oct-2026):
+  **margen global 30 % + redondeo comercial a $100** sobre el precio de
+  vitrina (Precio 2 del POS). Calibrado contra mercado (oct-2026): futbolito
+  de madera Éxito $301–362 mil vs JUGA $312 mil; cubos QiYi especializadas
+  $18–29,5 mil vs JUGA $22,1 mil — ganancia fuerte sin salirse del rango de
+  grandes superficies y tiendas especializadas.
+- **Regla de negocio:** el margen es la ganancia de la gestión del
+  administrador (comisión por las ventas) y se administra por configuración
+  publicada (`data/configuracion.js`), nunca tocando código. El cliente solo
+  ve el precio final: ningún porcentaje ni desglose se muestra en la tienda.
 - **Orden del catálogo**: de **menor a mayor precio** por defecto.
 - **Temporada automática** del 15-nov al 6-ene: configurable desde el panel
   (fábrica: 0 puntos extra).

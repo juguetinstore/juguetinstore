@@ -45,7 +45,8 @@ Verificaciones:
 - [ ] Total de productos ≥ 90% del vigente (el guarda-red del script aborta < 50%; la auditoría es más estricta a propósito).
 - [ ] Slugs y códigos `JUG-XXXX` de los 14 favoritos + 6 del héroe SIN CAMBIOS (diff del `catalogo.js` anterior).
 - [ ] Ningún número `JUG-` reutilizado: nuevos códigos no existen en el histórico del repo.
-- [ ] Precios: `venta == precio de vitrina de la fuente` para todo el catálogo (margen 0 por defecto).
+- [ ] Precios: `venta == precioFinal(vitrina)` con la estrategia publicada
+  (margen global 30 %, redondeo $100) para todo el catálogo.
 - [ ] Sin precios fuera de rango (< $200 o > $600.000) en el catálogo final.
 - [ ] Fuente leída completa (clon local del repo de la juguetería o URL crudo) sin cambios de esquema.
 - [ ] Imágenes: toda `img/p/*.webp` referenciada existe; 0 URLs externas en `catalogo.js`.
