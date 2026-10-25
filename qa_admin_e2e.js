@@ -120,36 +120,43 @@ async function entrar(page) {
     await ctx.close();
   }
 
-  /* ============ C. PRECIOS (base = vitrina del POS + config publicada: margen 30%, redondeo $100) ============ */
+  /* ============ C. PRECIOS (expectativas calculadas con el motor vivo: la suite no depende del precio base (5 o 2) ni del margen publicado) ============ */
   grupo = "C-Precios";
   {
     const { ctx, page } = await nuevaPagina(browser);
     await entrar(page);
-    const antes = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C0 base: pinza-la-bubu al precio configurado (vitrina $4.000 ×1.3 → $5.200)", antes === 5200, antes);
+    const espFinal = () => page.evaluate(() => precioFinal(CATALOGO_BASE_JUGA.find(p => p.id === "pinza-la-bubu")));
+    const precioPinza = () => page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
+    const base = await page.evaluate(() => CATALOGO_BASE_JUGA.find(p => p.id === "pinza-la-bubu").p);
+    const espBase = await espFinal();
+    const antes = await precioPinza();
+    check("C0 base: pinza-la-bubu al precio configurado (base $" + base.toLocaleString("es-CO") + " + margen publicado)", antes === espBase, { antes, espBase });
     await page.fill('#adminCats input[data-cat="cacharro"]', "100");
     await page.evaluate(() => aplicarPanelAdmin());
-    const c1 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C1 margen cacharros 100% (reemplaza al global): pinza = $8.000", c1 === 8000, c1);
+    const espC1 = await espFinal();
+    const c1 = await precioPinza();
+    check("C1 margen cacharros 100% (reemplaza al global): pinza = $" + espC1.toLocaleString("es-CO"), c1 === espC1, { c1, espC1 });
     await page.fill("#adminBuscarPrecio", "pinza la bubu");
     await page.waitForTimeout(200);
     await page.evaluate(() => fijarPrecioAdmin("pinza-la-bubu", "50000"));
-    const c2 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
+    const c2 = await precioPinza();
     check("C2 precio exacto pinza=$50.000 gana sobre el margen", c2 === 50000, c2);
     await page.evaluate(() => fijarPrecioAdmin("pinza-la-bubu", ""));
-    const c3 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C3 quitar precio fijo: vuelve a $8.000", c3 === 8000, c3);
+    const c3 = await precioPinza();
+    check("C3 quitar precio fijo: vuelve a $" + espC1.toLocaleString("es-CO"), c3 === espC1, c3);
     await page.selectOption("#adminRedondeo", "500");
     await page.evaluate(() => aplicarPanelAdmin());
-    const c4 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C4 redondeo 500: 4000×2(cat 100%)=8.000 ya es múltiplo → $8.000", c4 === 8000, c4);
+    const espC4 = await espFinal();
+    const c4 = await precioPinza();
+    check("C4 redondeo 500: pinza = $" + espC4.toLocaleString("es-CO"), c4 === espC4, { c4, espC4 });
     await page.fill("#adminMultiplicador", "2");
     await page.evaluate(() => aplicarPanelAdmin());
-    const c5 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C5 multiplicador x2: 4000×2×2=16.000 red500 → $16.000", c5 === 16000, c5);
+    const espC5 = await espFinal();
+    const c5 = await precioPinza();
+    check("C5 multiplicador x2: pinza = $" + espC5.toLocaleString("es-CO"), c5 === espC5, { c5, espC5 });
     await page.evaluate(() => restaurarPanelAdmin());
-    const c6 = await page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    check("C6 restaurar: pinza vuelve al precio configurado $5.200", c6 === 5200, c6);
+    const c6 = await precioPinza();
+    check("C6 restaurar: pinza vuelve al precio configurado $" + espBase.toLocaleString("es-CO"), c6 === espBase, { c6, espBase });
     await ctx.close();
   }
 

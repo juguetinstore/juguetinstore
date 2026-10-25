@@ -758,7 +758,7 @@ footer a:hover{color:var(--cr)}
       <select id="sortSelect" onchange="setSort(this.value)" aria-label="Ordenar productos">
         <option value="n">Recomendados</option>
         <option value="a">Precio: menor a mayor</option>
-        <option value="d">Precio: mayor a menor</option>
+        <option value="d" selected>Precio: mayor a menor</option>
         <option value="cat">Por categoría</option>
       </select>
     </label>
@@ -1457,7 +1457,7 @@ function track(ev,params){
 }
 
 /* ===== Estado ===== */
-let cart=ls("juga-cart",[]),favs=ls("juga-favs",[]),selQty={},selVar={},filter="todo",onlyFav=false,orden="n",pagina=1,listadoActual=[],upsellAbierto=true;
+let cart=ls("juga-cart",[]),favs=ls("juga-favs",[]),selQty={},selVar={},filter="todo",onlyFav=false,orden="d",pagina=1,listadoActual=[],upsellAbierto=true;
 function cartResumen(){let count=0,total=0;cart.forEach(it=>{const p=prod(it.id);if(p){count+=it.qty;total+=p.p*it.qty}});return{count:count,total:total};}
 
 /* ===== Navegación y categorías ===== */

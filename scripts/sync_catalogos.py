@@ -12,9 +12,9 @@ Que hace:
   - Lee el catalogo publicado de la fuente (clon local via JUGA_FUENTE_LOCAL,
     o descarga directa del URL crudo de GitHub si no hay clon).
   - Convierte cada producto al formato de la tienda JUGA: nombre en Titulo,
-    precio final tal cual (el precio de vitrina ya es el precio de venta),
-    categoria, SKU y fotos rehospedadas en img/p/ (webp, hash del path:
-    incremental).
+    precio base = Precio 5 del sistema cuando la fuente lo publica (campo
+    aditivo price5; respaldo: precio de vitrina = Precio 2), categoria, SKU
+    y fotos rehospedadas en img/p/ (webp, hash del path: incremental).
   - Asigna codigos permanentes JUG-XXXX por slug: se reutilizan los del
     catalogo.js anterior (los enlaces ?art=JUG-XXXX nunca se rompen) y los
     productos nuevos reciben numeros frescos, jamas reutilizados.
@@ -113,6 +113,7 @@ def parsear_productos(texto):
             imagen = m(r'image:"([^"]*)"').group(1)
             cat = m(r'category:"([^"]*)"').group(1)
             precio = int(m(r'price:(\d+)').group(1))
+            p5 = m(r'price5:(\d+)')
             cmpre = m(r'comparePrice:(\d+)')
             sku = m(r'sku:"([^"]*)"')
             imgs = m(r'images:\[(.*?)\]')
@@ -123,6 +124,7 @@ def parsear_productos(texto):
                 "imgs": [x for x in lista_js(imgs.group(1)) if x != imagen][:3],
                 "cat": cat,
                 "p": precio,
+                "p5": int(p5.group(1)) if p5 else 0,
                 "antes": int(cmpre.group(1)) if cmpre else 0,
                 "sku": sku.group(1) if sku else "",
             })
@@ -224,7 +226,7 @@ def escribir_catalogo_js(items):
     lineas.append("// catalogo.js de JUGA - generado automaticamente por scripts/sync_catalogos.py")
     lineas.append("// (%s). NO editar a mano: el cron de GitHub Actions lo regenera." % time.strftime("%Y-%m-%d %H:%M"))
     lineas.append("// Fuente: inventario de juguetes publicado por la jugueteria")
-    lineas.append("// (github.com/%s). Precio final de vitrina tal cual." % FUENTE_REPO)
+    lineas.append("// (github.com/%s). Base: Precio 5 del sistema; respaldo Precio 2 de vitrina." % FUENTE_REPO)
     lineas.append("// ======================================================================")
     lineas.append("const CATALOGO_JUGA=[")
     total = 0
@@ -272,6 +274,16 @@ if __name__ == "__main__":
     # validacion basica: precio real y foto
     productos = [p for p in productos if p["p"] > 0 and p["img"] and p["n"]]
     print("  validos (precio+foto+nombre):", len(productos))
+
+    # Precio base de JUGA = Precio 5 del sistema cuando la fuente lo publica
+    # (campo aditivo price5); los productos sin Precio 5 caen al precio de
+    # vitrina (Precio 2). La ganancia (margen) se aplica despues en la tienda
+    # con la configuracion publicada.
+    con_p5 = sum(1 for p in productos if p["p5"] > 0)
+    print("  con Precio 5:", con_p5, "de", len(productos), "(los demas usan Precio 2)")
+    for p in productos:
+        if p["p5"] > 0:
+            p["p"] = p["p5"]
 
     print("== Rehost de imagenes ==")
     rutas = []
