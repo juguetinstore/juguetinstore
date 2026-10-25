@@ -58,10 +58,12 @@ Ante el cliente nunca aparece el nombre de la fuente: una sola marca (JUGA).
 
 ### 2.2 Conversión y curación
 
-- **Precio base = Precio 5 del POS**: la fuente publica el Precio 5 de cada
-  producto (`price5`, campo aditivo desde oct-2026) cuando POSGold lo define;
-  JUGA lo toma como base y los productos sin Precio 5 caen al precio de
-  vitrina (Precio 2). El catálogo base arranca con margen 0 y redondeo 0; la
+- **Precio base = Precio 2 de vitrina**: la fuente también publica el Precio 5
+  (`price5`, escalón mayorista) pero JUGA NO lo usa como base: con él, un
+  tercio del catálogo quedaba por DEBAJO de la tienda física
+  (saldosjugueteriataiwan.com vende al Precio 2 exacto). Con base Precio 2 +
+  el margen del panel, los precios de JUGA quedan SIEMPRE por encima de la
+  tienda física. El catálogo base arranca con margen 0 y redondeo 0; la
   ganancia se sube desde el panel sin tocar código (publicado desde oct-2026
   — ver §3).
 - Nombres en formato Título (la fuente viene en mayúsculas), con SKU por
@@ -102,8 +104,10 @@ Prioridad: **1)** precio exacto fijado en el panel → **2)** margen de
 temporada → **3)** margen de categoría → **4)** margen global.
 
 - **Fábrica: margen 0 y redondeo 0.** Publicado desde el panel (25-oct-2026):
-  **margen global 30 % + redondeo comercial a $100** sobre el precio base
-  (Precio 5 del POS; respaldo Precio 2 de vitrina). Calibrado contra mercado
+  **margen global 30 % + redondeo comercial a $100** sobre el precio de
+  vitrina (Precio 2 del POS): JUGA queda siempre por encima de
+  saldosjugueteriataiwan.com (que vende al Precio 2 exacto) — el porcentaje
+  del panel es el control de cuánto por encima. Calibrado contra mercado
   (oct-2026): futbolito de madera Éxito $301–362 mil vs JUGA $312 mil; cubos
   QiYi especializadas $18–29,5 mil vs JUGA $22,1 mil — ganancia fuerte sin
   salirse del rango de grandes superficies y tiendas especializadas.

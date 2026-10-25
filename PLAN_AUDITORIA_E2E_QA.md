@@ -45,8 +45,9 @@ Verificaciones:
 - [ ] Total de productos ≥ 90% del vigente (el guarda-red del script aborta < 50%; la auditoría es más estricta a propósito).
 - [ ] Slugs y códigos `JUG-XXXX` de los 14 favoritos + 6 del héroe SIN CAMBIOS (diff del `catalogo.js` anterior).
 - [ ] Ningún número `JUG-` reutilizado: nuevos códigos no existen en el histórico del repo.
-- [ ] Precios: `venta == precioFinal(base)` — base = Precio 5 (`price5`, respaldo
-  Precio 2) — con la estrategia publicada (margen global 30 %, redondeo $100)
+- [ ] Precios: `venta == precioFinal(base)` — base = Precio 2 de vitrina, por
+  encima de la tienda física (saldosjugueteriataiwan.com vende al Precio 2
+  exacto) — con la estrategia publicada (margen global 30 %, redondeo $100)
   para todo el catálogo.
 - [ ] Sin precios fuera de rango (< $200 o > $600.000) en el catálogo final.
 - [ ] Fuente leída completa (clon local del repo de la juguetería o URL crudo) sin cambios de esquema.
