@@ -1,8 +1,11 @@
-# Sincronizacion automatica del catalogo de LUNARIA (pijamas):
-# descarga Sublimados Majestic, regenera catalogo.js (tienda) y el Excel
-# del proveedor; y publica los cambios.
+# Sincronizacion automatica del catalogo de JUGA (jugueteria):
+# toma el inventario publicado por la jugueteria (repo publico de GitHub,
+# generado 4 veces al dia desde el POS de la tienda), regenera catalogo.js
+# con codigos JUG-XXXX permanentes y rehospeda las fotos nuevas en img/p/.
 #
-# LUNARIA es un catalogo por repositorio: solo la linea de pijamas (l2).
+# JUGA hereda la estrategia del grupo: un catalogo por repositorio. La
+# fuente de juguetes es el repo jugueteriataiwanoficial/jugueteriataiwan
+# (maestro); este sync lo absorbe tal cual: precios de vitrina finales.
 #
 # Requisito (una sola vez): Settings > Actions > General > Workflow permissions
 # debe estar en "Read and write permissions" para que el bot pueda hacer push.
@@ -28,23 +31,22 @@ jobs:
         with:
           fetch-depth: 0   # historial completo: el panel publica data/configuracion.js
                            # por API mientras el cron corre; el push seguro lo absorbe
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Instalar dependencias
-        run: python -m pip install openpyxl pillow
+      - name: Clonar la fuente de juguetes (catalogo maestro de la jugueteria)
+        run: git clone --depth 1 https://github.com/jugueteriataiwanoficial/jugueteriataiwan /tmp/jugueteria
       - name: Sincronizar catalogo
+        env:
+          JUGA_FUENTE_LOCAL: /tmp/jugueteria
         run: python scripts/sync_catalogos.py
       - name: Publicar cambios (si los hay)
         run: |
           git config user.name  "tiendalunaria-bot"
           git config user.email "tiendalunaria@users.noreply.github.com"
-          git add catalogo.js *.xlsx img
+          git add catalogo.js img
           if ! git diff --cached --quiet; then
-            git commit -m "sync: actualiza catalogo de pijamas y Excel del proveedor [skip ci]"
+            git commit -m "sync: actualiza catalogo de juguetes [skip ci]"
             # Si el panel publico la configuracion mientras este cron corria,
             # el repositorio quedo adelante: se absorbe con rebase (el panel
-            # solo toca data/configuracion.js, nunca catalogo.js ni el Excel,
+            # solo toca data/configuracion.js, nunca catalogo.js ni img/,
             # asi que no hay conflicto posible) y se reintenta el push.
             if ! git pull --rebase origin main; then
               echo "No se pudo absorber lo publicado por el panel; el catalogo se regenera en la proxima corrida."

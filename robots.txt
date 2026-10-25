@@ -1,7 +1,7 @@
-# LUNARIA — rastreo abierto para buscadores
+# JUGA — rastreo abierto para buscadores
 # Al mover al dominio oficial: actualizar la linea Sitemap.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://tiendalunaria.github.io/lunaria/sitemap.xml
+Sitemap: https://tiendalunaria.github.io/juga/sitemap.xml

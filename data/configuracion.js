@@ -1,10 +1,10 @@
 // Configuración de la tienda publicada desde el panel de administración
 // (botón "Publicar para TODOS"). Se aplica a TODOS los visitantes de
-// https://tiendalunaria.github.io/lunaria/ — nadie necesita editar este archivo a mano.
+// https://tiendalunaria.github.io/juga/ — nadie necesita editar este archivo a mano.
 window.CONFIG_PUBLICADA = {
-  "version": 1792588720869,
+  "version": 1792590000000,
   "tienda": {
-    "nombre": "LUNARIA",
+    "nombre": "JUGA",
     "logo": "logo_120.png",
     "whatsappPedidos": "573132434760",
     "whatsappAtencion": "",
@@ -16,8 +16,8 @@ window.CONFIG_PUBLICADA = {
     "tiktok": "",
     "pixelMeta": "",
     "ga4": "",
-    "heroIds": "m85,m86,m59,m80,m81,m82",
-    "favoritos": "m85,m86,m59,m80,m81,m84,m03,m06,m08,m11,m15,m16,m18,m21,m23,m29,m44,m47,m61,m66",
+    "heroIds": "mesa-futbol-de-madera,pista-neon-carro-pila-luz-con-numero,carro-armable-x448pcs-control-remoto-pilas-1,goku-y-rey-mono,rompecabezas-torre-eiffel-x1000-piezas-caja,burbujero-mil-burbujas-pilas-cj-bubble-gun-4-motivos",
+    "favoritos": "mesa-futbol-de-madera,naruto-x6-anime,carro-armable-x448pcs-control-remoto-pilas-1,caja-cubo-rubik-3x3-cuadritos-qytoys,muneco-pokemon,pista-neon-carro-pila-luz-con-numero,magnetic-chess-caja-2-motivos,burbujero-mil-burbujas-pilas-cj-bubble-gun-4-motivos,rompecabezas-torre-eiffel-x1000-piezas-caja,goku-y-rey-mono,torre-columna-laberinto,domino-doble-9-caja-metalica-2,termo-corona-traslucido-3-colores,huevo-dinosaurio-mediano-crece-en-el-agua",
     "pagoContraEntrega": true,
     "vaciarCarrito": true,
     "categoriasOcultas": "",
@@ -27,31 +27,15 @@ window.CONFIG_PUBLICADA = {
     "catalogosOcultos": ""
   },
   "precios": {
-    "margenGlobal": 0.25,
+    "margenGlobal": 0,
     "multiplicadorBase": 1,
-    "redondeo": 1000,
-    "margenesPorCategoria": {
-      "joyas": 0.7,
-      "moda": 0.6,
-      "pijamas": 0.6,
-      "conjuntos": 0.6,
-      "pantalones": 0.6,
-      "shorts": 0.6,
-      "interior": 0.6,
-      "enterizos": 0.6,
-      "ninos": 0.6,
-      "navidad": 0.6,
-      "juguetes": 0.5,
-      "escolar": 0.5,
-      "bebe": 0.25,
-      "regalos": 0.3,
-      "urbana": 0.2
-    },
+    "redondeo": 0,
+    "margenesPorCategoria": {},
     "temporadaIds": [],
-    "temporadaCats": "juguetes,regalos,joyas,navidad",
+    "temporadaCats": "",
     "temporadaInicio": "11-15",
     "temporadaFin": "01-06",
-    "margenTemporada": 0.1,
+    "margenTemporada": 0,
     "preciosV": 2,
     "preciosPersonalizados": {}
   }

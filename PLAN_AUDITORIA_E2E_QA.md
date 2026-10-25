@@ -1,7 +1,7 @@
-# LUNARIA — Plan de Auditoría E2E y QA
+# JUGA — Plan de Auditoría E2E y QA
 
 **Versión:** 1.0 · **Fecha:** octubre 2026 · **Alcance:** todo el sistema publicado
-(https://tiendalunaria.github.io/lunaria/) y su pipeline.
+(https://tiendalunaria.github.io/juga/) y su pipeline.
 
 > Objetivo: garantizar que la tienda venda bien, cobre bien y no se caiga.
 > Prioridad de riesgos: (1) cobrar mal, (2) catálogo roto, (3) pedido no llega
@@ -16,8 +16,8 @@
 | 1 | Tienda (catálogo, precios, carrito, checkout, WhatsApp) | `index.html` + `catalogo.js` | Cobrar mal / pedido incompleto |
 | 2 | Panel de administración | `index.html` (sección admin) | Publicar configuración corrupta; fuga de token/clave |
 | 3 | Publicación por API | fetch a Contents API (`data/configuracion.js`) | Sobreescribir el cron; claves en el repo |
-| 4 | Cron de sincronización | `scripts/sync_catalogos.py` + workflow | Proveedor caído → tienda vacía; IDs cambiados → pedidos viejos rotos |
-| 5 | Catálogo y datos | `catalogo.js`, `data/configuracion.js`, Excel | Precios con margen equivocado; imágenes rotas |
+| 4 | Cron de sincronización | `scripts/sync_catalogos.py` + workflow | Fuente caída → tienda vacía; slugs/códigos cambiados → pedidos viejos rotos |
+| 5 | Catálogo y datos | `catalogo.js`, `data/configuracion.js` | Precios con margen equivocado; imágenes rotas |
 | 6 | Legales | `legal.html` | Datos legales desactualizados; config no absorbida |
 | 7 | Marca y activos | logos, favicons, banner, QR | Recurso 404; logo viejo en cualquier superficie |
 | 8 | No funcionales | móvil, a11y, performance, SEO, seguridad | Venta perdida en celular; penalización Google |
@@ -31,8 +31,8 @@
   `style="…" "Cormorant Garamond"…` rompía el atributo sin romper la página).
 - `node --check` sobre JS inline extraído y sobre `catalogo.js`.
 - Todos los recursos locales existen: `logo_120.png`, `logo_512*.png`,
-  `favicon*`, `apple-touch-icon.png`, `banner_pijamas_1600x600.png`, `qr_lunaria.png`.
-- Cero referencias a la marca vieja: grep `322D5B|B9A5F5|F7F4FC|E6DFF3|6A6480|Quicksand|Nunito|Noches suaves, sueños felices`
+  `favicon*`, `apple-touch-icon.png`, `og.png`, `qr_juga.png`.
+- Cero referencias a la marca vieja: grep `C99BA6|4B4141|FFF9F2|E9D9C8|Cormorant|Montserrat|LUNARIA|La comodidad comienza en casa`
   debe dar 0 en `index.html`/`legal.html` (en MDs solo permitido como línea secundaria).
 - Secretos: `git ls-files` NO contiene `GitHub.txt`, `Gmail.txt`, tokens `github_pat_…`.
 
@@ -43,18 +43,18 @@ python scripts/sync_catalogos.py          # compara contra el catalogo.js vigent
 ```
 Verificaciones:
 - [ ] Total de productos ≥ 90% del vigente (el guarda-red del script aborta < 50%; la auditoría es más estricta a propósito).
-- [ ] IDs `mNN` y códigos `LUN-XXXX` de los 20 favoritos + 6 del héroe SIN CAMBIOS (diff del `catalogo.js` anterior).
-- [ ] Ningún número `LUN-` reutilizado: nuevos códigos no existen en el histórico del repo.
-- [ ] Precios: `venta == ceil(base×1.6 /1000)×1000` para los 99 (fuera de temporada).
-- [ ] Sin precios placeholder ($3) en el catálogo final; familias expandidas con precio real por prenda.
-- [ ] Excel regenerado: cabecera chocolate `#4B4141`, hojas "Catálogo" y "Resumen", fecha de extracción de hoy.
+- [ ] Slugs y códigos `JUG-XXXX` de los 14 favoritos + 6 del héroe SIN CAMBIOS (diff del `catalogo.js` anterior).
+- [ ] Ningún número `JUG-` reutilizado: nuevos códigos no existen en el histórico del repo.
+- [ ] Precios: `venta == precio de vitrina de la fuente` para todo el catálogo (margen 0 por defecto).
+- [ ] Sin precios fuera de rango (< $200 o > $600.000) en el catálogo final.
+- [ ] Fuente leída completa (clon local del repo de la juguetería o URL crudo) sin cambios de esquema.
 - [ ] Imágenes: toda `img/p/*.webp` referenciada existe; 0 URLs externas en `catalogo.js`.
 - [ ] Prueba de fallo simulada: desconexión a mitad de descarga → el script debe abortar y conservar el catálogo vigente.
 
 ### L2 — Tienda E2E local (cada cambio funcional de `index.html`)
 Suite existente: `node qa_aterrizaje_precios.js` (ajustar rutas del checkout local).
-Cubre: 20 favoritos, carruseles por categoría, héroe, buscador (sin tildes/ñ,
-`LUN-XXXX`, SKU), `?art=` de alistamiento, precios de los 99, matemática de
+Cubre: 14 favoritos, carruseles por categoría, héroe, buscador (sin tildes/ñ,
+`JUG-XXXX`, SKU), `?art=` de alistamiento, precios de todo el catálogo, matemática de
 carrito, mensaje WhatsApp con total exacto, hoja de pedido PNG.
 Complementos NUEVOS (a incorporar a la suite):
 - [ ] **Checkout por fases completo**: pedido → datos → entrega → pago → notas;
@@ -80,9 +80,9 @@ C0–C6, héroe/favoritos D0–D6…). Complementos NUEVOS:
   `pull --rebase` del workflow absorbe sin conflicto (simular con 2 commits).
 
 ### L4 — Producción (smoke después de cada deploy + 1 vez/día)
-Contra https://tiendalunaria.github.io/lunaria/ (solo lectura, sin comprar):
+Contra https://tiendalunaria.github.io/juga/ (solo lectura, sin comprar):
 - [ ] HTTP 200 en `/`, `/catalogo.js`, `/data/configuracion.js`, `/legal.html` y los 7 activos de marca.
-- [ ] `catalogo.js` parsea y tiene ≥ 95 productos visibles; muestra de 10 precios correctos.
+- [ ] `catalogo.js` parsea y tiene ≥ 1500 juguetes visibles; muestra de 10 precios correctos.
 - [ ] Título y meta `og:` con el eslogan oficial; favicon carga (marca nueva).
 - [ ] 20 imágenes de producto aleatorias: 0 rotas (HTTP 200).
 - [ ] QR de la tarjeta apunta al dominio correcto.
@@ -90,7 +90,7 @@ Contra https://tiendalunaria.github.io/lunaria/ (solo lectura, sin comprar):
 
 ### L5 — No funcionales (1 vez por mes y antes de cada temporada)
 - **Móvil real**: iPhone SE y Android gama media (Chrome): carrito, checkout, WhatsApp.
-- **Accesibilidad**: contraste AA en rosa empolvado (`#3E3434` sobre `#C99BA6` = 5,0:1 ✓),
+- **Accesibilidad**: contraste AA (texto `#654800` sobre amarillo `#F2B832` ✓; azul `#24558A` sobre crema `#F7F3E9` ✓),
   foco visible, navegación por teclado del checkout completo, `aria-label` en iconos.
 - **Performance Lighthouse (móvil)**: objetivo ≥ 85; imágenes webp ~46 KB ya optimizadas;
   fuentes con `display=swap`; héroe solo descarga en escritorio (lazy en móvil).
@@ -106,7 +106,7 @@ Contra https://tiendalunaria.github.io/lunaria/ (solo lectura, sin comprar):
 |---|---|---|
 | Local | `index.html` directo + `catalogo.js` vigente | L0–L3 |
 | Staging | rama `qa/` con Pages de repositorio espejo | L3 (publicación real sin riesgo) |
-| Producción | tiendalunaria.github.io/lunaria | L4 smoke (solo lectura) |
+| Producción | tiendalunaria.github.io/juga | L4 smoke (solo lectura) |
 | Datos | WhatsApp de prueba `573001112222` (patrón de la suite A/B); clon del catálogo recortado a 10 ítems para iterar rápido | suites |
 
 Reglas: nunca publicar a producción desde QA; nunca comprar real en pruebas;
@@ -120,7 +120,7 @@ generado, no enviándolo.
 | Sev | Definición | Ejemplo | Acción |
 |---|---|---|---|
 | S1 | Cobra mal o pierde pedidos | total del carrito errado; WhatsApp sin total; precio ≠ fórmula | Bloquea deploy |
-| S2 | Catálogo/tienda rota para el usuario | catálogo < 95; imagen placeholder masiva; checkout no avanza | Bloquea deploy |
+| S2 | Catálogo/tienda rota para el usuario | catálogo < 1500; imagen placeholder masiva; checkout no avanza | Bloquea deploy |
 | S3 | Degradación visible sin pérdida | badge sin rebote; lightbox sin contador | Fix en 7 días |
 | S4 | Cosmético | espaciado, tipografía menor | Backlog |
 
@@ -139,7 +139,7 @@ smoke L4 verde, y reporte firmado con fecha.
 | Diario (automatizable con workflow `qa-smoke.yml`) | L4 smoke de producción |
 | Semanal (lunes) | L1 + revisión del run del cron de las 06:00 |
 | Mensual | L5 no funcionales |
-| **15-nov (antes de temporada)** | Auditoría completa L0–L5 + revisión de margen navidad 70% |
+| **15-nov (antes de temporada)** | Auditoría completa L0–L5 + revisión de temporada de regalos |
 
 ---
 
@@ -148,7 +148,7 @@ smoke L4 verde, y reporte firmado con fecha.
 ```
 Fecha / corrida:            Ejecutor:
 L0 estático:        PASS/FAIL (detalle)
-L1 pipeline:        productos ANTES=99 DESPUÉS=nn | IDs héroe/favoritos estables: SÍ/NO
+L1 pipeline:        productos ANTES=1938 DESPUÉS=nn | slugs/códigos héroe/favoritos estables: SÍ/NO
 L2 aterrizajes:     nn/nn PASS  | fallos:
 L3 panel:           nn/nn PASS  | fallos:
 L4 producción:      HTTP/precios/imágenes | deploy: min
@@ -175,5 +175,5 @@ Decisión:           PUBLICAR / NO PUBLICAR (motivo)
 
 | Fecha | Corrida | Resultado | Acción |
 |---|---|---|---|
-| 22-oct-2026 | **L4 smoke de producción** (`qa_smoke_produccion.js`, 23 checks) | **23/23 PASS** — producción sana | Automatizado con `qa-smoke.yml` (12:00 UTC) |
+| 25-oct-2026 | **Rebranding JUGA** — sistema clonado de LUNARIA; catálogo de juguetes real (fuente: repo de la juguetería, ~1.938 ítems); activos de marca y URLs propios | Base lista | Correr auditoría L0–L4 tras el primer deploy |
 | 22-oct-2026 | **Auditoría de secretos** (tree + historial completo de git) | **0 fugas.** Tokens/credenciales ausentes en repo e historial; config publicada sin `claveAdmin` ni token; `.gitignore` cubre archivos locales. 2 hallazgos evaluados como aceptados: clave `sb_publishable_` del proveedor (pública por diseño) y clave de fábrica del panel en HTML (por diseño; publicar exige token, nunca en código) | Ninguna obligatoria; rotación de clave de fábrica opcional |

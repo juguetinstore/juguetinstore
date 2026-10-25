@@ -1,12 +1,13 @@
 /* QA EXHAUSTIVO: aterrizaje de tarjetas por cada via de entrada + matematica
-   de precios (99 productos vs catalogo) + matematica del carrito.
+   de precios (todo el catalogo de juguetes) + matematica del carrito.
    Ejecutar:  node qa_aterrizaje_precios.js
-   51 verificaciones: los 20 favoritos, primero y ultimo de cada carrusel de
-   categoria, las 6 prendas del heroe, buscador y enlace ?art= aterrizan en
-   SU tarjeta con el panel de cantidad abierto; los 99 precios = base x 1.6
-   redondeado a 100; carrito con lineas, unidades, totales, mensaje de
-   WhatsApp y hoja de pedido exactos. */
+   Verificaciones: los 14 favoritos, primero y ultimo de cada carrusel de
+   categoria, los 6 juguetes del heroe, buscador y enlace ?art= aterrizan en
+   SU tarjeta con el panel de cantidad abierto; todos los precios = precio de
+   vitrina tal cual (margen 0); carrito con lineas, unidades, totales, mensaje
+   de WhatsApp y hoja de pedido exactos. */
 const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/playwright");
+const BASE = process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/";
 
 (async () => {
   const res = [];
@@ -15,7 +16,7 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   await page.route("**/data/configuracion.js", r => { const u = new global.URL(r.request().url()); u.searchParams.set("cb", String(Date.now())); r.continue({ url: u.toString() }); });
-  await page.goto("https://tiendalunaria.github.io/lunaria/?cb=" + Date.now(), { waitUntil: "domcontentloaded", timeout: 90000 });
+  await page.goto(BASE + "?cb=" + Date.now(), { waitUntil: "domcontentloaded", timeout: 90000 });
   await page.waitForFunction(() => (window.PRODUCTOS || []).length > 0, { timeout: 60000 });
   await page.waitForTimeout(1500);
 
@@ -24,7 +25,6 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
     const card = await page.evaluate(async (id) => {
       const p = prod(id);
       if (!p) return { error: "sin producto" };
-      // dispara exactamente lo que la via de entrada dispara
       scrollToProduct(id);
       await new Promise(r => setTimeout(r, 2600));
       const c = document.getElementById("product-" + id);
@@ -42,10 +42,10 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
     return card;
   };
 
-  /* ============ 1. FAVORITOS: los 20 items del carrusel ============ */
+  /* ============ 1. FAVORITOS: los 14 items del carrusel ============ */
   grupo = "1-Favoritos";
   const favs = await page.evaluate(() => CONFIG.favoritosIds.filter(id => prod(id) && prodVisible(prod(id))));
-  check("1.0 carrusel con " + favs.length + " favoritos visibles", favs.length === 20, favs.length);
+  check("1.0 carrusel con " + favs.length + " favoritos visibles", favs.length === 14, favs.length);
   for (const id of favs) await aterriza("Fav", id);
 
   /* ============ 2. CARRUSELES DE CATEGORIA: primero y ultimo de cada fila ============ */
@@ -69,15 +69,15 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
     for (const id of fila.ids) if (id) await aterriza("Carrusel " + fila.fila, id);
   }
 
-  /* ============ 3. HEROE: las 6 prendas de temporada ============ */
+  /* ============ 3. HEROE: los 6 juguetes destacados ============ */
   grupo = "3-Héroe";
   const heroIds = await page.evaluate(() => TIENDA.heroIds.split(",").map(s => s.trim()).filter(Boolean));
-  check("3.0 heroe con 6 prendas", heroIds.length === 6, heroIds);
+  check("3.0 heroe con 6 juguetes", heroIds.length === 6, heroIds);
   for (const id of heroIds) await aterriza("Héroe", id);
 
   /* ============ 4. BUSCADOR ============ */
   grupo = "4-Buscador";
-  await page.evaluate(() => { document.getElementById("searchInput").value = "grinch"; searchProducts(); });
+  await page.evaluate(() => { document.getElementById("searchInput").value = "rubik"; searchProducts(); });
   await page.waitForTimeout(400);
   const busca = await page.evaluate(() => {
     const b = document.querySelector("#searchResults .sri");
@@ -86,16 +86,16 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
   });
   if (busca) {
     await page.click("#searchResults .sri");
-    await aterriza("Buscador 'grinch'", busca);
-  }
+    await aterriza("Buscador 'rubik'", busca);
+  } else check("4.1 buscador 'rubik' con resultados", false, busca);
 
-  /* ============ 5. ?art=LUN-XXXX (enlace de alistamiento) ============ */
+  /* ============ 5. ?art=JUG-XXXX (enlace de alistamiento) ============ */
   grupo = "5-?art";
   {
-    const art = await page.evaluate(() => { const p = prod("m66"); return p ? p.cid : null; });
+    const art = await page.evaluate(() => { const p = prod("mesa-futbol-de-madera"); return p ? p.cid : null; });
     const page2 = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     await page2.route("**/data/configuracion.js", r => { const u = new global.URL(r.request().url()); u.searchParams.set("cb", String(Date.now())); r.continue({ url: u.toString() }); });
-    await page2.goto("https://tiendalunaria.github.io/lunaria/?cb=" + Date.now() + "&art=" + art, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await page2.goto(BASE + "?cb=" + Date.now() + "&art=" + art, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page2.waitForFunction(() => (window.PRODUCTOS || []).length > 0, { timeout: 60000 });
     await page2.waitForTimeout(3500);
     const c = await page2.evaluate((id) => {
@@ -103,46 +103,47 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
       if (!el) return { error: "sin tarjeta" };
       const r = el.getBoundingClientRect();
       return { visible: r.top < innerHeight - 60 && r.bottom > 70, panel: document.getElementById("q-" + id).classList.contains("open"), top: Math.round(r.top) };
-    }, "m66");
-    check("5.1 ?art=" + art + " aterriza en Juanita 4 Piezas con panel abierto", c.visible && c.panel, c);
+    }, "mesa-futbol-de-madera");
+    check("5.1 ?art=" + art + " aterriza en Mesa Futbol de Madera con panel abierto", c.visible && c.panel, c);
     await page2.close();
   }
 
-  /* ============ 6. PRECIOS: los 99 visibles = round100(base × 1.6) ============ */
+  /* ============ 6. PRECIOS: todos los visibles = precio de vitrina tal cual ============ */
   grupo = "6-Precios";
   const precios = await page.evaluate(() => {
     const malos = [];
     let n = 0;
     const base = {};
-    CATALOGO_BASE_LUNARIA.forEach(p => { base[p.id] = p.p; });
+    CATALOGO_BASE_JUGA.forEach(p => { base[p.id] = p.p; });
     PRODUCTOS.forEach(p => {
       if (!prodVisible(p)) return;
       n++;
-      const esperado = Math.round(base[p.id] * 1.6 / 100) * 100;
-      if (p.p !== esperado) malos.push({ id: p.id, n: p.n, esperado, real: p.p });
+      if (p.p !== base[p.id]) malos.push({ id: p.id, n: p.n, esperado: base[p.id], real: p.p });
     });
     return { n, malos };
   });
-  check("6.1 los " + precios.n + " productos visibles a base×1.6 redondeado a 100 (margen 60% fuera de temporada)", precios.n === 99 && precios.malos.length === 0, precios.malos.slice(0, 5));
+  check("6.1 los " + precios.n + " juguetes visibles al precio de vitrina tal cual (margen 0)", precios.n > 1500 && precios.malos.length === 0, precios.malos.slice(0, 5));
 
   /* ============ 7. CARRITO: matematica completa ============ */
   grupo = "7-Carrito";
   const carrito = await page.evaluate(() => new Promise(done => {
     const r = {};
     vaciarCarrito();
-    // 2x m44 (54400) + 1x m01 (161600) + 3x m98 Grinch Niño (45600)
-    addToCart("m44", 2, null);
-    addToCart("m01", 1, null);
-    addToCart("m98", 3, null);
+    // 2x mesa-futbol + 1x naruto-x6 + 3x pinza-la-bubu (precios leidos del catalogo vivo)
+    const a = prod("mesa-futbol-de-madera"), b = prod("naruto-x6-anime"), c = prod("pinza-la-bubu");
+    r.precios = { a: a.p, b: b.p, c: c.p };
+    addToCart("mesa-futbol-de-madera", 2, null);
+    addToCart("naruto-x6-anime", 1, null);
+    addToCart("pinza-la-bubu", 3, null);
     const s = cartResumen();
-    r.esperado = { items: 3, unidades: 6, total: 2 * 54400 + 161600 + 3 * 45600 };
+    r.esperado = { items: 3, unidades: 6, total: 2 * a.p + b.p + 3 * c.p };
     r.real = { items: cart.length, unidades: s.count, total: s.total };
     r.subtotalDrawer = document.getElementById("cartSubtotal").textContent;
     r.payTotal = document.getElementById("payTotal").textContent;
     r.payCount = document.getElementById("payCount").textContent;
-    // stepper en tarjeta: cambiar cantidad de m44 a 4
-    selQty["m44"] = 2; changeQty("m44", 2);
-    r.stepper = document.getElementById("qs-m44").textContent;
+    // stepper en tarjeta: cambiar cantidad de la mesa a 4
+    selQty["mesa-futbol-de-madera"] = 2; changeQty("mesa-futbol-de-madera", 2);
+    r.stepper = document.getElementById("qs-mesa-futbol-de-madera").textContent;
     // pedido por WhatsApp: verificar el mensaje
     window.open = u => { r.waUrl = u; return {}; };
     const set = (id, v) => { const el = document.getElementById(id); el.value = v; el.dispatchEvent(new Event("input", { bubbles: true })); };
@@ -154,14 +155,15 @@ const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/pla
     sendOrder();
     setTimeout(() => done(r), 700);
   }));
-  const esperadoTotal = 2 * 54400 + 161600 + 3 * 45600;
+  const esperadoTotal = carrito.esperado.total;
   check("7.1 carrito: 3 lineas, 6 unidades, total $" + esperadoTotal.toLocaleString("es-CO"),
     carrito.real.items === 3 && carrito.real.unidades === 6 && carrito.real.total === esperadoTotal, carrito);
-  check("7.2 stepper de tarjeta: 4x $54.400 = $217.600", carrito.stepper === "$217.600", carrito.stepper);
+  const esperadoStepper = "$" + (4 * carrito.precios.a).toLocaleString("es-CO");
+  check("7.2 stepper de tarjeta: 4x " + carrito.precios.a.toLocaleString("es-CO") + " = " + esperadoStepper, carrito.stepper === esperadoStepper, carrito.stepper);
   const dec = decodeURIComponent(carrito.waUrl || "");
   const totalFmt = "$" + esperadoTotal.toLocaleString("es-CO").replace(/\u00a0/g, ".");
   check("7.3 mensaje WhatsApp con el TOTAL exacto (" + totalFmt + ")", dec.includes("TOTAL PRODUCTOS: " + totalFmt), dec.slice(-260));
-  check("7.4 mensaje con lineas y c/u correctas", dec.includes("2 x Pijama en Satin") && dec.includes("3 x Pijama Familiar Grinch") && dec.includes("$54.400 c/u"), "");
+  check("7.4 mensaje con las lineas del pedido", dec.includes("2 x Mesa Futbol de Madera") && dec.includes("3 x Pinza la Bubu"), "");
   const hoja = await page.evaluate(() => new Promise(d => { crearHojaPedido("PED-QA").then(f => d({ size: f ? f.size : 0 })); }));
   check("7.5 hoja de pedido PNG generada con el resumen", hoja.size > 20000, hoja);
 

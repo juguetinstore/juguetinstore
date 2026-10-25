@@ -1,12 +1,12 @@
 /* ============================================================
-   QA SMOKE L4 — Producción (https://tiendalunaria.github.io/lunaria/)
+   QA SMOKE L4 — Producción (https://tiendalunaria.github.io/juga/)
    Solo lectura, sin compras. Corre diario (workflow qa-smoke.yml) y a mano.
    Uso local:  node qa_smoke_produccion.js
-   URL alterne:QA_TIENDA_URL=https://... node qa_smoke_produccion.js
+   URL alterna: QA_TIENDA_URL=https://... node qa_smoke_produccion.js
    Escribe smoke_resultado.txt (lo consume el workflow al abrir issue).
    ============================================================ */
-const BASE = (process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/lunaria/").replace(/\/?$/, "/");
-const UA = { "User-Agent": "lunaria-qa-smoke" };
+const BASE = (process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/").replace(/\/?$/, "/");
+const UA = { "User-Agent": "juga-qa-smoke" };
 
 const res = [];
 const check = (ok, id, msg, extra) => {
@@ -27,24 +27,24 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
   /* 1. Página principal */
   const home = await texto(BASE);
   check(home.st === 200, "1.1", "home HTTP 200", home.st);
-  check(/<title>LUNARIA — La comodidad comienza en casa<\/title>/i.test(home.t), "1.2", "title con eslogan oficial");
-  check(/og:title" content="LUNARIA — La comodidad comienza en casa"/i.test(home.t), "1.3", "og:title oficial");
+  check(/<title>JUGA — Regalos que despiertan sonrisas<\/title>/i.test(home.t), "1.2", "title con eslogan oficial");
+  check(/og:title" content="JUGA — Regalos que despiertan sonrisas"/i.test(home.t), "1.3", "og:title oficial");
   check(/rel="icon" href="favicon\.ico"/.test(home.t), "1.4", "favicon enlazado");
-  check(/fonts\.googleapis\.com[^"]*Cormorant\+Garamond/.test(home.t) && /fonts\.googleapis\.com[^"]*Montserrat/.test(home.t), "1.5", "tipografias oficiales cargadas");
+  check(/fonts\.googleapis\.com[^"]*Baloo\+2/.test(home.t) && /fonts\.googleapis\.com[^"]*Nunito/.test(home.t), "1.5", "tipografias oficiales cargadas");
   check(/wa\.me\/573132434760|573132434760/.test(home.t), "1.6", "WhatsApp de pedidos presente");
 
   /* 2. catalogo.js */
   const cat = await texto(BASE + "catalogo.js?t=" + Date.now());
   check(cat.st === 200, "2.1", "catalogo.js HTTP 200", cat.st);
-  const ps = [...cat.t.matchAll(/\{id:"([a-z]+)(\d+)",n:"((?:[^"\\]|\\.)*)",p:(\d+),cat:"([\w-]+)".*?cid:"LUN-(\d+)"/g)]
-    .map(m => ({ id: m[1] + m[2], n: m[3], p: +m[4], cat: m[5], cid: "LUN-" + m[6], img: (cat.t.slice(m.index, m.index + 600).match(/img:"([^"]+)"/) || [])[1] }));
-  check(ps.length >= 95, "2.2", "catalogo con >=95 productos visibles", ps.length);
-  check(ps.every(x => x.p >= 10000), "2.3", "sin precios placeholder (<$10.000, familias sin expandir)", ps.filter(x => x.p < 10000).slice(0, 3).map(x => x.id + ":" + x.p));
-  check(ps.every(x => x.p <= 200000), "2.4", "sin precios fuera de rango (> $200.000)", ps.filter(x => x.p > 200000).slice(0, 3).map(x => x.id + ":" + x.p));
-  check(ps.every(x => /^LUN-\d{4}$/.test(x.cid)), "2.5", "todos con codigo LUN-XXXX");
+  const ps = [...cat.t.matchAll(/\{id:"([\w-]+)",n:"((?:[^"\\]|\\.)*)",p:(\d+),cat:"([\w-]+)".*?cid:"JUG-(\d+)"/g)]
+    .map(m => ({ id: m[1], n: m[2], p: +m[3], cat: m[4], cid: "JUG-" + m[5], img: (cat.t.slice(m.index, m.index + 600).match(/img:"([^"]+)"/) || [])[1] }));
+  check(ps.length >= 1500, "2.2", "catalogo con >=1500 juguetes visibles", ps.length);
+  check(ps.every(x => x.p >= 200), "2.3", "sin precios fuera de rango (<$200)", ps.filter(x => x.p < 200).slice(0, 3).map(x => x.id + ":" + x.p));
+  check(ps.every(x => x.p <= 600000), "2.4", "sin precios fuera de rango (> $600.000)", ps.filter(x => x.p > 600000).slice(0, 3).map(x => x.id + ":" + x.p));
+  check(ps.every(x => /^JUG-\d{4}$/.test(x.cid)), "2.5", "todos con codigo JUG-XXXX");
   const conImg = ps.filter(x => x.img);
   check(conImg.length >= ps.length * 0.95, "2.6", ">=95% con imagen propia", conImg.length + "/" + ps.length);
-  check(!/https?:\/\/(?!tiendalunaria)/.test(cat.t.replace(/https?:\/\/tiendalunaria[^"']*/g, "")) || !/https?:\/\/(?!tiendalunaria\.github\.io)[^"']*\.(jpg|png|webp)/i.test(cat.t), "2.7", "sin imagenes de dominios ajenos");
+  check(!/https?:\/\/(?!tiendalunaria\.github\.io|raw\.githubusercontent\.com)[^"']*\.(jpg|jpeg|png|webp)/i.test(cat.t), "2.7", "sin imagenes de dominios ajenos");
 
   /* 3. Muestra de imagenes (20 aleatorias) */
   const muestra = conImg.sort(() => Math.random() - 0.5).slice(0, 20);
@@ -63,20 +63,21 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
     check(!/github_pat_/.test(cfg.t), "4.4", "sin token de GitHub publicado");
     check(typeof conf.version === "number", "4.5", "version numerica", conf.version);
     check((conf.tienda || {}).whatsappPedidos === "573132434760", "4.6", "WhatsApp vigente en config publicada", (conf.tienda || {}).whatsappPedidos);
+    check((conf.tienda || {}).nombre === "JUGA", "4.7", "nombre JUGA en config publicada", (conf.tienda || {}).nombre);
   }
 
   /* 5. Legal y activos de marca */
   const legal = await texto(BASE + "legal.html");
   check(legal.st === 200, "5.1", "legal.html HTTP 200", legal.st);
   const activos = ["logo_120.png", "logo_120_light.png", "logo_512.png", "logo_512_light.png", "favicon.ico",
-    "favicon-32.png", "favicon-48.png", "apple-touch-icon.png", "banner_pijamas_1600x600.png", "qr_lunaria.png"];
+    "favicon-32.png", "favicon-48.png", "apple-touch-icon.png", "og.png", "qr_juga.png"];
   const muertos = [];
   for (const a of activos) { const st = await vivo(BASE + a); if (st !== 200) muertos.push(a + ":" + st); }
   check(muertos.length === 0, "5.2", "10 activos de marca HTTP 200", muertos);
 
   /* 6. Deploy reciente de Pages (aviso, no bloquea si la API esta limitada) */
   try {
-    const r = await fetch("https://api.github.com/repos/tiendalunaria/lunaria/actions/runs?per_page=15", { headers: UA });
+    const r = await fetch("https://api.github.com/repos/tiendalunaria/juga/actions/runs?per_page=15", { headers: UA });
     if (r.ok) {
       const runs = (await r.json()).workflow_runs || [];
       const last = runs.find(x => x.name === "pages build and deployment");

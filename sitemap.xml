@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Sitemap de LUNARIA para Google Search Console / Bing Webmaster.
-     Al mover al dominio oficial: reemplazar tiendalunaria.github.io/lunaria
+<!-- Sitemap de JUGA para Google Search Console / Bing Webmaster.
+     Al mover al dominio oficial: reemplazar tiendalunaria.github.io/juga
      por el dominio nuevo en las URLs de abajo (GitHub Pages redirige 301
      automaticamente, y las senales SEO se transfieren).
      Tienda de una sola pagina: home + legal. Los productos abren con
      ?art=LUN-XXXX (permitidos en robots.txt). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tiendalunaria.github.io/lunaria/</loc>
+    <loc>https://tiendalunaria.github.io/juga/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tiendalunaria.github.io/lunaria/legal.html</loc>
+    <loc>https://tiendalunaria.github.io/juga/legal.html</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
