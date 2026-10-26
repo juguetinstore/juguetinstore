@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de JUGA - generado automaticamente por scripts/sync_catalogos.py
-// (2026-10-26 00:17). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-10-26 06:25). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
@@ -1326,7 +1326,7 @@ const CATALOGO_JUGA=[
 {id:"lego-vengador-caja-4-modelos",n:"Lego Vengador Caja 4 Modelos",p:15000,cat:"armatodo",prov:"tw",cid:"JUG-1319",img:"img/p/a7251d0b90e63640.webp",sku:"6992989559034"},
 {id:"base-luz-esferas",n:"Base Luz Esferas",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-1320",img:"img/p/2aa52327e0932e34.webp",sku:"05563"},
 {id:"goku-pequeno-x2",n:"Goku Pequeño X2",p:60000,cat:"colecciones",prov:"tw",cid:"JUG-1321",img:"img/p/9891ba098d09b596.webp",sku:"04569"},
-{id:"paloma-de-equilibrio-x12",n:"Paloma de Equilibrio X12",p:15000,cat:"piñateria",prov:"tw",cid:"JUG-1322",img:"img/p/5eb91cda632f398e.webp",imgs:["img/p/ab4d6c9147ce8ad5.webp"],sku:"01226"},
+{id:"paloma-de-equilibrio-x12",n:"Paloma de Equilibrio X12",p:15000,cat:"piñateria",prov:"tw",cid:"JUG-1322",img:"img/p/ab4d6c9147ce8ad5.webp",imgs:["img/p/5eb91cda632f398e.webp"],sku:"01226"},
 {id:"dragon-verde",n:"Dragon Verde",p:60000,cat:"colecciones",prov:"tw",cid:"JUG-1323",img:"img/p/23e79d70de0dbf3d.webp",sku:"04966"},
 {id:"transforme-metalico-luz-y-sonido-2-motivos",n:"Transforme Metalico Luz y Sonido 2 Motivos",p:60000,cat:"jugueteria",prov:"tw",cid:"JUG-1324",img:"img/p/a44f1272f753874f.webp",sku:"04097"},
 {id:"coleccion-demon-slayer-x6",n:"Coleccion Demon Slayer X6",p:60000,cat:"colecciones",prov:"tw",cid:"JUG-1325",img:"img/p/cee1c5a75785abe8.webp",sku:"05556"},
@@ -1449,7 +1449,7 @@ const CATALOGO_JUGA=[
 {id:"pistola-lanza-hidrogel-5000-water-booms",n:"Pistola Lanza Hidrogel 5000 Water Booms",p:80000,cat:"deporte",prov:"tw",cid:"JUG-1442",img:"img/p/140889f5846ef60e.webp",sku:"7702202568102"},
 {id:"balon-futbol-ak-clasico-5",n:"Balon Futbol Ak Clasico #5",p:60000,cat:"deporte",prov:"tw",cid:"JUG-1443",img:"img/p/172bcee070394ace.webp",sku:"7895430108425"},
 {id:"grua-a-control-remoto",n:"Pluma Control Grande",p:250000,cat:"jugueteria",prov:"tw",cid:"JUG-1444",img:"img/p/ec0fbbade5f1d737.webp",sku:"6603888926604"},
-{id:"caja-juguete-unicornio-malumeta-luces-y-sonido",n:"Caja Juguete Unicornio Malumeta Luces y Sonido",p:35000,cat:"jugueteria",prov:"tw",cid:"JUG-1445",img:"img/p/352619850918c9d4.webp",imgs:["img/p/c9749a9b7b7ff63d.webp"],sku:"2023100269793"},
+{id:"caja-juguete-unicornio-malumeta-luces-y-sonido",n:"Caja Juguete Unicornio Malumeta Luces y Sonido",p:35000,cat:"jugueteria",prov:"tw",cid:"JUG-1445",img:"img/p/c9749a9b7b7ff63d.webp",imgs:["img/p/352619850918c9d4.webp"],sku:"2023100269793"},
 {id:"lanza-agua-colores-en-bolsa",n:"Lanza Agua Colores en Bolsa",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-1446",img:"img/p/23fc0e60bc03003a.webp",sku:"6603888925447"},
 {id:"trompo-balon-luz-y-sonido-1",n:"Trompo Balon Luz y Sonido",p:9000,cat:"jugueteria",prov:"tw",cid:"JUG-1447",img:"img/p/f77da048ae025ea9.webp",sku:"8920906236339"},
 {id:"bolsa-armatodo-ficha-pequena-x54-piezas",n:"Bolsa Armatodo Ficha Pequeña X54 Piezas",p:18000,cat:"armatodo",prov:"tw",cid:"JUG-1448",img:"img/p/59299dcd5932a2d1.webp",sku:"01227"},
@@ -1541,7 +1541,7 @@ const CATALOGO_JUGA=[
 {id:"caja-juguete-muneco-anime-con-base",n:"Caja Juguete Muñeco Anime con Base",p:35000,cat:"colecciones",prov:"tw",cid:"JUG-1534",img:"img/p/d805e426321c752b.webp",sku:"01082"},
 {id:"bolsa-munecos-y-muneco-base-anime-x3",n:"Bolsa Muñecos y Muñeco Base Anime X3",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1535",img:"img/p/20fc330d3891ecb9.webp",sku:"01209"},
 {id:"caja-juguete-muneco-cuervos-con-base-anime",n:"Caja Juguete Muñeco Cuervos con Base Anime",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1536",img:"img/p/9aa3362e26b0a772.webp",sku:"01284"},
-{id:"caja-juguete-dinosaurio-con-malumeta",n:"Caja Juguete Dinosaurio con Malumeta",p:35000,cat:"animales",prov:"tw",cid:"JUG-1537",img:"img/p/a99965b6618898b7.webp",imgs:["img/p/4e618698a1073df6.webp"],sku:"00888"},
+{id:"caja-juguete-dinosaurio-con-malumeta",n:"Caja Juguete Dinosaurio con Malumeta",p:35000,cat:"animales",prov:"tw",cid:"JUG-1537",img:"img/p/4e618698a1073df6.webp",imgs:["img/p/a99965b6618898b7.webp"],sku:"00888"},
 {id:"lanza-agua-espuma",n:"Lanza Agua Espuma",p:7000,cat:"deporte",prov:"tw",cid:"JUG-1538",img:"img/p/d23b6bb57c3d01a4.webp",sku:"6957738203262"},
 {id:"demon-x5-2",n:"Demon X5",p:35000,cat:"colecciones",prov:"tw",cid:"JUG-1539",img:"img/p/33e2033f6b0df07b.webp",sku:"04623"},
 {id:"seilor-moon-x-8",n:"Seilor Moon x 8",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1540",img:"img/p/4e859d170b243c44.webp",sku:"05103"},
@@ -1759,7 +1759,7 @@ const CATALOGO_JUGA=[
 {id:"carton-truco-de-magia-copa-y-bolita-x20",n:"Carton Truco de Magia Copa y Bolita X20",p:35000,cat:"piñateria",prov:"tw",cid:"JUG-1752",img:"img/p/e877d1031719ff37.webp",sku:"00799"},
 {id:"bolsa-munecos-con-base-x2-anime",n:"Bolsa Muñecos con Base X2 Anime",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1753",img:"img/p/3a9ac5f9b04f313e.webp",sku:"01375"},
 {id:"caja-armable-harry-2",n:"Caja Armable Harry",p:260000,cat:"armatodo",prov:"tw",cid:"JUG-1754",img:"img/p/27bceaac4fa654d3.webp",sku:"01977"},
-{id:"caja-masajeador-delfin",n:"Caja Masajeador Delfin",p:55000,cat:"hogar",prov:"tw",cid:"JUG-1755",img:"img/p/ed8213cfe6cbf288.webp",imgs:["img/p/24279dabd6485db4.webp"],sku:"01275"},
+{id:"caja-masajeador-delfin",n:"Caja Masajeador Delfin",p:55000,cat:"hogar",prov:"tw",cid:"JUG-1755",img:"img/p/24279dabd6485db4.webp",imgs:["img/p/ed8213cfe6cbf288.webp"],sku:"01275"},
 {id:"muneco-bebe",n:"Muñeco Bebe",p:18000,cat:"jugueteria",prov:"tw",cid:"JUG-1756",img:"img/p/a59b4239a94f6bf4.webp",sku:"2026888807768"},
 {id:"juego-de-lanzamiento-con-accesorios-1",n:"Juego de Lanzamiento con Accesorios",p:250000,cat:"jugueteria",prov:"tw",cid:"JUG-1757",img:"img/p/e1aaef22b163c5e4.webp",sku:"6603888931134"},
 {id:"pista-carros-monster-tiburon-caja",n:"Pista Carros Monster Tiburon Caja",p:80000,cat:"jugueteria",prov:"tw",cid:"JUG-1758",img:"img/p/65864344b5901310.webp",sku:"2025041084923"},
@@ -1774,7 +1774,7 @@ const CATALOGO_JUGA=[
 {id:"caja-cubo-rubik-1x3x3-jiehui-toys-bolitas",n:"Caja Cubo Rubik 1x3x3 Jiehui Toys Bolitas",p:4500,cat:"cubo-rubik",prov:"tw",cid:"JUG-1767",img:"img/p/5046a1a1e021282f.webp",sku:"7702202303301"},
 {id:"bolsa-muneco-bola-verde-anime-2",n:"Bolsa Muñeco Bola Verde Anime",p:45000,cat:"colecciones",prov:"tw",cid:"JUG-1768",img:"img/p/2d932eb5f76c516a.webp",sku:"01189"},
 {id:"bolsa-muneco-otra-fase-espada-anime",n:"Bolsa Muñeco Otra Fase Espada Anime",p:45000,cat:"colecciones",prov:"tw",cid:"JUG-1769",img:"img/p/1ecda25695ec6bc6.webp",sku:"01190"},
-{id:"malla-juego-didactico-dona-apilable-x13-niveles",n:"Malla Juego Didactico Dona Apilable X13 Niveles",p:40000,cat:"bebe",prov:"tw",cid:"JUG-1770",img:"img/p/1dc3dda9a6170b7d.webp",imgs:["img/p/fb625deecbf2cd76.webp"],sku:"00902"},
+{id:"malla-juego-didactico-dona-apilable-x13-niveles",n:"Malla Juego Didactico Dona Apilable X13 Niveles",p:40000,cat:"bebe",prov:"tw",cid:"JUG-1770",img:"img/p/fb625deecbf2cd76.webp",imgs:["img/p/1dc3dda9a6170b7d.webp"],sku:"00902"},
 {id:"muneca-crespa",n:"Muñeca Crespa",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-1771",img:"img/p/de88873b8403e893.webp",sku:"2025041081625"},
 {id:"estuche-velozmente",n:"Estuche Velozmente",p:20000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1772",img:"img/p/15ce6a9264424586.webp",sku:"01397"},
 {id:"carro-deportivo-x4-bolsa",n:"Carro Deportivo X4 Bolsa",p:8000,cat:"piñateria",prov:"tw",cid:"JUG-1773",img:"img/p/74d07626855e26ab.webp",sku:"6957738203552"},
