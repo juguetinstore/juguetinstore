@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de JUGA - generado automaticamente por scripts/sync_catalogos.py
-// (2026-10-26 06:25). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-10-26 14:16). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
