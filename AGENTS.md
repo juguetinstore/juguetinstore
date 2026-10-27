@@ -1,10 +1,11 @@
 # AGENTS.md — Guía para trabajar en este repositorio
 
-Tienda online de JUGA: un `index.html` monolítico publicado por GitHub Pages
-en https://tiendalunaria.github.io/juga/, con catálogo sincronizado cada 6 h
-desde el repo de la juguetería y panel de administración que publica la
-configuración por API. Ver `README.md` para la arquitectura completa y
-`JUGA_Brief_Branding.md` para la identidad de marca.
+Tienda online de Juguetinstore: un `index.html` monolítico publicado por
+GitHub Pages en https://juguetinstore.github.io/juguetinstore/, con catálogo
+sincronizado cada 6 h desde el repo de la juguetería y panel de
+administración que publica la configuración por API. Ver `README.md` para la
+arquitectura completa y `JUGUETINSTORE_Brief_Branding.md` para la identidad
+de marca.
 
 ## Reglas de oro
 
@@ -32,7 +33,7 @@ node qa_aterrizaje_precios.js    # aterrizajes + precios + carrito: 45/45 espera
 node qa_smoke_produccion.js      # smoke L4 de producción: 25/25 (solo lectura; QA_TIENDA_URL para otra URL)
 
 # Sync en seco contra un clon local de la fuente (no toca producción):
-JUGA_FUENTE_LOCAL=/ruta/al/clon/jugueteriataiwan python scripts/sync_catalogos.py
+JUGUETINSTORE_FUENTE_LOCAL=/ruta/al/clon/jugueteriataiwan python scripts/sync_catalogos.py
 ```
 
 Publicar: `git push origin main`. GitHub Pages republica en ~1–3 min. Si el
@@ -52,30 +53,28 @@ cron `catalogo.js` + `img/`: no hay conflicto posible).
 - **Panel de administración**: login con `TIENDA_DEFECTO.claveAdmin` (clave de
   conveniencia, no seguridad), abre con el enlace del pie, `?admin` o
   Ctrl+Shift+A. El token de GitHub se guarda en localStorage
-  (`juga-github-token`) y se puede cargar con el enlace de configuración de un
-  solo toque (`generar_enlace_config.py`, local: viaja en el #fragmento, que
-  nunca llega al servidor).
+  (`juguetinstore-github-token`) y se puede cargar con el enlace de
+  configuración de un solo toque (`generar_enlace_config.py`, local: viaja en
+  el #fragmento, que nunca llega al servidor).
 - **Precios**: `precioFinal(p) = base × multiplicadorBase × (1 + margen)` con
   redondeo comercial hacia ARRIBA (`redondearPrecio`, con épsilon para que un
-  resto flotante tipo `4000×1.3 = 5200.000…01` no suba $100 de más). Prioridad:
+  resto flotante tipo `4000×1.4 = 5600.000…01` no suba $100 de más). Prioridad:
   precio exacto del panel → margen de temporada → margen de categoría →
   margen global (el de categoría REEMPLAZA al global). **Base del catálogo =
-  Precio 2 de vitrina del POS** (el `price5` mayorista que publica la fuente NO
-  se consume: con él, un tercio del catálogo quedaba por debajo de la tienda
-  física saldosjugueteriataiwan.com, que vende al Precio 2 exacto). Publicado
-  desde oct-2026: **margen global 30 % + redondeo $100** → JUGA queda SIEMPRE
-  por encima de la tienda física, y el % del panel es el control de cuánto por
-  encima. **Orden por defecto del grid: mayor a menor** (`orden="d"`).
+  Precio 2 de vitrina del POS** (el `price5` mayorista que publica la fuente
+  NO se consume). Publicado desde oct-2026: **margen global 40 % + redondeo
+  $100** → Juguetinstore queda SIEMPRE por encima de la tienda física, y el %
+  del panel es el control de cuánto por encima. **Orden por defecto del grid:
+  mayor a menor** (`orden="d"`).
 - **Héroe** (solo escritorio, ≤900 px oculto): galería de hasta 6 juguetes
-  (heroIds del panel) con el **emblema** `logo_512.png` al centro — el círculo
-  blanco con las letras de color es opaco y se lee sobre cualquier foto. Nunca
-  usar `logo_512_light.png` ahí: la versión light vuelve blanco TODO el
-  emblema y el círculo queda vacío.
+  (heroIds del panel) con el **emblema** `logo_512.png` al centro — el fondo
+  blanco es opaco y se lee sobre cualquier foto. Nunca usar `logo_512_light.png`
+  ahí: la versión light vuelve blanco TODO el emblema y queda vacío.
 - **Barra de filtros del catálogo** (`.tbar` + `#chips`): los chips van en UNA
   sola fila deslizable (snap entre chips, degradado al borde derecho con el
   pseudo sticky `::after` y la clase `is-desb` que marca `ajustarChips()` en
-  render y resize). Envueltos ocupaban 2–3 filas y la barra pegajosa tapaba las
-  tarjetas.
+  render y resize). Envueltos ocupaban 2–3 filas y la barra pegajosa tapaba
+  las tarjetas.
 - **Navegación a un producto** (`scrollToProduct`): paginación just-in-time
   (renderiza la página del índice), abre el panel de cantidad y
   `scrollIntoView` con `behavior:"instant"` si el salto es >4000 px, suave si
@@ -84,9 +83,9 @@ cron `catalogo.js` + `img/`: no hay conflicto posible).
 - **Compra**: carrito lateral con sugeridos por categoría (COMPLEMENTOS),
   checkout por fases (pedido → datos → entrega → pago → notas) con validación
   en vivo, consecutivo `PED-YYYYMMDD-NNN`, pedido directo por wa.me al
-  WhatsApp configurado y hoja de pedido PNG dibujada en canvas que se
-  descarga para adjuntar al chat. "Vuelo al carrito" con WAAPI (respeta
-  `prefers-reduced-motion`).
+  WhatsApp configurado (+57 312 251 3972) y hoja de pedido PNG dibujada en
+  canvas que se descarga para adjuntar al chat. "Vuelo al carrito" con WAAPI
+  (respeta `prefers-reduced-motion`).
 - **Visibilidad**: `prodVisible(p)` y `catViva(id)` son la ÚNICA fuente de
   verdad — gobiernan grid, subnav, burbujas, chips, menú móvil, carruseles,
   héroe, favoritos, buscador, lightbox, upsells y footer.
@@ -102,7 +101,7 @@ cron `catalogo.js` + `img/`: no hay conflicto posible).
 - El check 6 de `qa_aterrizaje_precios.js` compara cada producto visible
   contra `precioFinal(base)`: válido para cualquier estrategia publicada.
 - El smoke L4 lee el margen de la config publicada y escala los rangos:
-  vitrina $200–$600.000; precio final $200–$780.000 con margen 30 % (el techo
+  vitrina $200–$600.000; precio final $200–$840.000 con margen 40 % (el techo
   del 2.4b se recalcula solo si se sube el margen).
 
 ## Gotchas conocidos
@@ -113,13 +112,18 @@ cron `catalogo.js` + `img/`: no hay conflicto posible).
   por código: lo publicado siempre tapa a la fábrica. La clave del panel nunca
   viaja en la config publicada (el smoke lo verifica a diario).
 - `price5` (Precio 5 del POS, escalón mayorista) viaja en el catálogo de la
-  fuente como campo aditivo (1.923 de 1.938 productos lo traen): disponible
-  para otros canales, pero JUGA no lo consume por decisión de negocio
-  (superioridad sobre la tienda física). Ratio P2/P5 hasta 12×: ningún margen
-  único sano lo compensaría.
-- El historial de este repo contiene los commits previos de LUNARIA (pijamas):
+  fuente como campo aditivo: disponible para otros canales, pero Juguetinstore
+  no lo consume por decisión de negocio (superioridad sobre la tienda física).
+  Ratio P2/P5 hasta 12×: ningún margen único sano lo compensaría.
+- El historial de este repo contiene los commits previos de JUGA y LUNARIA:
   es herencia del clon; los checks L0 de marca vieja solo aplican al contenido
   actual de `index.html`/`legal.html`.
 - Las rutas absolutas de las suites apuntan al Playwright de
   `C:/Users/User/IKI/dropi-analytics/node_modules`: ajustar si se mueve ese
-  proyecto.
+  proyecto. El clon local de este repo vive en
+  `C:/Users/User/JUGUETINSTORE/juguetinstore`.
+- Claves de localStorage/sessionStorage de la marca:
+  `juguetinstore-tienda-v1`, `juguetinstore-precios-v1`,
+  `juguetinstore-config-base`, `juguetinstore-cart`, `juguetinstore-favs`,
+  `juguetinstorePedSeq`, `juguetinstore-admin`,
+  `juguetinstore-github-token`.

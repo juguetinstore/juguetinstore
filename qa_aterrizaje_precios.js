@@ -7,7 +7,7 @@
    configurada (precioFinal sobre la vitrina del POS); carrito con lineas,
    unidades, totales, mensaje de WhatsApp y hoja de pedido exactos. */
 const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/playwright");
-const BASE = process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/";
+const BASE = process.env.QA_TIENDA_URL || "https://juguetinstore.github.io/juguetinstore/";
 
 (async () => {
   const res = [];
@@ -114,7 +114,7 @@ const BASE = process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/
     const malos = [];
     let n = 0;
     const base = {};
-    CATALOGO_BASE_JUGA.forEach(p => { base[p.id] = p; });
+    CATALOGO_BASE_JUGUETINSTORE.forEach(p => { base[p.id] = p; });
     PRODUCTOS.forEach(p => {
       if (!prodVisible(p)) return;
       n++;

@@ -1,4 +1,4 @@
-/* ===== AUDITORIA E2E COMPLETA DEL PANEL DE ADMINISTRACION (JUGA) =====
+/* ===== AUDITORIA E2E COMPLETA DEL PANEL DE ADMINISTRACION (Juguetinstore) =====
    Ejecutar:  node qa_admin_e2e.js   (usa el playwright de dropi-analytics)
    Cubre: acceso (3 vias + login/clave), todos los campos (identidad,
    legales, redes, ganancias, categorias), todas las funciones (heroe,
@@ -6,14 +6,14 @@
    ocultar productos, precio exacto, comportamiento, clave nueva, token,
    publicar, guardar, restaurar, copiar, preview, lista). El grupo G publica
    de verdad una version nueva de data/configuracion.js (solo si hay token
-   local de GitHub para tiendalunaria/juga). */
+   local de GitHub para juguetinstore/juguetinstore). */
 const { chromium } = require("C:/Users/User/IKI/dropi-analytics/node_modules/playwright");
 const fs = require("fs");
 
-const BASE = process.env.QA_LOCAL_URL || "file:///C:/Users/User/JUGA/juga/index.html";
-const PROD = process.env.QA_TIENDA_URL || "https://tiendalunaria.github.io/juga/";
-const CLAVE = "JUGA123*";
-const TOKEN_FILE = process.env.QA_TOKEN_FILE || "C:/Users/User/JUGA/juga/GitHub.txt";
+const BASE = process.env.QA_LOCAL_URL || "file:///C:/Users/User/JUGUETINSTORE/juguetinstore/index.html";
+const PROD = process.env.QA_TIENDA_URL || "https://juguetinstore.github.io/juguetinstore/";
+const CLAVE = "Juguetin123*";
+const TOKEN_FILE = process.env.QA_TOKEN_FILE || "C:/Users/User/JUGUETINSTORE/juguetinstore/GitHub.txt";
 const res = [];
 let grupo = "";
 const check = (n, c, e) => res.push(grupo + " | " + n + ": " + (c ? "PASS" : "FAIL" + (e !== undefined ? " -> " + JSON.stringify(e) : "")));
@@ -99,13 +99,13 @@ async function entrar(page) {
     await page.fill("#adminRazon", "Prueba SAS");
     await page.fill("#adminNit", "NIT-900123");
     await page.fill("#adminDir", "Calle Falsa 123");
-    await page.fill("#adminEmail", "prueba@juga.co");
-    await page.fill("#adminIg", "@juga.prueba");
+    await page.fill("#adminEmail", "prueba@juguetinstore.co");
+    await page.fill("#adminIg", "@juguetinstore.prueba");
     await page.fill("#adminPixel", "1234567890");
     await page.evaluate(() => guardarPanelAdmin());
-    const guardado = await page.evaluate(() => JSON.parse(localStorage.getItem("juga-tienda-v1")));
+    const guardado = await page.evaluate(() => JSON.parse(localStorage.getItem("juguetinstore-tienda-v1")));
     check("B3 legales/redes/pixel persistidos en localStorage",
-      guardado.razonSocial === "Prueba SAS" && guardado.nit === "NIT-900123" && guardado.pixelMeta === "1234567890" && guardado.instagram === "juga.prueba", guardado);
+      guardado.razonSocial === "Prueba SAS" && guardado.nit === "NIT-900123" && guardado.pixelMeta === "1234567890" && guardado.instagram === "juguetinstore.prueba", guardado);
     await page.evaluate(() => { window.__cb = null; const o = navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText.bind(navigator.clipboard) : null; if (o) navigator.clipboard.writeText = t => { window.__cb = t; return o(t); }; });
     await page.evaluate(() => copiarConfigAdmin());
     await page.waitForTimeout(350);
@@ -113,8 +113,8 @@ async function entrar(page) {
     check("B4 copiar configuración: bloques TIENDA_DEFECTO + PRECIOS_DEFECTO con valores actuales",
       cb && /const TIENDA_DEFECTO=/.test(cb) && /const PRECIOS_DEFECTO=/.test(cb) && /TIENDA PRUEBA E2E/.test(cb), cb && cb.slice(0, 80));
     await page.evaluate(() => restaurarPanelAdmin());
-    const despues = await page.evaluate(() => ({ ls: localStorage.getItem("juga-tienda-v1"), nombre: TIENDA.nombre, wa: TIENDA.whatsappPedidos }));
-    check("B5 restaurar: limpia localStorage y vuelve a lo publicado", despues.ls === null && despues.nombre === "JUGA" && despues.wa === "573132434760", despues);
+    const despues = await page.evaluate(() => ({ ls: localStorage.getItem("juguetinstore-tienda-v1"), nombre: TIENDA.nombre, wa: TIENDA.whatsappPedidos }));
+    check("B5 restaurar: limpia localStorage y vuelve a lo publicado", despues.ls === null && despues.nombre === "Juguetinstore" && despues.wa === "573122513972", despues);
     const preview = await page.evaluate(() => { document.getElementById("adminMargen").value = "25"; document.getElementById("adminMultiplicador").value = "1"; document.getElementById("adminRedondeo").value = "100"; pintarPreviewAdmin(); return document.getElementById("adminPreview").textContent; });
     check("B6 preview: costo $10.000 con 25% -> $12.500", /\$12\.500/.test(preview), preview);
     await ctx.close();
@@ -125,9 +125,9 @@ async function entrar(page) {
   {
     const { ctx, page } = await nuevaPagina(browser);
     await entrar(page);
-    const espFinal = () => page.evaluate(() => precioFinal(CATALOGO_BASE_JUGA.find(p => p.id === "pinza-la-bubu")));
+    const espFinal = () => page.evaluate(() => precioFinal(CATALOGO_BASE_JUGUETINSTORE.find(p => p.id === "pinza-la-bubu")));
     const precioPinza = () => page.evaluate(() => window.PRODUCTOS.find(p => p.id === "pinza-la-bubu").p);
-    const base = await page.evaluate(() => CATALOGO_BASE_JUGA.find(p => p.id === "pinza-la-bubu").p);
+    const base = await page.evaluate(() => CATALOGO_BASE_JUGUETINSTORE.find(p => p.id === "pinza-la-bubu").p);
     const espBase = await espFinal();
     const antes = await precioPinza();
     check("C0 base: pinza-la-bubu al precio configurado (base $" + base.toLocaleString("es-CO") + " + margen publicado)", antes === espBase, { antes, espBase });
@@ -267,7 +267,7 @@ async function entrar(page) {
     check("F1 contra entrega off: opción desaparece del checkout", f1.oculta && f1.contra === false, f1);
     await page.evaluate(() => { const cb = document.getElementById("adminVaciar"); cb.checked = false; cb.dispatchEvent(new Event("change")); });
     await page.evaluate(() => guardarPanelAdmin());
-    const f2 = await page.evaluate(() => JSON.parse(localStorage.getItem("juga-tienda-v1")).vaciarCarrito);
+    const f2 = await page.evaluate(() => JSON.parse(localStorage.getItem("juguetinstore-tienda-v1")).vaciarCarrito);
     check("F2 vaciar carrito off persistido", f2 === false, f2);
     await page.fill("#adminClaveNueva", "NuevaClaveE2E");
     await page.evaluate(() => guardarPanelAdmin());
@@ -284,10 +284,10 @@ async function entrar(page) {
     check("F3 clave nueva: vieja falla, nueva entra", viejaFalla && nuevaEntra);
     await page.fill("#adminToken", "github_pat_PRUEBA");
     await page.evaluate(() => guardarTokenGitHub());
-    const tok1 = await page.evaluate(() => localStorage.getItem("juga-github-token"));
+    const tok1 = await page.evaluate(() => localStorage.getItem("juguetinstore-github-token"));
     await page.fill("#adminToken", "");
     await page.evaluate(() => guardarTokenGitHub());
-    const tok2 = await page.evaluate(() => localStorage.getItem("juga-github-token"));
+    const tok2 = await page.evaluate(() => localStorage.getItem("juguetinstore-github-token"));
     check("F4 token: se guarda y se borra", tok1 === "github_pat_PRUEBA" && tok2 === "", { tok1, tok2 });
     await page.evaluate(() => { window.__ultimoToast = ""; const o = showToast; window.showToast = m => { window.__ultimoToast = m; o(m); }; });
     await page.evaluate(() => publicarConfigAdmin());
@@ -299,7 +299,7 @@ async function entrar(page) {
     check("F6 lista completa de productos: abre con todas las filas", f6.visible && f6.filas > 1500, f6);
     await page.fill("#adminNombre", "PRUEBA GUARDAR");
     await page.evaluate(() => guardarPanelAdmin());
-    const f7 = await page.evaluate(() => JSON.parse(localStorage.getItem("juga-tienda-v1")).nombre);
+    const f7 = await page.evaluate(() => JSON.parse(localStorage.getItem("juguetinstore-tienda-v1")).nombre);
     check("F7 guardar en MI computador persiste el nombre", f7 === "PRUEBA GUARDAR", f7);
     await ctx.close();
   }
@@ -310,10 +310,10 @@ async function entrar(page) {
     let tok = "";
     try { tok = ((fs.readFileSync(TOKEN_FILE, "utf8").match(/github_pat_[A-Za-z0-9_]+/) || [])[0]) || ""; } catch (e) {}
     if (!tok) {
-      check("G0 omitido: sin token local para " + "tiendalunaria/juga" + " (deja " + TOKEN_FILE + " con el token fine-grained para correr esta prueba)", true);
+      check("G0 omitido: sin token local para " + "juguetinstore/juguetinstore" + " (deja " + TOKEN_FILE + " con el token fine-grained para correr esta prueba)", true);
     } else {
       const apiConfig = async () => {
-        const r = await fetch("https://api.github.com/repos/tiendalunaria/juga/contents/data/configuracion.js", { headers: { Authorization: "Bearer " + tok, Accept: "application/vnd.github+json" }, cache: "no-store" });
+        const r = await fetch("https://api.github.com/repos/juguetinstore/juguetinstore/contents/data/configuracion.js", { headers: { Authorization: "Bearer " + tok, Accept: "application/vnd.github+json" }, cache: "no-store" });
         const j = await r.json();
         const txt = Buffer.from(j.content, "base64").toString("utf8");
         return { version: Number((/"version":\s*(\d+)/.exec(txt) || [0, 0])[1]), sinClave: !/"claveAdmin"/.test(txt), hero: /"heroIds":\s*"([^"]*)"/.exec(txt)[1] };
@@ -325,7 +325,7 @@ async function entrar(page) {
       await page.goto(PROD + "?cb=" + Date.now(), { waitUntil: "domcontentloaded", timeout: 90000 });
       await page.waitForFunction(() => (window.PRODUCTOS || []).length > 0, { timeout: 60000 });
       await page.waitForTimeout(1000);
-      await page.evaluate((t) => { localStorage.setItem("juga-github-token", t); }, tok);
+      await page.evaluate((t) => { localStorage.setItem("juguetinstore-github-token", t); }, tok);
       await page.evaluate(() => intentarAbrirAdmin());
       await page.fill("#adminClave", CLAVE);
       await page.press("#adminClave", "Enter");
@@ -335,7 +335,7 @@ async function entrar(page) {
       await page.evaluate(() => publicarConfigAdmin());
       await page.waitForTimeout(6000);
       const nuevaCfg = await apiConfig();
-      const g = await page.evaluate(() => ({ toast: window.__pubToast, base: localStorage.getItem("juga-config-base"), hero: TIENDA.heroIds }));
+      const g = await page.evaluate(() => ({ toast: window.__pubToast, base: localStorage.getItem("juguetinstore-config-base"), hero: TIENDA.heroIds }));
       check("G1 publicar con token real: toast de publicada", /Publicada/.test(g.toast), g.toast);
       check("G2 la versión publicada incrementa sobre la previa", nuevaCfg.version > previaCfg.version, { previa: previaCfg.version, nueva: nuevaCfg.version });
       check("G3 la configuración publicada no lleva la clave", nuevaCfg.sinClave === true);

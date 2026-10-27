@@ -1,12 +1,12 @@
 // Configuración de la tienda publicada desde el panel de administración
 // (botón "Publicar para TODOS"). Se aplica a TODOS los visitantes de
-// https://tiendalunaria.github.io/juga/ — nadie necesita editar este archivo a mano.
+// https://juguetinstore.github.io/juguetinstore/ — nadie necesita editar este archivo a mano.
 window.CONFIG_PUBLICADA = {
-  "version": 1792908000000,
+  "version": 1793000000000,
   "tienda": {
-    "nombre": "JUGA",
+    "nombre": "Juguetinstore",
     "logo": "logo_120.png",
-    "whatsappPedidos": "573132434760",
+    "whatsappPedidos": "573122513972",
     "whatsappAtencion": "",
     "razonSocial": "",
     "nit": "",
@@ -27,7 +27,7 @@ window.CONFIG_PUBLICADA = {
     "catalogosOcultos": ""
   },
   "precios": {
-    "margenGlobal": 0.3,
+    "margenGlobal": 0.4,
     "multiplicadorBase": 1,
     "redondeo": 100,
     "margenesPorCategoria": {},

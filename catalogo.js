@@ -1,10 +1,10 @@
 // ======================================================================
-// catalogo.js de JUGA - generado automaticamente por scripts/sync_catalogos.py
+// catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py
 // (2026-10-26 18:27). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
-const CATALOGO_JUGA=[
+const CATALOGO_JUGUETINSTORE=[
 {id:"pista-neon-carro-pila-luz-con-numero",n:"Pista Neon Carro Pila Luz con Numero",p:100000,cat:"jugueteria",prov:"tw",cid:"JUG-0001",img:"img/p/ab3e006cee3b8b68.webp",sku:"2026888805337"},
 {id:"mesa-futbol-de-madera",n:"Mesa Futbol de Madera",p:240000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0002",img:"img/p/b2c2df655db414c5.webp",sku:"6603888929247"},
 {id:"burbujero-mil-burbujas-pilas-cj-bubble-gun-4-motivos",n:"Burbujero Mil Burbujas Pilas Cj Bubble Gun 4 Motivos",p:24000,cat:"burbujeros",prov:"tw",cid:"JUG-0003",img:"img/p/216763225e6ffc01.webp",sku:"2026888800936"},

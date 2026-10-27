@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Sincroniza el catalogo de JUGA (jugueteria) desde la fuente de inventario
+"""Sincroniza el catalogo de Juguetinstore (jugueteria) desde la fuente de inventario
 publicada y actualiza catalogo.js.
 
 Fuente:
@@ -9,15 +9,15 @@ Fuente:
     productos activos, existencias y foto) es el MAESTRO de juguetes.
 
 Que hace:
-  - Lee el catalogo publicado de la fuente (clon local via JUGA_FUENTE_LOCAL,
+  - Lee el catalogo publicado de la fuente (clon local via JUGUETINSTORE_FUENTE_LOCAL,
     o descarga directa del URL crudo de GitHub si no hay clon).
-  - Convierte cada producto al formato de la tienda JUGA: nombre en Titulo,
+  - Convierte cada producto al formato de la tienda Juguetinstore: nombre en Titulo,
     precio base = precio de vitrina (Precio 2 del POS), categoria, SKU y
     fotos rehospedadas en img/p/ (webp, hash del path: incremental). La
     fuente tambien publica el Precio 5 (price5, escalon mayorista) pero
-    JUGA NO lo usa como base: con el, un tercio del catalogo quedaba por
+    Juguetinstore NO lo usa como base: con el, un tercio del catalogo quedaba por
     DEBAJO de la tienda fisica (saldosjugueteriataiwan.com vende al
-    Precio 2 exacto); con base Precio 2 + el margen del panel, JUGA
+    Precio 2 exacto); con base Precio 2 + el margen del panel, Juguetinstore
     queda SIEMPRE por encima de la tienda fisica.
   - Asigna codigos permanentes JUG-XXXX por slug: se reutilizan los del
     catalogo.js anterior (los enlaces ?art=JUG-XXXX nunca se rompen) y los
@@ -47,7 +47,7 @@ PEQ = {"de", "del", "la", "el", "los", "las", "y", "con", "para", "en", "x", "po
 
 FUENTE_REPO = "jugueteriataiwanoficial/jugueteriataiwan"
 FUENTE_RAW = "https://raw.githubusercontent.com/%s/main/" % FUENTE_REPO
-FUENTE_LOCAL = os.environ.get("JUGA_FUENTE_LOCAL", "")
+FUENTE_LOCAL = os.environ.get("JUGUETINSTORE_FUENTE_LOCAL", "")
 
 # ============================================================================
 # Utilidades
@@ -225,12 +225,12 @@ def escribir_catalogo_js(items):
     vistos = set()
     lineas = []
     lineas.append("// ======================================================================")
-    lineas.append("// catalogo.js de JUGA - generado automaticamente por scripts/sync_catalogos.py")
+    lineas.append("// catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py")
     lineas.append("// (%s). NO editar a mano: el cron de GitHub Actions lo regenera." % time.strftime("%Y-%m-%d %H:%M"))
     lineas.append("// Fuente: inventario de juguetes publicado por la jugueteria")
     lineas.append("// (github.com/%s). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda." % FUENTE_REPO)
     lineas.append("// ======================================================================")
-    lineas.append("const CATALOGO_JUGA=[")
+    lineas.append("const CATALOGO_JUGUETINSTORE=[")
     total = 0
     for p in items:
         if p["id"] in vistos:
@@ -279,7 +279,7 @@ if __name__ == "__main__":
 
     # Precio base = Precio 2 de vitrina (NO el Precio 5 mayorista que la
     # fuente tambien publica): con el margen del panel aplicado en la
-    # tienda, JUGA queda SIEMPRE por encima de la tienda fisica
+    # tienda, Juguetinstore queda SIEMPRE por encima de la tienda fisica
     # (saldosjugueteriataiwan.com vende al Precio 2 exacto).
 
     print("== Rehost de imagenes ==")

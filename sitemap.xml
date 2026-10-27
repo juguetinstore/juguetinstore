@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Sitemap de JUGA para Google Search Console / Bing Webmaster.
-     Al mover al dominio oficial: reemplazar tiendalunaria.github.io/juga
+<!-- Sitemap de Juguetinstore para Google Search Console / Bing Webmaster.
+     Al mover al dominio oficial: reemplazar juguetinstore.github.io/juguetinstore
      por el dominio nuevo en las URLs de abajo (GitHub Pages redirige 301
      automaticamente, y las senales SEO se transfieren).
      Tienda de una sola pagina: home + legal. Los productos abren con
-     ?art=LUN-XXXX (permitidos en robots.txt). -->
+     ?art=JUG-XXXX (permitidos en robots.txt). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tiendalunaria.github.io/juga/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://juguetinstore.github.io/juguetinstore/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tiendalunaria.github.io/juga/legal.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://juguetinstore.github.io/juguetinstore/legal.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

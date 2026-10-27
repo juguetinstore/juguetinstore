@@ -3,33 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JUGA — Regalos que despiertan sonrisas</title>
-<meta name="description" content="JUGA: juguetes y regalos infantiles que despiertan sonrisas, con envíos a todo el país. Paga contra entrega o por Nequi.">
-<meta property="og:title" content="JUGA — Regalos que despiertan sonrisas">
-<meta property="og:description" content="Juguetes y regalos infantiles para imaginar, descubrir y jugar. Envíos a toda Colombia, paga contra entrega o por Nequi.">
+<title>Juguetinstore — ¡Cada juguete, una nueva aventura!</title>
+<meta name="description" content="Juguetinstore: juguetes y regalos infantiles para imaginar, descubrir y jugar. ¡Cada juguete, una nueva aventura! Envíos a toda Colombia, paga contra entrega o por Nequi.">
+<meta property="og:title" content="Juguetinstore — ¡Cada juguete, una nueva aventura!">
+<meta property="og:description" content="Juguetes y regalos infantiles para imaginar, descubrir y jugar. ¡Cada juguete, una nueva aventura! Envíos a toda Colombia, paga contra entrega o por Nequi.">
 <!-- Al publicar: reemplazar por la URL absoluta de la imagen de vista previa (mínimo 512×512) -->
-<meta property="og:image" content="https://tiendalunaria.github.io/juga/og.png">
-<meta property="og:url" content="https://tiendalunaria.github.io/juga/">
+<meta property="og:image" content="https://juguetinstore.github.io/juguetinstore/og.png">
+<meta property="og:url" content="https://juguetinstore.github.io/juguetinstore/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
 <!-- SEO: canonical de la tienda. Al mover al dominio oficial: actualizar esta URL,
      og:url, la URL del schema.org (linea siguiente) y las URLs de sitemap.xml;
      GitHub Pages redirige 301 automaticamente el github.io al dominio nuevo. -->
-<link rel="canonical" href="https://tiendalunaria.github.io/juga/">
-<meta name="theme-color" content="#F7F3E9">
+<link rel="canonical" href="https://juguetinstore.github.io/juguetinstore/">
+<meta name="theme-color" content="#F5F7FB">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"OnlineStore","name":"JUGA","slogan":"Regalos que despiertan sonrisas","url":"https://tiendalunaria.github.io/juga/","areaServed":{"@type":"Country","name":"Colombia"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"OnlineStore","name":"Juguetinstore","slogan":"¡Cada juguete, una nueva aventura!","url":"https://juguetinstore.github.io/juguetinstore/","areaServed":{"@type":"Country","name":"Colombia"}}</script>
 <style>
-/* ============ Tokens de marca JUGA (ver JUGA_Brief_Branding.md) ============ */
-:root{--y:#F2B832;--c:#24558A;--cr:#F7F3E9;--bd:#EBDFC8;--mu:#657386;--cy:#654800;--coral:#E96D5C;--ok:#237A57;--err:#B42318;
---sh:0 1px 2px #24558A0d,0 10px 30px #24558A12;--shh:0 2px 4px #24558A10,0 18px 44px #24558A22;
---ff:"Baloo 2",cursive;--fb:"Nunito",sans-serif}
+/* ============ Tokens de marca Juguetinstore (ver JUGUETINSTORE_Brief_Branding.md) ============
+   Paleta del brief: azul eléctrico #377DFF (botones y acentos), rosa alegre
+   #FF5DA2, amarillo sol #FFC107, verde juguetón #2ECC71, violeta creativo
+   #9B59B6, azul profundo #1F2A44 (texto y contraste), blanco nube #F5F7FB. */
+:root{--y:#FFC107;--c:#1F2A44;--cr:#F5F7FB;--bd:#DCE4F5;--mu:#5B6B85;--cy:#1F2A44;--coral:#FF5DA2;--ok:#1E9E52;--err:#B42318;
+--azul:#377DFF;--verde:#2ECC71;--violeta:#9B59B6;
+--sh:0 1px 2px #1F2A440d,0 10px 30px #1F2A4412;--shh:0 2px 4px #1F2A4410,0 18px 44px #1F2A4422;
+--ff:"Nunito",sans-serif;--fb:"Montserrat",sans-serif}
 *{box-sizing:border-box;margin:0}
 /* El header movil pliega su barra de categorias al hacer scroll: ese cambio de
    altura activaria el "scroll anchoring" del navegador (que reajusta el scroll
@@ -39,7 +43,7 @@ html{overflow-anchor:none}
 html{scroll-behavior:smooth}
 body{background:var(--cr);color:var(--c);font:400 15px/1.6 var(--fb);-webkit-font-smoothing:antialiased}
 img{max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit}
-h1,h2,h3{font-family:var(--ff);letter-spacing:.01em;line-height:1.15}
+h1,h2,h3{font-family:var(--ff);font-weight:800;letter-spacing:.01em;line-height:1.15}
 :focus-visible{outline:2.5px solid var(--c);outline-offset:3px;border-radius:6px}
 .noscroll{overflow:hidden}
 .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
@@ -50,16 +54,16 @@ h1,h2,h3{font-family:var(--ff);letter-spacing:.01em;line-height:1.15}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
 .rv.in{opacity:1;transform:none}
 /* ============ Botones ============ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 26px;border-radius:999px;border:1.5px solid var(--c);background:var(--c);color:var(--cr);font:500 14.5px var(--fb);cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 26px;border-radius:999px;border:1.5px solid var(--azul);background:var(--azul);color:#fff;font:500 14.5px var(--fb);cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
 .btn:hover{transform:translateY(-1px);box-shadow:var(--shh)}
 .btn.y{background:var(--y);border-color:var(--y);color:var(--cy);font-weight:600}
 .btn.o{background:transparent;color:var(--c)}
 .btn.o:hover{background:var(--c);color:var(--cr)}
 /* ============ Barra superior y encabezado ============ */
-.top{background:var(--c);color:#F7F3E9cc;text-align:center;padding:9px 12px;font:400 13px var(--fb);letter-spacing:.02em}
+.top{background:var(--c);color:#F5F7FBcc;text-align:center;padding:9px 12px;font:400 13px var(--fb);letter-spacing:.02em}
 section[id]{scroll-margin-top:88px}
 #favoritos{scroll-margin-top:88px}
-#hdr{position:sticky;top:0;z-index:60;background:#F7F3E9f2;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+#hdr{position:sticky;top:0;z-index:60;background:#F5F7FBf2;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
 .hd{display:grid;grid-template-columns:auto minmax(240px,480px) auto;align-items:center;gap:16px;max-width:1180px;margin:0 auto;padding:11px 26px}
 .brand{justify-self:start;display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:0;padding:0}
 .brand img{height:44px;display:block}
@@ -71,12 +75,12 @@ section[id]{scroll-margin-top:88px}
 .sres{position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shh);max-height:340px;overflow-y:auto;z-index:70;display:none;padding:6px}
 .sri{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;padding:8px;border-radius:10px;cursor:pointer}
 .sri:hover{background:var(--cr)}
-.sri .srt{width:42px;height:42px;border-radius:9px;background:var(--soft,#eee) center/contain no-repeat;flex:none;display:grid;place-items:center;font:700 11px var(--ff);color:#24558A2e}
+.sri .srt{width:42px;height:42px;border-radius:9px;background:var(--soft,#eee) center/contain no-repeat;flex:none;display:grid;place-items:center;font:700 9px var(--ff);color:#1F2A442e}
 .sri b{font:500 13px var(--fb);display:block}
 .sri i{font:600 12px var(--fb);color:var(--mu);font-style:normal}
 .hicons{display:flex;gap:4px;justify-self:end;align-items:center}
 .ib{position:relative;width:44px;height:44px;border:0;background:none;border-radius:50%;cursor:pointer;display:grid;place-items:center;color:var(--c);transition:background .2s}
-.ib:hover{background:#24558A10}
+.ib:hover{background:#1F2A4410}
 .ib .bdg{position:absolute;top:3px;right:1px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--y);color:var(--cy);font:600 10.5px/17px var(--fb);text-align:center}
 .ib.on{background:var(--c);color:var(--cr)}
 .subnav{position:relative;background:#fff;border-top:1px solid var(--bd)}
@@ -89,30 +93,30 @@ section[id]{scroll-margin-top:88px}
    medias parecia texto roto) y el snap hace que el scroll pare SIEMPRE
    entre categorias, nunca a mitad de palabra. */
 .subnav:has(#subnavTrack.is-desb)::after{content:"";position:absolute;right:0;top:1px;bottom:0;width:58px;background:linear-gradient(90deg,#fff0,#fff);pointer-events:none}
-.snl:hover{background:#24558A0d}
+.snl:hover{background:#1F2A440d}
 .snl.on{background:var(--c);color:var(--cr);font-weight:600}
 .sn-sep{width:1px;height:18px;background:var(--bd);flex:none;margin:0 6px}
 /* ============ Menú móvil ============ */
-.mmov{position:fixed;inset:0;background:#24558A66;z-index:75;opacity:0;visibility:hidden;transition:.3s;backdrop-filter:blur(2px)}
+.mmov{position:fixed;inset:0;background:#1F2A4466;z-index:75;opacity:0;visibility:hidden;transition:.3s;backdrop-filter:blur(2px)}
 .mmov.open{opacity:1;visibility:visible}
-.mm{position:fixed;top:0;left:-330px;width:320px;max-width:88vw;height:100%;background:var(--cr);z-index:80;transition:left .35s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column;box-shadow:14px 0 40px #24558A33}
+.mm{position:fixed;top:0;left:-330px;width:320px;max-width:88vw;height:100%;background:var(--cr);z-index:80;transition:left .35s cubic-bezier(.25,.46,.45,.94);display:flex;flex-direction:column;box-shadow:14px 0 40px #1F2A4433}
 .mm.open{left:0}
 .mm-h{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--bd)}
 .mm-t{font:700 22px var(--ff)}
 .mm-list{flex:1;overflow-y:auto;padding:16px 12px;list-style:none}
 .mm-list button{width:100%;display:flex;align-items:center;gap:12px;background:none;border:0;padding:13px 14px;border-radius:12px;font:500 14.5px var(--fb);color:var(--c);cursor:pointer;text-align:left;transition:background .2s}
-.mm-list button:hover{background:#24558A0a}
+.mm-list button:hover{background:#1F2A440a}
 .mm-f{padding:14px 16px calc(14px + env(safe-area-inset-bottom,0));border-top:1px solid var(--bd)}
 .mm-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--y);color:var(--cy);border-radius:999px;padding:13px;font:600 14px var(--fb)}
 /* ============ Marcos de foto (compartidos: card, carrusel, héroe, lightbox) ============ */
 .ph{position:relative;background:var(--soft,#fff);display:grid;place-items:center;overflow:hidden}
 .ph.has-img .mono{display:none}
 .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;transition:transform .5s}
-.ph .mono{font:700 30px var(--ff);color:#24558A12;letter-spacing:-.04em;user-select:none;position:relative;z-index:1}
+.ph .mono{font:800 21px var(--ff);color:#1F2A4412;letter-spacing:-.04em;user-select:none;position:relative;z-index:1}
 /* ============ Héroe ============ */
 .hero-g{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:58px 0 40px}
-.hero h1{font-size:clamp(32px,4.6vw,55px);font-weight:600;margin:14px 0 18px}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,#F2B83280 64%)}
+.hero h1{font-size:clamp(32px,4.6vw,55px);font-weight:800;margin:14px 0 18px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,#FFC10780 64%)}
 .hero .lead{font-size:16.5px;color:var(--mu);max-width:480px;margin:0 0 22px}
 .hben{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
 .hb{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--bd);border-radius:999px;padding:8px 14px;font:500 12.5px var(--fb)}
@@ -123,7 +127,7 @@ section[id]{scroll-margin-top:88px}
 .hc{background:#fff;border-radius:26px;padding:18px;box-shadow:var(--shh);opacity:0;transition:opacity .45s}
 .hc.in{opacity:1}
 .hc .ph{aspect-ratio:4/5;cursor:pointer;border-radius:16px}
-.hc-chip{display:inline-flex;align-items:center;gap:6px;background:var(--soft,#EBDFC8);border-radius:999px;padding:6px 12px;font:600 11.5px var(--fb);letter-spacing:.08em;text-transform:uppercase}
+.hc-chip{display:inline-flex;align-items:center;gap:6px;background:var(--soft,#DCE4F5);border-radius:999px;padding:6px 12px;font:600 11.5px var(--fb);letter-spacing:.08em;text-transform:uppercase}
 .hc-chip .ic{width:13px;height:13px}
 .hc h3{font-size:18px;font-weight:600;margin:12px 2px 4px}
 .hc .desc{font-size:12.5px;color:var(--mu);margin:0 2px 10px}
@@ -146,7 +150,7 @@ section[id]{scroll-margin-top:88px}
 .bub .bp{width:76px;height:76px;border-radius:50%;border:2px solid var(--bd);background:#fff center/cover no-repeat;display:grid;place-items:center;transition:transform .25s,box-shadow .25s}
 .bub .bp .ic{width:30px;height:30px}
 .bub:hover .bp{transform:translateY(-3px);box-shadow:var(--sh)}
-.bub.on .bp{border-color:var(--y);box-shadow:0 0 0 3px #F2B83236}
+.bub.on .bp{border-color:var(--y);box-shadow:0 0 0 3px #FFC10736}
 .bub .bl{font:600 12.5px/1.25 var(--fb);max-width:100%;text-align:center;white-space:normal;height:33px;overflow:hidden}
 .bub .bq{font:600 11px var(--fb);color:var(--mu)}
 .cwrap .carr{top:44%}
@@ -173,7 +177,7 @@ section[id]{scroll-margin-top:88px}
 .cfr .mono{font-size:25px}
 .cfr img{cursor:default}
 .cbg{position:absolute;top:10px;left:10px;z-index:3;background:#fffffff2;color:var(--c);font:600 10.5px var(--fb);letter-spacing:.05em;text-transform:uppercase;padding:5px 10px;border-radius:999px;backdrop-filter:blur(6px)}
-.cov{position:absolute;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(to top,#24558Ae6,#24558A80 55%,transparent);color:#fff;padding:34px 14px 12px;transform:translateY(100%);transition:transform .3s}
+.cov{position:absolute;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(to top,#1F2A44e6,#1F2A4480 55%,transparent);color:#fff;padding:34px 14px 12px;transform:translateY(100%);transition:transform .3s}
 .cari:hover .cov,.cari:focus-visible .cov{transform:none}
 @media(hover:none){.cov{transform:none}}
 .cov b{display:block;font:600 13px/1.3 var(--fb);margin-bottom:3px}
@@ -190,7 +194,7 @@ section[id]{scroll-margin-top:88px}
 .chint{text-align:center;font-size:12.5px;color:var(--mu);display:none}
 @media(hover:none){.chint{display:block}}
 /* ============ Marquesina ============ */
-.marquee{background:var(--c);color:#F7F3E9d9;overflow:hidden;padding:13px 0;margin-top:26px}
+.marquee{background:var(--c);color:#F5F7FBd9;overflow:hidden;padding:13px 0;margin-top:26px}
 .mq{display:flex;white-space:nowrap;width:max-content;animation:mq 32s linear infinite}
 .mq span{font:500 13px var(--fb);letter-spacing:.05em;padding:0 28px;position:relative}
 .mq span::after{content:"";position:absolute;right:-3px;top:50%;width:5px;height:5px;border-radius:50%;background:var(--y);transform:translateY(-50%)}
@@ -198,7 +202,7 @@ section[id]{scroll-margin-top:88px}
 /* ============ Banda oscura de joyas ============ */
 /* ============ Catálogo ============ */
 #tienda{padding-top:62px}
-.tbar{position:sticky;top:var(--hh,86px);z-index:45;background:#F7F3E9f2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 0 8px;border-bottom:1px solid var(--bd);margin-bottom:22px}
+.tbar{position:sticky;top:var(--hh,86px);z-index:45;background:#F5F7FBf2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 0 8px;border-bottom:1px solid var(--bd);margin-bottom:22px}
 .tbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .tcount{font:600 13px var(--fb);color:var(--mu);letter-spacing:.06em;text-transform:uppercase}
 .sortw{display:flex;align-items:center;gap:8px;font:500 13px var(--fb);color:var(--mu)}
@@ -209,7 +213,7 @@ section[id]{scroll-margin-top:88px}
    snap entre chips y degradado al borde derecho (mismo patron del subnav). */
 .chips{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-top:8px;padding:2px 2px 6px;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
 .chips::-webkit-scrollbar{display:none}
-.chips.is-desb::after{content:"";position:sticky;right:0;flex:0 0 auto;margin-left:-58px;width:58px;height:40px;background:linear-gradient(90deg,#F7F3E900,#F7F3E9);pointer-events:none}
+.chips.is-desb::after{content:"";position:sticky;right:0;flex:0 0 auto;margin-left:-58px;width:58px;height:40px;background:linear-gradient(90deg,#F5F7FB00,#F5F7FB);pointer-events:none}
 .chip{border:1px solid var(--bd);background:transparent;border-radius:999px;padding:8px 16px;font:500 13px var(--fb);cursor:pointer;color:var(--c);transition:.2s;display:inline-flex;align-items:center;flex:none;white-space:nowrap;scroll-snap-align:start}
 .chip:hover{border-color:var(--c)}
 .chip.on{background:var(--c);color:var(--cr);border-color:var(--c)}
@@ -259,7 +263,7 @@ section[id]{scroll-margin-top:88px}
 /* ============ Confianza ============ */
 .trust{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);margin-top:64px}
 .trust .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding-top:32px;padding-bottom:32px}
-.ti .tic{width:46px;height:46px;border-radius:14px;background:#F2B83222;display:grid;place-items:center;margin-bottom:10px}
+.ti .tic{width:46px;height:46px;border-radius:14px;background:#FFC10722;display:grid;place-items:center;margin-bottom:10px}
 .ti .tic .ic{width:21px;height:21px}
 .ti b{font:600 15px var(--ff);display:block;margin-bottom:5px}
 .ti span{font-size:12.5px;color:var(--mu);line-height:1.5}
@@ -278,17 +282,17 @@ details p{margin:12px 0 0;color:var(--mu)}
 .news .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:50px;padding-bottom:50px}
 .news h2{margin:0 0 6px}
 /* ============ Pie ============ */
-footer{background:var(--c);color:#F7F3E9b3;padding:56px 0 34px;font-size:13.5px;line-height:2}
+footer{background:var(--c);color:#F5F7FBb3;padding:56px 0 34px;font-size:13.5px;line-height:2}
 footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
 footer b.h{color:var(--cr);font:600 12.5px var(--fb);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:8px}
 footer a:hover{color:var(--cr)}
 .flink{display:block;background:none;border:0;padding:0;text-align:left;color:inherit;font:400 13.5px var(--fb);cursor:pointer}
 .flink:hover{color:var(--cr)}
-.legal{grid-column:1/-1;border-top:1px solid #F7F3E922;padding-top:20px;margin-top:14px;font-size:12px}
+.legal{grid-column:1/-1;border-top:1px solid #F5F7FB22;padding-top:20px;margin-top:14px;font-size:12px}
 /* ============ Barra de pago, botones flotantes y avisos ============ */
 .pay{position:fixed;left:50%;bottom:88px;transform:translate(-50%,16px);opacity:0;visibility:hidden;transition:.3s;z-index:54;width:min(92%,400px)}
 .pay.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
-.pay .in{display:flex;align-items:center;gap:12px;background:var(--y);color:var(--cy);border-radius:999px;padding:12px 20px;box-shadow:0 10px 30px #24558A59;cursor:pointer;border:0;width:100%}
+.pay .in{display:flex;align-items:center;gap:12px;background:var(--y);color:var(--cy);border-radius:999px;padding:12px 20px;box-shadow:0 10px 30px #1F2A4459;cursor:pointer;border:0;width:100%}
 .pay .pc{position:relative;display:grid;place-items:center}
 .pay .cnt{position:absolute;top:-8px;right:-10px;background:var(--c);color:var(--y);font:700 10.5px var(--fb);min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center;padding:0 3px}
 .pay .pl{font:600 14px var(--fb)}
@@ -303,19 +307,19 @@ footer a:hover{color:var(--cr)}
 .fab.ca{background:var(--c);color:var(--cr)}
 .fab.tp{background:#fff}
 .fab .cnt{position:absolute;top:2px;right:2px;background:var(--y);color:var(--c);font:700 10.5px var(--fb);min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center;padding:0 3px}
-@keyframes wpulse{0%,100%{box-shadow:0 0 0 0 #F2B83277,var(--shh)}50%{box-shadow:0 0 0 12px #F2B83200,var(--shh)}}
+@keyframes wpulse{0%,100%{box-shadow:0 0 0 0 #FFC10777,var(--shh)}50%{box-shadow:0 0 0 12px #FFC10700,var(--shh)}}
 #toast{position:fixed;top:16px;left:50%;transform:translate(-50%,-90px);z-index:200;background:var(--c);color:var(--cr);padding:12px 22px;border-radius:999px;font:500 13.5px var(--fb);box-shadow:var(--shh);opacity:0;transition:.35s;pointer-events:none;max-width:88vw;text-align:center}
 #toast.show{transform:translate(-50%,0);opacity:1}
 #toast.err{background:var(--err)}
 /* ============ Carrito lateral ============ */
-#cartDrawer{position:fixed;top:0;right:-440px;width:min(430px,100%);height:100vh;height:100dvh;background:var(--cr);z-index:85;transition:right .35s;display:flex;flex-direction:column;box-shadow:-14px 0 44px #24558A40}
+#cartDrawer{position:fixed;top:0;right:-440px;width:min(430px,100%);height:100vh;height:100dvh;background:var(--cr);z-index:85;transition:right .35s;display:flex;flex-direction:column;box-shadow:-14px 0 44px #1F2A4440}
 #cartDrawer.open{right:0}
 .cd-h{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;background:var(--c);color:var(--cr)}
 .cd-h h3{font-size:19px}
 .cd-items{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .cit{display:flex;gap:12px;background:#fff;border-radius:16px;padding:11px;align-items:center;box-shadow:var(--sh)}
 .th{width:58px;height:58px;border-radius:12px;flex:none;background:var(--soft,#eee) center/contain no-repeat;display:grid;place-items:center;overflow:hidden}
-.th b{font:700 9.5px var(--ff);letter-spacing:-.02em;color:#24558A2e}
+.th b{font:700 9.5px var(--ff);letter-spacing:-.02em;color:#1F2A442e}
 .cit .inf{flex:1;min-width:0}
 .cit .nm{font:500 13px/1.3 var(--fb);display:block;margin-bottom:2px}
 .cit .un{font-size:11.5px;color:var(--mu);display:block}
@@ -336,7 +340,7 @@ footer a:hover{color:var(--cr)}
 .upsrow .pp{font:600 12.5px var(--ff);white-space:nowrap}
 .tier{display:inline-block;font:700 9.5px var(--fb);text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:2px 8px;margin-bottom:3px}
 .tier.b{background:#E8F5EC;color:#1E7A34}
-.tier.m{background:#F7EDE7;color:#8A5700}
+.tier.m{background:#FFF3D6;color:#8A6D00}
 .tier.a{background:var(--c);color:var(--cr)}
 .addsm{border:0;background:var(--y);color:var(--cy);border-radius:8px;padding:6px 10px;font:600 11.5px var(--fb);cursor:pointer;flex:none}
 .addsm:hover{transform:translateY(-1px)}
@@ -348,7 +352,7 @@ footer a:hover{color:var(--cr)}
 .cd-empty{text-align:center;padding:52px 20px;color:var(--mu);background:#fff;border-radius:16px}
 .cd-empty .ic{width:40px;height:40px;margin-bottom:12px}
 /* ============ Formulario de pedido (estilo COD por fases) ============ */
-.modal{position:fixed;inset:0;background:#24558A80;z-index:95;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;visibility:hidden;pointer-events:none;transition:.25s}
+.modal{position:fixed;inset:0;background:#1F2A4480;z-index:95;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;visibility:hidden;pointer-events:none;transition:.25s}
 .modal.show{opacity:1;visibility:visible;pointer-events:auto}
 .cod{background:#fff;border-radius:22px;width:100%;max-width:580px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;transform:scale(.97);transition:transform .25s}
 .modal.show .cod{transform:scale(1)}
@@ -357,13 +361,13 @@ footer a:hover{color:var(--cr)}
 .cod-t{flex:1;min-width:0}
 .cod-t h3{font-size:17px}
 .cod-t p{font-size:11.5px;color:var(--mu);margin:1px 0 0}
-.cod-x{border:0;background:#24558A0a;width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;color:var(--c)}
-.cod-x:hover{background:#24558A18}
+.cod-x{border:0;background:#1F2A440a;width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;color:var(--c)}
+.cod-x:hover{background:#1F2A4418}
 .cod-b{flex:1;overflow-y:auto;padding:16px 18px 8px;-webkit-overflow-scrolling:touch}
 .ra{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
 .ra span{display:inline-flex;align-items:center;gap:6px;background:var(--cr);border:1px solid var(--bd);border-radius:999px;padding:5px 11px;font:500 11.5px var(--fb)}
 .ra .ic{width:13px;height:13px;color:var(--ok)}
-.sec{background:#FFFDF6;border:1px solid #F0E8D6;border-radius:16px;padding:14px;margin-bottom:12px}
+.sec{background:#F8FAFF;border:1px solid #DCE4F5;border-radius:16px;padding:14px;margin-bottom:12px}
 .sec-t{display:flex;align-items:center;gap:9px;font:600 15px var(--ff);margin-bottom:12px}
 .pn{width:22px;height:22px;min-width:22px;border-radius:50%;background:var(--c);color:var(--cr);font:600 11.5px/22px var(--fb);text-align:center}
 .pn.done{background:var(--ok)}
@@ -393,10 +397,10 @@ footer a:hover{color:var(--cr)}
 .po .pot{flex:1;min-width:0}
 .po .pot b{display:block;font:600 13.5px var(--fb)}
 .po .pot small{font-size:11px;color:var(--mu)}
-.po.sel{border-color:var(--y);box-shadow:0 0 0 3px #F2B83233}
+.po.sel{border-color:var(--y);box-shadow:0 0 0 3px #FFC10733}
 .po.sel .poi{background:var(--y)}
 .best{position:absolute;top:-9px;right:10px;background:var(--y);color:var(--cy);font:700 9.5px var(--fb);text-transform:uppercase;letter-spacing:.05em;border-radius:999px;padding:2px 8px}
-.osum{background:#fff;border:1px solid #F0E8D6;border-radius:12px;padding:4px 12px}
+.osum{background:#fff;border:1px solid #DCE4F5;border-radius:12px;padding:4px 12px}
 .osr{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--bd)}
 .osr .th{width:44px;height:54px;border-radius:8px}
 .osr .th b{font-size:8px}
@@ -404,13 +408,13 @@ footer a:hover{color:var(--cr)}
 .osr .nm{font:500 12.5px/1.25 var(--fb);display:block}
 .osr .pp{font:600 13px var(--ff);white-space:nowrap}
 .stpr{display:flex;align-items:center;gap:7px;margin-top:5px}
-.stpr button{width:26px;height:26px;border:1.5px solid #E3E3E9;background:#fff;border-radius:8px;font-size:15px;font-weight:700;line-height:1;cursor:pointer;color:var(--c)}
+.stpr button{width:26px;height:26px;border:1.5px solid #DDE4F2;background:#fff;border-radius:8px;font-size:15px;font-weight:700;line-height:1;cursor:pointer;color:var(--c)}
 .stpr b{font:700 12.5px var(--fb);min-width:15px;text-align:center}
 .osl{display:flex;justify-content:space-between;gap:10px;padding:7px 0;font-size:12px;color:var(--mu)}
 .osl.env{border-top:1px solid var(--bd);margin-top:4px}
 .osl span:last-child{text-align:right}
 .cod-upsell{margin-top:10px;padding-top:10px;border-top:1px dashed var(--bd)}
-.upst{display:flex;align-items:center;justify-content:space-between;width:100%;background:#FFFDF6;border:1.5px dashed var(--bd);border-radius:10px;padding:8px 11px;font:600 12px var(--fb);cursor:pointer;color:var(--c)}
+.upst{display:flex;align-items:center;justify-content:space-between;width:100%;background:#F8FAFF;border:1.5px dashed var(--bd);border-radius:10px;padding:8px 11px;font:600 12px var(--fb);cursor:pointer;color:var(--c)}
 .upst:hover{background:var(--cr)}
 .cod-upt{display:flex;gap:8px;overflow-x:auto;padding:8px 1px 4px;scrollbar-width:thin;overscroll-behavior-x:contain}
 .upc{flex:0 0 120px;border:1px solid var(--bd);border-radius:12px;padding:7px;background:#fff;display:flex;flex-direction:column;gap:5px}
@@ -424,26 +428,26 @@ footer a:hover{color:var(--cr)}
 .cod-tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
 .cod-tot span{font:500 12px var(--fb);color:var(--mu)}
 .cod-tot b{font:600 21px var(--ff)}
-.wbtn{width:100%;min-height:50px;border:0;border-radius:14px;background:#D8D2C6;color:#fff;font:600 15px var(--fb);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:none;transition:.25s}
+.wbtn{width:100%;min-height:50px;border:0;border-radius:14px;background:#C7D2E8;color:#fff;font:600 15px var(--fb);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:none;transition:.25s}
 .wbtn .ic{width:19px;height:19px}
 .wbtn.en{background:var(--y);color:var(--cy);pointer-events:auto;box-shadow:var(--sh)}
 .wbtn.en:hover{transform:translateY(-1px)}
 /* ============ Lightbox de fotos ============ */
-#lightbox{position:fixed;inset:0;background:#24558Ad9;z-index:110;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;visibility:hidden;transition:.25s}
+#lightbox{position:fixed;inset:0;background:#1F2A44d9;z-index:110;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;visibility:hidden;transition:.25s}
 #lightbox.show{opacity:1;visibility:visible}
 .lbp{background:#fff;border-radius:20px;width:100%;max-width:1000px;max-height:92vh;overflow-y:auto;position:relative;padding:18px;box-shadow:0 24px 60px #0006;scrollbar-width:thin}
-.lbx{position:absolute;top:12px;right:12px;z-index:5;width:38px;height:38px;border:0;border-radius:50%;background:#24558A0a;cursor:pointer;display:grid;place-items:center;color:var(--c)}
-.lbx:hover{background:#24558A18}
+.lbx{position:absolute;top:12px;right:12px;z-index:5;width:38px;height:38px;border:0;border-radius:50%;background:#1F2A440a;cursor:pointer;display:grid;place-items:center;color:var(--c)}
+.lbx:hover{background:#1F2A4418}
 .lbgal{display:flex;gap:14px;justify-content:center}
 .lbthx{display:flex;flex-direction:column;gap:8px;width:62px;flex:none;max-height:min(640px,66vh);overflow-y:auto;padding:2px}
 .lbth{width:58px;height:58px;border-radius:9px;border:2px solid var(--bd);background:#eee center/cover no-repeat;cursor:pointer;padding:0;flex:none;transition:border-color .2s}
 .lbth.on,.lbth:hover{border-color:var(--y)}
-.lbmain{position:relative;flex:0 1 auto;width:min(430px,100%);aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--soft,#F7F3E9)}
+.lbmain{position:relative;flex:0 1 auto;width:min(430px,100%);aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--soft,#F5F7FB)}
 .lbmain img{cursor:default}
 .lbnav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:#fffffff2;color:var(--c);display:grid;place-items:center;cursor:pointer;z-index:4;box-shadow:var(--sh)}
 .lbnav:hover{transform:translateY(-50%) scale(1.07)}
 .lbnav.pv{left:10px}.lbnav.nx{right:10px}
-.lbcount{position:absolute;bottom:10px;right:10px;z-index:4;background:#24558Ab3;color:#fff;font:600 11.5px var(--fb);padding:3px 10px;border-radius:999px}
+.lbcount{position:absolute;bottom:10px;right:10px;z-index:4;background:#1F2A44b3;color:#fff;font:600 11.5px var(--fb);padding:3px 10px;border-radius:999px}
 .lbinf{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
 .lbcap{font:600 15px var(--ff);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lbcta{display:inline-flex;align-items:center;gap:8px;border:0;background:var(--y);color:var(--cy);border-radius:999px;padding:10px 18px;font:600 13px var(--fb);cursor:pointer;flex:none;box-shadow:var(--sh)}
@@ -520,15 +524,15 @@ footer a:hover{color:var(--cr)}
    cache: no descarga nada) y vive solo ~0.5s. Marco blanco y
    object-fit contain: el producto viaja COMPLETO, igual que en las
    tarjetas de la marca. */
-.juga-fly{position:fixed;z-index:99999;pointer-events:none;border-radius:10px;background:#fff;object-fit:contain;box-shadow:0 8px 24px #24558A59}
+.juguetinstore-fly{position:fixed;z-index:99999;pointer-events:none;border-radius:10px;background:#fff;object-fit:contain;box-shadow:0 8px 24px #1F2A4459}
 /* ============ Accesibilidad: menos movimiento ============ */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
   .rv{opacity:1;transform:none}
-  .juga-fly{display:none}
+  .juguetinstore-fly{display:none}
 }
-/* ============ Hero: galería de esmeraldas de laboratorio ============ */
+/* ============ Hero: galería de juguetes ============ */
 .hero{position:relative;overflow:hidden;padding:0;margin-top:-1px}
 .hero-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:0;height:min(72vh,680px)}
 .hero-gal .hg-item{position:relative;overflow:hidden;cursor:pointer}
@@ -540,8 +544,8 @@ footer a:hover{color:var(--cr)}
 .hero-gal .hg-item:hover .hg-info{opacity:1;transform:none}
 .hero-gal .hg-info b{font:600 15px var(--fb);display:block;text-shadow:0 1px 4px #0006}
 .hero-gal .hg-info span{font:600 14px var(--ff);text-shadow:0 1px 4px #0006}
-/* El logo del centro es el EMBLEMA JUGA: circulo blanco con las letras
-   JUGA de color. El disco blanco es opaco, asi que el logo se lee sobre
+/* El logo del centro es el EMBLEMA de Juguetinstore: su fondo blanco es
+   opaco, asi que el logo se lee sobre
    cualquier foto del hero (clara u oscura) sin necesidad de placa detras. */
 .hero-tag{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;pointer-events:none}
 .hero-tag span{font:700 clamp(48px,7vw,84px) var(--ff);letter-spacing:-.03em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45);display:block;line-height:1}
@@ -574,18 +578,18 @@ footer a:hover{color:var(--cr)}
 .admin-cat-nombre{font:600 13px var(--fb);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .admin-buscar{width:100%;padding:11px 13px;border:1.5px solid var(--bd);border-radius:10px;font:400 13px var(--fb);background:#fff;margin-bottom:10px}
 .admin-buscar:focus{outline:none;border-color:var(--c)}
-.admin-fila{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:8px 10px;background:#FFFDF6;border:1px solid #F0E8D6;border-radius:10px;font-size:12.5px;margin-bottom:6px}
+.admin-fila{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:8px 10px;background:#F8FAFF;border:1px solid #DCE4F5;border-radius:10px;font-size:12.5px;margin-bottom:6px}
 .admin-fila .an{font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .admin-fila input{width:104px;padding:7px 9px;border:1.5px solid var(--bd);border-radius:8px;font:500 12px var(--fb);background:#fff}
 .admin-btn{border:0;background:var(--y);color:var(--cy);border-radius:9px;padding:8px 14px;font:600 12px var(--fb);cursor:pointer;white-space:nowrap}
 .admin-btn.quitar{background:#FDECEF;color:var(--err)}
 .admin-fijados{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
-.admin-fijados .admin-fila{background:#F7EDE7;border-color:#EBDFC8}
+.admin-fijados .admin-fila{background:#E9F0FB;border-color:#DCE4F5}
 .admin-lista{max-height:300px;overflow-y:auto;border:1px solid var(--bd);border-radius:12px;padding:8px;margin-bottom:12px;display:flex;flex-direction:column;gap:6px;scrollbar-width:thin}
 .admin-lista .gr{font:700 11px var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--y);background:var(--c);border-radius:8px;padding:6px 10px}
 .admin-botones{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .admin-botones .btn{min-height:44px;padding:0 18px;font-size:13px}
-.admin-nota{margin-top:14px;font-size:12px;color:var(--mu);background:#FFFDF6;border:1px dashed var(--bd);border-radius:10px;padding:10px 12px;line-height:1.5}
+.admin-nota{margin-top:14px;font-size:12px;color:var(--mu);background:#F8FAFF;border:1px dashed var(--bd);border-radius:10px;padding:10px 12px;line-height:1.5}
 .admin-sync-ayuda{margin:4px 0 2px;font-size:12px;color:var(--mu)}
 .admin-sync-ayuda summary{cursor:pointer;font:600 12.5px var(--fb);color:var(--c);padding:6px 0}
 .admin-sync-ayuda[open] summary{margin-bottom:2px}
@@ -639,9 +643,9 @@ footer a:hover{color:var(--cr)}
 <!-- ============ Encabezado ============ -->
 <header id="hdr">
   <div class="hd">
-    <button class="brand" onclick="scrollToTop()" aria-label="JUGA, volver al inicio">
-      <img src="logo_120.png" alt="JUGA" onerror="this.style.display='none'">
-      <span class="bt" id="brandTxt">Regalos que despiertan sonrisas</span>
+    <button class="brand" onclick="scrollToTop()" aria-label="Juguetinstore, volver al inicio">
+      <img src="logo_120.png" alt="Juguetinstore" onerror="this.style.display='none'">
+      <span class="bt" id="brandTxt">¡Cada juguete, una nueva aventura!</span>
     </button>
     <div class="sbox">
       <input id="searchInput" type="search" placeholder="Buscar productos" aria-label="Buscar productos">
@@ -665,7 +669,7 @@ footer a:hover{color:var(--cr)}
 <!-- ============ Menú móvil ============ -->
 <div class="mmov" id="menuOverlay" onclick="toggleMenu()"></div>
 <aside class="mm" id="mobileMenu" aria-label="Menú">
-  <div class="mm-h"><span class="mm-t"><img src="logo_120.png" alt="JUGA" style="height:36px;display:block" onerror="this.style.display='none'"></span>
+  <div class="mm-h"><span class="mm-t"><img src="logo_120.png" alt="Juguetinstore" style="height:36px;display:block" onerror="this.style.display='none'"></span>
     <button class="ib" onclick="toggleMenu()" aria-label="Cerrar menú"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <ul class="mm-list" id="mobileMenuList"></ul>
@@ -679,7 +683,7 @@ footer a:hover{color:var(--cr)}
 <section class="hero">
 <div class="hero-gal" id="heroGal"></div>
 <div class="hero-tag">
-  <img src="logo_512.png" alt="JUGA" style="height:clamp(64px,9vw,120px);display:block;margin:0 auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,.55))" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font:700 clamp(48px,7vw,84px) 'Baloo 2',cursive;letter-spacing:.06em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45)">JUGA</span>
+  <img src="logo_512.png" alt="Juguetinstore" style="height:clamp(64px,9vw,120px);display:block;margin:0 auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,.55))" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none;font:800 clamp(34px,5.5vw,64px) 'Nunito',sans-serif;letter-spacing:.04em;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.45)">Juguetinstore</span>
   <b>Encuentra ese regalo que ilumina su día</b>
   <small>Juguetes para imaginar, descubrir y jugar</small>
 </div>
@@ -698,7 +702,7 @@ footer a:hover{color:var(--cr)}
   <p class="sect-s rv">Un carrusel con lo mejor de cada categoría: desliza y toca un producto.</p>
   <div class="crow" id="favoritos" style="display:none">
     <div class="chead"><span class="clab" id="favRowLabel">Los favoritos de <img src="logo_120.png" alt="" style="height:16px;vertical-align:-2px;margin-left:2px" onerror="this.remove()"></span><span class="cmeta" id="favRowMeta"></span></div>
-    <div class="ctrack" id="carFav" tabindex="0" role="region" data-rows="2" aria-label="Carrusel de los favoritos de JUGA"></div>
+    <div class="ctrack" id="carFav" tabindex="0" role="region" data-rows="2" aria-label="Carrusel de los favoritos de Juguetinstore"></div>
     <div class="cnav" id="dotsFav"></div>
     <button class="carr L" type="button" onclick="scrollCarousel(-1,'carFav')" aria-label="Producto anterior"><svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
     <button class="carr R" type="button" onclick="scrollCarousel(1,'carFav')" aria-label="Producto siguiente"><svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -743,8 +747,8 @@ footer a:hover{color:var(--cr)}
 
 <!-- ============ Marquesina ============ -->
 <div class="marquee" aria-hidden="true"><div class="mq">
-  <span>Envíos a todo el país</span><span>Pequeños detalles, grandes sonrisas</span><span>Pago seguro</span><span>Precios claros</span><span>Juguetes para imaginar y descubrir</span><span>Atención por WhatsApp</span>
-  <span>Envíos a todo el país</span><span>Pequeños detalles, grandes sonrisas</span><span>Pago seguro</span><span>Precios claros</span><span>Juguetes para imaginar y descubrir</span><span>Atención por WhatsApp</span>
+  <span>Envíos a todo el país</span><span>Pequeños juguetes, grandes sonrisas</span><span>Pago seguro</span><span>Precios claros</span><span>Juguetes para imaginar y descubrir</span><span>Atención por WhatsApp</span>
+  <span>Envíos a todo el país</span><span>Pequeños juguetes, grandes sonrisas</span><span>Pago seguro</span><span>Precios claros</span><span>Juguetes para imaginar y descubrir</span><span>Atención por WhatsApp</span>
 </div></div>
 
 <!-- ============ Catálogo ============ -->
@@ -772,7 +776,7 @@ footer a:hover{color:var(--cr)}
 <!-- ============ Confianza ============ -->
 <section class="trust"><div class="wrap">
   <div class="ti rv"><div class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 9h11v7H3zM14 12h4l3 3v1h-7zM6.5 19a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6M17.5 19a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6"/></svg></div><b>Envío nacional</b><span>Llegamos a todo el país. El envío se cotiza según tu ciudad.</span></div>
-  <div class="ti rv"><div class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M2 6h20v12H2zM2 10h20M6 14h5"/></svg></div><b>Contra entrega o Nequi</b><span>Paga al recibir o transfiere al 313 243 4760.</span></div>
+  <div class="ti rv"><div class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M2 6h20v12H2zM2 10h20M6 14h5"/></svg></div><b>Contra entrega o Nequi</b><span>Paga al recibir o transfiere al 312 251 3972.</span></div>
   <div class="ti rv"><div class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 9h18v12H3zM2 6h20v3H2zM12 6v15M12 6C9 1 6 3 8 6M12 6c3-5 6-3 4 0"/></svg></div><b>Regalos para cada ocasión</b><span>Opciones por presupuesto y ocasión.</span></div>
   <div class="ti rv"><div class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6zM9 12l2 2 4-4"/></svg></div><b>Calidad cuidada</b><span>Productos seleccionados y revisados antes de despachar.</span></div>
   <div class="ti rv"><div class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></div><b>Atención por WhatsApp</b><span>Pedidos y dudas con respuesta rápida.</span></div>
@@ -782,7 +786,7 @@ footer a:hover{color:var(--cr)}
 <section id="faq"><div class="wrap">
   <div class="rv"><div class="eyebrow">Ayuda</div><h2>Preguntas frecuentes</h2></div>
   <details><summary>¿Hacen envíos a todo el país?</summary><p>Sí, despachamos a todo el país. El costo del envío depende de tu ciudad y lo confirmamos por WhatsApp junto con tu pedido.</p></details>
-  <details><summary>¿Qué medios de pago aceptan?</summary><p>Aceptamos pago contra entrega (pagas al recibir tu pedido) y transferencia por Nequi al 313 243 4760. Confirmamos tu pago por WhatsApp.</p></details>
+  <details><summary>¿Qué medios de pago aceptan?</summary><p>Aceptamos pago contra entrega (pagas al recibir tu pedido) y transferencia por Nequi al 312 251 3972. Confirmamos tu pago por WhatsApp.</p></details>
   <details><summary>¿Cómo hago un cambio o devolución?</summary><p>Escríbenos por WhatsApp dentro de los 5 días hábiles después de recibir tu pedido y coordinamos la solución.</p></details>
   <details><summary>¿Puedo pedir algo que no veo en la tienda?</summary><p>Sí, escríbenos por WhatsApp la referencia o una foto de lo que buscas y lo cotizamos.</p></details>
   <details><summary>¿Puedo enviar mi compra como regalo?</summary><p>Sí: escríbelo en el paso de notas del pedido y lo tenemos en cuenta al preparar tu envío.</p></details>
@@ -798,9 +802,9 @@ footer a:hover{color:var(--cr)}
 <!-- ============ Pie ============ -->
 <footer><div class="wrap">
   <div>
-    <img src="logo_512_light.png" alt="JUGA" style="height:44px;display:block;margin-bottom:10px" onerror="this.style.display='none'"><br>
-    Regalos que despiertan sonrisas,<br>con cariño colombiano.<br>
-    <a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp 313 243 4760</a>
+    <img src="logo_512_light.png" alt="Juguetinstore" style="height:44px;display:block;margin-bottom:10px" onerror="this.style.display='none'"><br>
+    Juguetes para imaginar, descubrir y jugar,<br>con cariño colombiano.<br>
+    <a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp 312 251 3972</a>
   </div>
   <div><b class="h">Tienda</b>
     <button class="flink" onclick="filterProducts('colecciones')">Colecciones y figuras</button>
@@ -822,7 +826,7 @@ footer a:hover{color:var(--cr)}
     <a href="legal.html#datos">Tratamiento de datos</a><br>
     <a href="legal.html#retracto">Derecho de retracto</a>
   </div>
-  <div class="legal" id="footLegal">© JUGA · Hecho con cariño en Colombia.</div>
+  <div class="legal" id="footLegal">© Juguetinstore · Hecho con cariño en Colombia.</div>
 </div></footer>
 
 <!-- ============ Barra de pago y botones flotantes ============ -->
@@ -945,7 +949,7 @@ footer a:hover{color:var(--cr)}
           <label class="po">
             <input type="radio" name="paymentMethod" value="transferencia" onchange="updPay()">
             <span class="poi"><svg class="ic" viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M4 10v9M12 10v9M20 10v9M3 19h18"/></svg></span>
-            <span class="pot"><b>Transferencia Nequi</b><small>Al 313 243 4760 · se confirma por WhatsApp</small></span>
+            <span class="pot"><b>Transferencia Nequi</b><small>Al 312 251 3972 · se confirma por WhatsApp</small></span>
           </label>
         </div>
         <div class="sec fh" data-fase="5">
@@ -1001,16 +1005,16 @@ footer a:hover{color:var(--cr)}
 
       <div class="admin-h">Identidad de la tienda</div>
       <div class="admin-grid">
-        <label class="admin-label">Nombre<input id="adminNombre" placeholder="JUGA"></label>
-        <label class="admin-label">Logo (URL; vacío = logo JUGA)<input id="adminLogo" placeholder="https://…"></label>
-        <label class="admin-label">WhatsApp de pedidos (10 dígitos)<input id="adminWaPedidos" inputmode="numeric" placeholder="3132434760"></label>
-        <label class="admin-label">WhatsApp de atención (vacío = mismo)<input id="adminWaAtencion" inputmode="numeric" placeholder="3132434760"></label>
+        <label class="admin-label">Nombre<input id="adminNombre" placeholder="Juguetinstore"></label>
+        <label class="admin-label">Logo (URL; vacío = logo Juguetinstore)<input id="adminLogo" placeholder="https://…"></label>
+        <label class="admin-label">WhatsApp de pedidos (10 dígitos)<input id="adminWaPedidos" inputmode="numeric" placeholder="3122513972"></label>
+        <label class="admin-label">WhatsApp de atención (vacío = mismo)<input id="adminWaAtencion" inputmode="numeric" placeholder="3122513972"></label>
         <label class="admin-label">Email de contacto<input id="adminEmail" placeholder="tucorreo@ejemplo.com"></label>
       </div>
 
       <div class="admin-h">Datos legales <small>se muestran en la sección legal y el pie</small></div>
       <div class="admin-grid">
-        <label class="admin-label">Razón social<input id="adminRazon" placeholder="Ej. Juga Juguetes S.A.S."></label>
+        <label class="admin-label">Razón social<input id="adminRazon" placeholder="Ej. Juguetinstore S.A.S."></label>
         <label class="admin-label">NIT<input id="adminNit" placeholder="Ej. 901.234.567-8"></label>
         <label class="admin-label">Dirección de atención (opcional)<input id="adminDir" placeholder="Ciudad, dirección"></label>
       </div>
@@ -1102,7 +1106,7 @@ footer a:hover{color:var(--cr)}
       <p class="admin-nota">💡 ¿Token vacío? Pide a tu persona de confianza el <b>enlace de configuración</b> (lo genera el script local <em>generar_enlace_config.py</em> del proyecto): al abrirlo una sola vez, el token queda cargado para siempre en este navegador y el campo nace lleno. El token nunca va escrito dentro del archivo de la página: el repositorio es público y cualquiera podría leerlo.</p>
       <details class="admin-sync-ayuda">
         <summary>¿Cómo consigo ese token?</summary>
-        <p class="admin-nota">En github.com entra a <b>Settings → Developer settings → Fine-grained tokens → Generate new token</b>: en Repository access marca <b>solo el repositorio de la tienda</b> (tiendalunaria/juga) y en Repository permissions elige <b>Contents → Read and write</b>. Genera el token (empieza por <em>github_pat_</em>), cópialo y pégalo arriba: queda guardado únicamente en este navegador. <em>Es un permiso quirúrgico: con ese token solo se pueden cambiar archivos del repositorio — nada más. Igual que la clave del panel, nunca viaja en la configuración publicada.</em></p>
+        <p class="admin-nota">En github.com entra a <b>Settings → Developer settings → Fine-grained tokens → Generate new token</b>: en Repository access marca <b>solo el repositorio de la tienda</b> (juguetinstore/juguetinstore) y en Repository permissions elige <b>Contents → Read and write</b>. Genera el token (empieza por <em>github_pat_</em>), cópialo y pégalo arriba: queda guardado únicamente en este navegador. <em>Es un permiso quirúrgico: con ese token solo se pueden cambiar archivos del repositorio — nada más. Igual que la clave del panel, nunca viaja en la configuración publicada.</em></p>
       </details>
 
       <div class="admin-botones">
@@ -1152,7 +1156,7 @@ footer a:hover{color:var(--cr)}
    CONFIGURACIÓN: edita solo este bloque
    ============================================================ */
 const CONFIG={
-  whatsapp:"573132434760",           // número con indicativo: 57 + 3132434760
+  whatsapp:"573122513972",           // número con indicativo: 57 + 3122513972
   porPagina:60,                      // productos por carga en el catálogo
   vaciarCarritoTrasPedido:true,      // evita enviar el mismo pedido dos veces
   destacado:"mesa-futbol-de-madera",                   // producto de la tarjeta del héroe
@@ -1190,15 +1194,15 @@ const IMG={};
    (inventario propio de la marca; el proceso interno lo cura con
    galerias y variantes de talla/color). El cron de GitHub
    Actions lo actualiza solo: no editar a mano. */
-const CATALOGO_BASE_JUGA=(typeof CATALOGO_JUGA!=="undefined"&&Array.isArray(CATALOGO_JUGA))?CATALOGO_JUGA:[];
+const CATALOGO_BASE_JUGUETINSTORE=(typeof CATALOGO_JUGUETINSTORE!=="undefined"&&Array.isArray(CATALOGO_JUGUETINSTORE))?CATALOGO_JUGUETINSTORE:[];
 
 /* ===== Ajustes editables desde el panel de administración =====
    "Guardar en MI computador" (localStorage) + "Guardar para TODOS" copia estos
    dos bloques para reemplazarlos en el archivo y publicarlos. */
 const TIENDA_DEFECTO={
-  nombre:"JUGA",
+  nombre:"Juguetinstore",
   logo:"logo_120.png",
-  whatsappPedidos:"573132434760",
+  whatsappPedidos:"573122513972",
   whatsappAtencion:"",          // vacío = mismo que pedidos
   razonSocial:"",nit:"",direccion:"",email:"",
   instagram:"",tiktok:"",
@@ -1207,7 +1211,7 @@ const TIENDA_DEFECTO={
   favoritos:"mesa-futbol-de-madera,naruto-x6-anime,carro-armable-x448pcs-control-remoto-pilas-1,caja-cubo-rubik-3x3-cuadritos-qytoys,muneco-pokemon,pista-neon-carro-pila-luz-con-numero,magnetic-chess-caja-2-motivos,burbujero-mil-burbujas-pilas-cj-bubble-gun-4-motivos,rompecabezas-torre-eiffel-x1000-piezas-caja,goku-y-rey-mono,torre-columna-laberinto,domino-doble-9-caja-metalica-2,termo-corona-traslucido-3-colores,huevo-dinosaurio-mediano-crece-en-el-agua",
   pagoContraEntrega:true,
   vaciarCarrito:true,
-  claveAdmin:"JUGA123*",
+  claveAdmin:"Juguetin123*",
   categoriasOcultas:"",
   productosOcultos:"",
   seccionesOcultas:"",
@@ -1215,9 +1219,9 @@ const TIENDA_DEFECTO={
   catalogosOcultos:""
 };
 const PRECIOS_DEFECTO={
-  margenGlobal:0,             /* precio de vitrina de la jugueteria tal cual */
+  margenGlobal:0.4,           /* ganancia global del 40 %: decisión de Juguetinstore */
   multiplicadorBase:1,
-  redondeo:0,
+  redondeo:100,
   margenesPorCategoria:{},
   temporadaIds:[],
   temporadaCats:"",
@@ -1227,7 +1231,7 @@ const PRECIOS_DEFECTO={
   preciosV:2,
   preciosPersonalizados:{}
 };
-const TIENDA_KEY="juga-tienda-v1",PRECIOS_KEY="juga-precios-v1";
+const TIENDA_KEY="juguetinstore-tienda-v1",PRECIOS_KEY="juguetinstore-precios-v1";
 /* ===== Configuración publicada desde el panel ("Publicar para TODOS") =====
    data/configuracion.js lo escribe el PANEL vía la API de GitHub: nadie
    lo edita a mano y TODOS los visitantes la ven sin tocar el archivo de
@@ -1238,7 +1242,7 @@ const TIENDA_KEY="juga-tienda-v1",PRECIOS_KEY="juga-precios-v1";
      nuevo. Si lo publicado trae una versión mayor a la que este
      navegador ya absorbió, manda lo publicado y lo guardado aquí se
      descarta (ya vino incluido o quedó viejo). */
-const BASE_CONFIG_KEY="juga-config-base";
+const BASE_CONFIG_KEY="juguetinstore-config-base";
 const CONFIG_PUBLICA=(typeof window.CONFIG_PUBLICADA!=="undefined"&&window.CONFIG_PUBLICADA)?window.CONFIG_PUBLICADA:null;
 (function absorberConfigPublica(){
   if(!CONFIG_PUBLICA||!CONFIG_PUBLICA.version)return;
@@ -1384,13 +1388,13 @@ function precioFinal(p,hoyOpt){
   return redondearPrecio(p.p*PRECIOS.multiplicadorBase*(1+margen));
 }
 function recargarPrecios(){
-  window.PRODUCTOS=CATALOGO_BASE_JUGA.map(function(p,i){
+  window.PRODUCTOS=CATALOGO_BASE_JUGUETINSTORE.map(function(p,i){
     return Object.assign({},p,{p:precioFinal(p),cid:(p.cid||("JUG-"+String(i+1).padStart(4,"0")))});
   });
   pagina=1;
   renderGrid();initCarouseles();actualizarHero();renderCart();
 }
-window.PRODUCTOS=CATALOGO_BASE_JUGA.map(function(p,i){
+window.PRODUCTOS=CATALOGO_BASE_JUGUETINSTORE.map(function(p,i){
   return Object.assign({},p,{p:precioFinal(p),cid:(p.cid||("JUG-"+String(i+1).padStart(4,"0")))});
 });
 /* ============================================================ */
@@ -1404,14 +1408,14 @@ const ls=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?
 const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
 const prod=id=>PRODUCTOS.find(p=>p.id===id);
 const catEntry=cat=>CATS.find(c=>c.id===cat)||{};
-const softOf=cat=>catEntry(cat).c||"#F7F3E9";
+const softOf=cat=>catEntry(cat).c||"#F5F7FB";
 const labelOf=cat=>catEntry(cat).n||"Otros";
 const iconPath=cat=>catEntry(cat).i||"";
 const productImgs=p=>{if(!p)return[];return [p.img].concat(p.imgs||[]).filter(Boolean);};
 const waLink=t=>"https://wa.me/"+CONFIG.whatsapp+(t?"?text="+encodeURIComponent(t):"");
 function placeholderImg(cat){
   const c=softOf(cat);
-  return "data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="#FFFFFF"/><text x="200" y="278" font-family="Nunito,Arial,sans-serif" font-size="44" font-weight="700" fill="'+c+'" fill-opacity="0.55" text-anchor="middle" letter-spacing="-2">JUGA</text></svg>');
+  return "data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" fill="#FFFFFF"/><text x="200" y="278" font-family="Nunito,Arial,sans-serif" font-size="36" font-weight="800" fill="'+c+'" fill-opacity="0.55" text-anchor="middle" letter-spacing="-2">Juguetinstore</text></svg>');
 }
 /* Respaldo universal de imagenes con cadena de galeria: si la foto falla
    (URL rota), se reintenta con la SIGUIENTE foto de la galeria del
@@ -1455,7 +1459,7 @@ function track(ev,params){
 }
 
 /* ===== Estado ===== */
-let cart=ls("juga-cart",[]),favs=ls("juga-favs",[]),selQty={},selVar={},filter="todo",onlyFav=false,orden="d",pagina=1,listadoActual=[],upsellAbierto=true;
+let cart=ls("juguetinstore-cart",[]),favs=ls("juguetinstore-favs",[]),selQty={},selVar={},filter="todo",onlyFav=false,orden="d",pagina=1,listadoActual=[],upsellAbierto=true;
 function cartResumen(){let count=0,total=0;cart.forEach(it=>{const p=prod(it.id);if(p){count+=it.qty;total+=p.p*it.qty}});return{count:count,total:total};}
 
 /* ===== Navegación y categorías ===== */
@@ -1526,7 +1530,7 @@ function tarjetaHTML(p){
   const id=String(p.id),imgs=productImgs(p),tiene=imgs.length>0,src=tiene?imgs[0]:"",f=favs.includes(p.id),soft=softOf(p.cat);
   return '<article class="card" id="product-'+esc(id)+'" data-cat="'+esc(p.cat)+'">'
   +'<div class="ph'+(tiene?' has-img':'')+'" style="--soft:'+soft+(tiene?";--img:url('"+esc(src)+"')":"")+'" role="button" tabindex="0" aria-label="Ver '+esc(p.n)+'" onclick="verProducto(\''+escJs(id)+'\')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();verProducto(\''+escJs(id)+'\')}">'
-  +(tiene?'<img src="'+esc(src)+'" alt="'+esc(p.n)+'" loading="lazy" decoding="async" onerror="imgOnError(this,\''+escJs(p.cat)+'\',\''+escJs(id)+'\')">':'<b class="mono">JUGA</b>')
+  +(tiene?'<img src="'+esc(src)+'" alt="'+esc(p.n)+'" loading="lazy" decoding="async" onerror="imgOnError(this,\''+escJs(p.cat)+'\',\''+escJs(id)+'\')">':'<b class="mono">Juguetinstore</b>')
   +'<button class="fav'+(f?' on':'')+'" type="button" aria-pressed="'+f+'" aria-label="Favorito: '+esc(p.n)+'" onclick="event.stopPropagation();toggleFav(\''+escJs(id)+'\')"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10C19.5 15.4 12 20 12 20z"/></svg></button>'
   +'<button class="qadd" type="button" aria-label="Agregar una unidad de '+esc(p.n)+' al carrito" onclick="event.stopPropagation();quickAdd(\''+escJs(id)+'\')"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>'
   +'</div>'
@@ -1618,7 +1622,7 @@ function quickAdd(id,abrir){
 function toggleFav(id){
   const i=favs.indexOf(id);
   if(i>=0)favs.splice(i,1);else favs.push(id);
-  sv("juga-favs",favs);
+  sv("juguetinstore-favs",favs);
   $("favCount").textContent=favs.length;
   const card=$("product-"+id);
   if(card){const b=card.querySelector(".fav");if(b){const on=favs.includes(id);b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);}}
@@ -1658,7 +1662,7 @@ function volarAlCarrito(id){
     if(!destino||!dr.width)return false;
     const ir=img.getBoundingClientRect();
     const clon=img.cloneNode(false);
-    clon.className="juga-fly";
+    clon.className="juguetinstore-fly";
     clon.removeAttribute("id");
     clon.removeAttribute("loading");
     clon.removeAttribute("decoding");
@@ -1684,7 +1688,7 @@ function addToCart(id,qty,vari){
   const k=varKey(vari||null);
   const it=cart.find(x=>x.id===id&&varKey(x.var)===k);
   if(it)it.qty+=qty;else cart.push({id:id,qty:qty,var:vari||null});
-  sv("juga-cart",cart);
+  sv("juguetinstore-cart",cart);
   const p=prod(id);
   if(p)track("AddToCart",{content_name:p.n,content_type:"product",content_ids:[id],contents:[{id:id,quantity:qty,item_price:p.p}],num_items:qty,value:p.p*qty,currency:"COP"});
   renderCart();
@@ -1695,10 +1699,10 @@ function updateCartQty(i,d){
   const it=cart[i];if(!it)return;
   it.qty+=d;
   if(it.qty<=0)cart.splice(i,1);
-  sv("juga-cart",cart);renderCart();
+  sv("juguetinstore-cart",cart);renderCart();
 }
-function removeCartItem(i){cart.splice(i,1);sv("juga-cart",cart);renderCart();}
-function vaciarCarrito(){cart=[];selQty={};sv("juga-cart",cart);renderCart();}
+function removeCartItem(i){cart.splice(i,1);sv("juguetinstore-cart",cart);renderCart();}
+function vaciarCarrito(){cart=[];selQty={};sv("juguetinstore-cart",cart);renderCart();}
 function updateCounts(){
   const n=cart.reduce((s,i)=>s+i.qty,0);
   [["cartCount",n],["floatingCartCount",n]].forEach(par=>{
@@ -1764,7 +1768,7 @@ function sugeridosPorTicket(enCarrito){
 const TIER={mismo:["Combina","b"],combo:["Complemento","m"]};
 function miniThumb(p){
   const imgs=productImgs(p),soft=softOf(p.cat);
-  return '<span class="th"'+(imgs.length?' style="background-image:url(\''+esc(imgs[0])+'\')"':"")+'>'+(imgs.length?"":"<b>JUGA</b>")+'</span>';
+  return '<span class="th"'+(imgs.length?' style="background-image:url(\''+esc(imgs[0])+'\')"':"")+'>'+(imgs.length?"":"<b>Juguetín</b>")+'</span>';
 }
 function renderCart(){
   const box=$("cartItems");
@@ -1940,11 +1944,11 @@ function sendOrder(){
   const nombre=val("customerName"),tel=val("customerPhone").replace(/\D/g,""),email=val("customerEmail");
   const dep=val("customerDept"),ciudad=val("customerCity"),barrio=val("customerHood"),dir=val("customerAddress"),notas=val("orderNotes");
   const pago=(document.querySelector('input[name="paymentMethod"]:checked')||{value:"contra-entrega"}).value;
-  const labels={"contra-entrega":"Contra entrega (paga al recibir)","transferencia":"Transferencia Nequi al 313 243 4760 (se confirma por WhatsApp)"};
+  const labels={"contra-entrega":"Contra entrega (paga al recibir)","transferencia":"Transferencia Nequi al 312 251 3972 (se confirma por WhatsApp)"};
   const s=cartResumen();
   /* WhatsApp formatea *texto* como negrita: da jerarquia al pedido */
   const consec=consecutivoPedido();
-  let m="*PEDIDO — JUGA* · No. "+consec+"\n\n";
+  let m="*PEDIDO — Juguetinstore* · No. "+consec+"\n\n";
   m+="*Cliente:* "+nombre+"\n*WhatsApp:* +57 "+tel+"\n";
   if(email)m+="*Email:* "+email+"\n";
   m+="\n*Entrega:* A domicilio\nDepartamento: "+dep+"\nCiudad: "+ciudad+"\n";
@@ -1952,7 +1956,7 @@ function sendOrder(){
   m+="Dirección: "+dir+"\n";
   m+="\n*Pago:* "+(labels[pago]||pago)+"\n\n*Productos:*\n";
   let urlBase="";
-  try{urlBase=location.origin+location.pathname;}catch(e){urlBase="https://tiendalunaria.github.io/juga/";}
+  try{urlBase=location.origin+location.pathname;}catch(e){urlBase="https://juguetinstore.github.io/juguetinstore/";}
   cart.forEach(function(it){
     const p=prod(it.id);
     if(!p)return;
@@ -2008,10 +2012,10 @@ function cargarImagenPedido(src){
 function consecutivoPedido(){
   const hoy=new Date().toISOString().slice(0,10);
   let c=null;
-  try{c=JSON.parse(localStorage.getItem("jugaPedSeq"))||null;}catch(e){}
+  try{c=JSON.parse(localStorage.getItem("juguetinstorePedSeq"))||null;}catch(e){}
   if(!c||c.fecha!==hoy)c={fecha:hoy,seq:0};
   c.seq+=1;
-  try{localStorage.setItem("jugaPedSeq",JSON.stringify(c));}catch(e){}
+  try{localStorage.setItem("juguetinstorePedSeq",JSON.stringify(c));}catch(e){}
   return "PED-"+hoy.replace(/-/g,"")+"-"+String(c.seq).padStart(3,"0");
 }
 /* Corta un texto con elipsis para que nunca exceda maxW pixeles. */
@@ -2053,25 +2057,25 @@ async function crearHojaPedido(consec){
     cv.width=1080;cv.height=alto;
     const cx=cv.getContext("2d");
     if(!cx)return null;
-    cx.fillStyle="#F7F3E9";cx.fillRect(0,0,1080,alto);
+    cx.fillStyle="#F5F7FB";cx.fillRect(0,0,1080,alto);
     /* ===== Encabezado ===== */
     const logo=new Image();
     logo.src="logo_512.png";
     try{await logo.decode();}catch(e){}
     if(logo.width)cx.drawImage(logo,60,46,132,132);
-    cx.fillStyle="#F2B832";cx.fillRect(600,58,420,86);
-    cx.fillStyle="#24558A";cx.font="700 33px 'Baloo 2', Arial, sans-serif";
+    cx.fillStyle="#FFC107";cx.fillRect(600,58,420,86);
+    cx.fillStyle="#1F2A44";cx.font="700 33px 'Nunito', Arial, sans-serif";
     cx.textAlign="center";
     cx.fillText("No. "+(consec||consecutivoPedido()),810,113);
     cx.textAlign="right";
-    cx.fillStyle="#657386";cx.font="500 27px Nunito, Arial, sans-serif";
+    cx.fillStyle="#5B6B85";cx.font="500 27px Montserrat, Arial, sans-serif";
     cx.fillText(new Date().toLocaleDateString("es-CO")+" · "+new Date().toLocaleTimeString("es-CO",{hour:"2-digit",minute:"2-digit"}),1020,180);
     cx.textAlign="left";
-    cx.fillStyle="#24558A";cx.font="700 62px 'Baloo 2', Arial, sans-serif";
+    cx.fillStyle="#1F2A44";cx.font="700 62px 'Nunito', Arial, sans-serif";
     cx.fillText("PEDIDO",60,252);
-    cx.fillStyle="#657386";cx.font="500 28px Nunito, Arial, sans-serif";
-    cx.fillText("JUGA · Regalos que despiertan sonrisas",60,294);
-    cx.fillStyle="#F2B832";cx.fillRect(60,330,960,6);
+    cx.fillStyle="#5B6B85";cx.font="500 28px Montserrat, Arial, sans-serif";
+    cx.fillText("Juguetinstore · ¡Cada juguete, una nueva aventura!",60,294);
+    cx.fillStyle="#FFC107";cx.fillRect(60,330,960,6);
     /* ===== Filas de productos ===== */
     let y=380;
     for(let i=0;i<items.length;i++){
@@ -2086,15 +2090,15 @@ async function crearHojaPedido(consec){
         cx.drawImage(im,60+(150-w)/2,y+(150-h)/2,w,h);
       }else{
         cx.fillStyle=softOf(p.cat);cx.fillRect(60,y,150,150);
-        cx.fillStyle="#24558A2e";cx.font="700 30px 'Baloo 2', Arial, sans-serif";
-        cx.textAlign="center";cx.fillText("JUGA",135,y+95);cx.textAlign="left";
+        cx.fillStyle="#1F2A442e";cx.font="700 24px 'Nunito', Arial, sans-serif";
+        cx.textAlign="center";cx.fillText("Juguetín",135,y+95);cx.textAlign="left";
       }
       /* columna de texto (248..748): nombre en 2 lineas + refs + variante */
-      cx.fillStyle="#24558A";cx.font="600 36px Nunito, Arial, sans-serif";
+      cx.fillStyle="#1F2A44";cx.font="600 36px Montserrat, Arial, sans-serif";
       const nombre=envolverLineas(cx,p.n,500,2);
       cx.fillText(nombre[0],248,y+46);
       if(nombre[1])cx.fillText(nombre[1],248,y+88);
-      cx.fillStyle="#657386";cx.font="500 26px Nunito, Arial, sans-serif";
+      cx.fillStyle="#5B6B85";cx.font="500 26px Montserrat, Arial, sans-serif";
       let refParts=[];
       if(p.cid)refParts.push("Cat: "+p.cid);
       if(p.sku)refParts.push("Ref: "+p.sku);
@@ -2106,33 +2110,33 @@ async function crearHojaPedido(consec){
       }
       /* columna de precios (750..1020): cant x total + c/u */
       cx.textAlign="right";
-      cx.fillStyle="#24558A";cx.font="700 36px 'Baloo 2', Arial, sans-serif";
+      cx.fillStyle="#1F2A44";cx.font="700 36px 'Nunito', Arial, sans-serif";
       cx.fillText(cortarTexto(cx,it.qty+" × "+cop(p.p*it.qty),266),1020,y+58);
       if(it.qty>1){
-        cx.fillStyle="#657386";cx.font="500 26px Nunito, Arial, sans-serif";
+        cx.fillStyle="#5B6B85";cx.font="500 26px Montserrat, Arial, sans-serif";
         cx.fillText(cortarTexto(cx,cop(p.p)+" c/u",240),1020,y+100);
       }
       cx.textAlign="left";
-      cx.fillStyle="#EBDFC8";cx.fillRect(60,y+176,960,2);
+      cx.fillStyle="#DCE4F5";cx.fillRect(60,y+176,960,2);
       y+=200;
     }
     /* ===== Pie ===== */
     let fTotal=0,fCount=0;
     items.forEach(function(it){const p=prod(it.id);if(p){fTotal+=p.p*it.qty;fCount+=it.qty;}});
-    cx.fillStyle="#24558A";cx.font="700 50px 'Baloo 2', Arial, sans-serif";
+    cx.fillStyle="#1F2A44";cx.font="700 50px 'Nunito', Arial, sans-serif";
     cx.fillText("TOTAL PRODUCTOS",60,y+58);
     cx.textAlign="right";cx.fillText(cop(fTotal),1020,y+58);cx.textAlign="left";
-    cx.fillStyle="#657386";cx.font="500 28px Nunito, Arial, sans-serif";
+    cx.fillStyle="#5B6B85";cx.font="500 28px Montserrat, Arial, sans-serif";
     cx.fillText(cortarTexto(cx,fCount+" unidad"+(fCount===1?"":"es")+" · Envío pagado: se cotiza según la ciudad",920),60,y+108);
-    cx.fillText("Pago: contra entrega · Nequi 313 243 4760",60,y+148);
-    cx.fillStyle="#F2B832";cx.fillRect(60,y+186,960,4);
-    cx.fillStyle="#24558A";cx.font="700 36px 'Baloo 2', Arial, sans-serif";
+    cx.fillText("Pago: contra entrega · Nequi 312 251 3972",60,y+148);
+    cx.fillStyle="#FFC107";cx.fillRect(60,y+186,960,4);
+    cx.fillStyle="#1F2A44";cx.font="700 36px 'Nunito', Arial, sans-serif";
     cx.textAlign="center";cx.fillText("¡Gracias por tu compra!",540,y+244);
-    cx.fillStyle="#657386";cx.font="500 26px Nunito, Arial, sans-serif";
-    cx.fillText(cortarTexto(cx,"WhatsApp +57 313 243 4760 · No. "+(consec||""),900),540,y+286);
+    cx.fillStyle="#5B6B85";cx.font="500 26px Montserrat, Arial, sans-serif";
+    cx.fillText(cortarTexto(cx,"WhatsApp +57 312 251 3972 · No. "+(consec||""),900),540,y+286);
     cx.textAlign="left";
     const blob=await new Promise(function(res){cv.toBlob(res,"image/png");});
-    return new File([blob],"pedido-juga.png",{type:"image/png"});
+    return new File([blob],"pedido-juguetinstore.png",{type:"image/png"});
   }catch(e){return null;}
 }
 
@@ -2152,7 +2156,7 @@ function descargarHoja(hoja){
   try{
     const url=URL.createObjectURL(hoja);
     const a=document.createElement("a");
-    a.href=url;a.download="pedido-juga.png";
+    a.href=url;a.download="pedido-juguetinstore.png";
     document.body.appendChild(a);a.click();a.remove();
     setTimeout(function(){URL.revokeObjectURL(url);},5000);
     showToast("Hoja del pedido descargada: adjúntala en el chat para un alistamiento más rápido");
@@ -2247,8 +2251,8 @@ function searchProducts(){
   const r=todos.slice(0,8);
   box.innerHTML=r.length?r.map(p=>{
     const imgs=productImgs(p);
-    return '<button type="button" class="sri" onclick="scrollToProduct(\''+escJs(p.id)+'\')"><span class="srt"'+(imgs.length?' style="background-image:url(\''+esc(imgs[0])+'\')"':"")+'>'+(imgs.length?"":"JUGA")+'</span><span><b>'+esc(p.n)+'</b><i>'+cop(p.p)+' · '+esc(labelOf(p.cat))+'</i></span></button>';
-  }).join("")+(todos.length>8?'<div class="sri" style="cursor:default;opacity:.75"><span class="srt" style="background:var(--cr)">+'+(todos.length-8)+'</span><span><b>'+(todos.length-8)+' resultados más</b><i>Sigue escribiendo para afinar la búsqueda</i></span></div>':""):'<div class="sri"><span class="srt" style="background-color:var(--cr)">JUGA</span><span><b>Sin resultados</b><i>Prueba con otra palabra</i></span></div>';
+    return '<button type="button" class="sri" onclick="scrollToProduct(\''+escJs(p.id)+'\')"><span class="srt"'+(imgs.length?' style="background-image:url(\''+esc(imgs[0])+'\')"':"")+'>'+(imgs.length?"":"Juguetín")+'</span><span><b>'+esc(p.n)+'</b><i>'+cop(p.p)+' · '+esc(labelOf(p.cat))+'</i></span></button>';
+  }).join("")+(todos.length>8?'<div class="sri" style="cursor:default;opacity:.75"><span class="srt" style="background:var(--cr)">+'+(todos.length-8)+'</span><span><b>'+(todos.length-8)+' resultados más</b><i>Sigue escribiendo para afinar la búsqueda</i></span></div>':""):'<div class="sri"><span class="srt" style="background-color:var(--cr)">Juguetín</span><span><b>Sin resultados</b><i>Prueba con otra palabra</i></span></div>';
   box.style.display="block";
 }
 function hideSearch(){$("searchResults").style.display="none";}
@@ -2328,7 +2332,7 @@ function catsVisiblesTexto(max){
   return vivas.slice(0,n).map(c=>c.n).join(" · ")+(vivas.length>n?" y más":"");
 }
 function textoCompartirTienda(){
-  return "JUGA — "+catsVisiblesTexto(4)+". Regalos que despiertan sonrisas. Envíos a toda Colombia. Paga contra entrega o por Nequi.";
+  return "Juguetinstore — "+catsVisiblesTexto(4)+". ¡Cada juguete, una nueva aventura!. Envíos a toda Colombia. Paga contra entrega o por Nequi.";
 }
 async function shareCatalog(){
   let url="";try{url=location.origin+location.pathname;}catch(e){url=location.href;}
@@ -2342,7 +2346,7 @@ async function shareCatalog(){
         await navigator.share({text:url,files:[tarjeta]});
         return;
       }
-      await navigator.share({title:"JUGA",text:textoCompartirTienda(),url:url});
+      await navigator.share({title:"Juguetinstore",text:textoCompartirTienda(),url:url});
       return;
     }
   }catch(e){}
@@ -2360,35 +2364,35 @@ async function shareCatalog(){
 async function crearTarjetaCompartir(){
   try{
     const logo=new Image();logo.src="logo_512.png";
-    const qr=new Image();qr.src="qr_juga.png"; /* apunta a https://tiendalunaria.github.io/juga/ */
+    const qr=new Image();qr.src="qr_juguetinstore.png"; /* apunta a https://juguetinstore.github.io/juguetinstore/ */
     try{await logo.decode();}catch(e){}
     try{await qr.decode();}catch(e){}
     const cv=document.createElement("canvas");
     cv.width=1080;cv.height=1080;
     const cx=cv.getContext("2d");
     if(!cx)return null;
-    cx.fillStyle="#F7F3E9";cx.fillRect(0,0,1080,1080);
+    cx.fillStyle="#F5F7FB";cx.fillRect(0,0,1080,1080);
     cx.textAlign="center";
     if(logo.width)cx.drawImage(logo,390,70,300,300);
-    cx.fillStyle="#24558A";
-    cx.font="700 47px 'Baloo 2', Arial, sans-serif";
-    cx.fillText("Regalos que",540,455);
-    cx.fillText("despiertan sonrisas",540,512);
-    cx.fillStyle="#657386";cx.font="500 29px Nunito, Arial, sans-serif";
+    cx.fillStyle="#1F2A44";
+    cx.font="700 47px 'Nunito', Arial, sans-serif";
+    cx.fillText("¡Cada juguete,",540,455);
+    cx.fillText("una nueva aventura!",540,512);
+    cx.fillStyle="#5B6B85";cx.font="500 29px Montserrat, Arial, sans-serif";
     cx.fillText(cortarTexto(cx,catsVisiblesTexto(4),980),540,568);
-    cx.fillStyle="#F2B832";cx.fillRect(440,600,200,5);
+    cx.fillStyle="#FFC107";cx.fillRect(440,600,200,5);
     /* QR sobre fondo blanco: escanea y entra a la tienda */
     cx.fillStyle="#FFFFFF";cx.fillRect(390,632,300,300);
     if(qr.width)cx.drawImage(qr,415,657,250,250);
-    cx.fillStyle="#657386";cx.font="600 27px Nunito, Arial, sans-serif";
+    cx.fillStyle="#5B6B85";cx.font="600 27px Montserrat, Arial, sans-serif";
     cx.fillText("Escanea y descubre el catálogo",540,965);
     /* insignia amarilla con la URL */
-    cx.fillStyle="#F2B832";cx.fillRect(260,990,540,64);
-    cx.fillStyle="#24558A";cx.font="700 34px 'Baloo 2', Arial, sans-serif";
+    cx.fillStyle="#FFC107";cx.fillRect(260,990,540,64);
+    cx.fillStyle="#1F2A44";cx.font="700 34px 'Nunito', Arial, sans-serif";
     let url="";try{url=location.origin+location.pathname;}catch(e){url=location.href;}
-    cx.fillText((url||"tiendalunaria.github.io/juga").replace(/^https?:\/\//,"").replace(/\/$/,""),540,1033);
+    cx.fillText((url||"juguetinstore.github.io/juguetinstore").replace(/^https?:\/\//,"").replace(/\/$/,""),540,1033);
     const blob=await new Promise(function(res){cv.toBlob(res,"image/png");});
-    return new File([blob],"juga-tienda.png",{type:"image/png"});
+    return new File([blob],"juguetinstore-tienda.png",{type:"image/png"});
   }catch(e){return null;}
 }
 
@@ -2399,7 +2403,7 @@ function crearItemCarro(p){
   d.setAttribute("aria-label","Ver "+p.n);
   const imgs=productImgs(p),tiene=imgs.length>0,soft=softOf(p.cat);
   d.innerHTML='<div class="cfr ph'+(tiene?" has-img":"")+'" style="--soft:'+soft+(tiene?";--img:url('"+esc(imgs[0])+"')":"")+'">'
-  +(tiene?'<img src="'+esc(imgs[0])+'" alt="'+esc(p.n)+'" loading="lazy" decoding="async" onerror="imgOnError(this,\''+escJs(p.cat)+'\',\''+escJs(String(p.id))+'\')">':'<b class="mono">JUGA</b>')
+  +(tiene?'<img src="'+esc(imgs[0])+'" alt="'+esc(p.n)+'" loading="lazy" decoding="async" onerror="imgOnError(this,\''+escJs(p.cat)+'\',\''+escJs(String(p.id))+'\')">':'<b class="mono">Juguetinstore</b>')
   +'<span class="cbg">'+esc(labelOf(p.cat))+'</span>'
   +'<div class="cov"><b>'+esc(p.n)+'</b><span>'+cop(p.p)+'</span></div></div>';
   d.addEventListener("click",()=>scrollToProduct(p.id));
@@ -2645,14 +2649,14 @@ function compactarHeader(){
 
 /* ===== Identidad en vivo (nombre, logo, legal, enlaces) ===== */
 function aplicarIdentidad(){
-  const nombre=TIENDA.nombre||"JUGA";
-  /* El texto junto al logo es el ESLOGAN (el logo ya dice JUGA: repetirlo
+  const nombre=TIENDA.nombre||"Juguetinstore";
+  /* El texto junto al logo es el ESLOGAN (el logo ya dice el nombre: repetirlo
      era redundante); el nombre configurable sigue en el titulo, el footer
      y los saludos de WhatsApp. */
-  $("brandTxt").textContent="Regalos que despiertan sonrisas";
+  $("brandTxt").textContent="¡Cada juguete, una nueva aventura!";
   const limg=document.querySelector(".brand img");
   if(limg){limg.src=TIENDA.logo||TIENDA_DEFECTO.logo;limg.onerror=function(){limg.style.display="none";};limg.style.display="";}
-  document.title=nombre+" — Regalos que despiertan sonrisas";
+  document.title=nombre+" — ¡Cada juguete, una nueva aventura!";
   const waPed=TIENDA.whatsappPedidos||TIENDA_DEFECTO.whatsappPedidos;
   const waAte=TIENDA.whatsappAtencion||waPed;
   /* Mensajes de CONTACTO (no pedidos): contextual por punto de entrada y
@@ -2667,9 +2671,9 @@ function aplicarIdentidad(){
   };
   Object.keys(saludos).forEach(function(id){const e=$(id);if(e)e.href="https://wa.me/"+waAte+"?text="+encodeURIComponent(saludos[id]);});
   /* seccion legal */
-  const razon=$("legRazon");if(razon)razon.textContent=TIENDA.razonSocial||"JUGA";
+  const razon=$("legRazon");if(razon)razon.textContent=TIENDA.razonSocial||"Juguetinstore";
   const datos=[];
-  datos.push({t:TIENDA.razonSocial||"JUGA",i:"M3 21h18M5 21V10l7-7 7 7v11M9 21v-6h6v6"});
+  datos.push({t:TIENDA.razonSocial||"Juguetinstore",i:"M3 21h18M5 21V10l7-7 7 7v11M9 21v-6h6v6"});
   if(TIENDA.nit)datos.push({t:"NIT "+TIENDA.nit,i:"M4 9h16v12H4zM4 6h16v3H4M9 9h6"});
   if(TIENDA.direccion)datos.push({t:TIENDA.direccion,i:"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 12l3.5-3.5"});
   if(TIENDA.email)datos.push({t:TIENDA.email,i:"M3 6h18v12H3zM3 6l9 7 9-7"});
@@ -2677,7 +2681,7 @@ function aplicarIdentidad(){
   const ld=$("legalData");
   if(ld)ld.innerHTML=datos.map(function(d){return '<span class="ld-chip"><svg class="ic" viewBox="0 0 24 24"><path d="'+d.i+'"/></svg>'+esc(d.t)+'</span>';}).join("");
   const fl=$("footLegal");
-  if(fl)fl.innerHTML="© "+new Date().getFullYear()+" "+(TIENDA.razonSocial||nombre)+(TIENDA.nit?(" · NIT "+TIENDA.nit):"")+' · Hecho con <img src="logo_120_light.png" alt="JUGA" style="height:14px;vertical-align:-2px" onerror="this.remove()"> en Colombia.';
+  if(fl)fl.innerHTML="© "+new Date().getFullYear()+" "+(TIENDA.razonSocial||nombre)+(TIENDA.nit?(" · NIT "+TIENDA.nit):"")+' · Hecho con <img src="logo_120_light.png" alt="Juguetinstore" style="height:14px;vertical-align:-2px" onerror="this.remove()"> en Colombia.';
 }
 function fmtWa(n){const d=String(n||"").replace(/\D/g,"").replace(/^57/,"");return d.replace(/(\d{3})(\d{3})(\d{4})/,"$1 $2 $3");}
 function normWa(v){const d=String(v||"").replace(/\D/g,"");if(!d)return"";if(d.length===10)return "57"+d;return d;}
@@ -2741,7 +2745,7 @@ function aplicarContraEntrega(){
 }
 
 /* ===== Panel de administración ===== */
-function sesionAdmin(){try{return sessionStorage.getItem("juga-admin")==="1";}catch(e){return false;}}
+function sesionAdmin(){try{return sessionStorage.getItem("juguetinstore-admin")==="1";}catch(e){return false;}}
 function intentarAbrirAdmin(){sesionAdmin()?abrirPanelAdmin():mostrarLoginAdmin();}
 function mostrarLoginAdmin(){
   const m=$("adminLoginModal");if(!m)return;
@@ -2753,7 +2757,7 @@ function cerrarLoginAdmin(){$("adminLoginModal").classList.remove("show");}
 function entrarAdmin(){
   const c=$("adminClave").value;
   if(c&&c===TIENDA.claveAdmin){
-    try{sessionStorage.setItem("juga-admin","1");}catch(e){}
+    try{sessionStorage.setItem("juguetinstore-admin","1");}catch(e){}
     cerrarLoginAdmin();abrirPanelAdmin();
     showToast("Bienvenido al panel de la tienda");
   }else{
@@ -2763,7 +2767,7 @@ function entrarAdmin(){
     $("adminClave").value="";
   }
 }
-function cerrarSesionAdmin(){try{sessionStorage.removeItem("juga-admin");}catch(e){}cerrarPanelAdmin();showToast("Sesión cerrada");}
+function cerrarSesionAdmin(){try{sessionStorage.removeItem("juguetinstore-admin");}catch(e){}cerrarPanelAdmin();showToast("Sesión cerrada");}
 function abrirPanelAdmin(){
   pintarPanelAdmin();
   $("adminModal").classList.add("show");
@@ -2828,7 +2832,7 @@ function pintarHeroAdmin(){
     ids.forEach(function(id,i){
       const p=window.PRODUCTOS.find(function(x){return x.id===id;});
       if(!p)return;
-      h+='<div class="admin-fila" style="background:#F7EDE7;border-color:#EBDFC8">'
+      h+='<div class="admin-fila" style="background:#E9F0FB;border-color:#DCE4F5">'
         +'<img src="'+p.img+'" alt="" style="width:34px;height:34px;object-fit:cover;border-radius:8px">'
         +'<span class="an">'+(i+1)+'. '+esc(p.n.slice(0,30))+'</span>'
         +'<span style="font:600 12px Nunito">'+cop(p.p)+'</span>'
@@ -2848,7 +2852,7 @@ function pintarFavoritosAdmin(){
     ids.forEach(function(id){
       const p=window.PRODUCTOS.find(function(x){return x.id===id;});
       if(!p)return;
-      h+='<div class="admin-fila" style="background:#F7EDE7;border-color:#EBDFC8">'
+      h+='<div class="admin-fila" style="background:#E9F0FB;border-color:#DCE4F5">'
         +'<img src="'+p.img+'" alt="" style="width:34px;height:34px;object-fit:cover;border-radius:8px">'
         +'<span class="an">'+esc(p.n.slice(0,30))+'</span>'
         +'<span style="font:600 12px Nunito">'+cop(p.p)+'</span>'
@@ -2867,7 +2871,7 @@ function pintarFijadosAdmin(){
     h='<p style="font:600 12px Nunito;color:var(--mu);margin:0 0 6px">PRECIOS FIJOS ('+ids.length+'):</p>';
     ids.forEach(function(id){
       const p=window.PRODUCTOS.find(function(x){return x.id===id;});
-      h+='<div class="admin-fila" style="background:#F7EDE7"><span class="an">'+esc(p?p.n:id)+'</span><span style="font:700 12px Nunito">'+cop(PRECIOS.preciosPersonalizados[id])+'</span><button class="admin-btn quitar" type="button" onclick="quitarFijadoAdmin(\''+escJs(id)+'\')">Quitar</button></div>';
+      h+='<div class="admin-fila" style="background:#E9F0FB"><span class="an">'+esc(p?p.n:id)+'</span><span style="font:700 12px Nunito">'+cop(PRECIOS.preciosPersonalizados[id])+'</span><button class="admin-btn quitar" type="button" onclick="quitarFijadoAdmin(\''+escJs(id)+'\')">Quitar</button></div>';
     });
   }
   $("adminFijados").innerHTML=h;
@@ -3219,8 +3223,8 @@ function copiarConfigAdmin(){
    visitantes en ~1 minuto. Escribiendo ese archivo ya no hace falta
    pedirle a nadie que edite la página. La clave del panel NUNCA se
    publica (queda de fábrica en el archivo o guardada en cada navegador). */
-const GITHUB_TOKEN_KEY="juga-github-token";
-const REPO_API="https://api.github.com/repos/tiendalunaria/juga";
+const GITHUB_TOKEN_KEY="juguetinstore-github-token";
+const REPO_API="https://api.github.com/repos/juguetinstore/juguetinstore";
 function leerTokenGitHub(){
   try{return localStorage.getItem(GITHUB_TOKEN_KEY)||"";}catch(e){return "";}
 }
@@ -3278,7 +3282,7 @@ async function publicarConfigAdmin(){
     const cuerpo={version:version,tienda:tiendaSinClave,precios:PRECIOS};
     const contenido='// Configuración de la tienda publicada desde el panel de administración\n'
       +'// (botón "Publicar para TODOS"). Se aplica a TODOS los visitantes de\n'
-      +'// https://tiendalunaria.github.io/juga/ — nadie necesita editar este archivo a mano.\n'
+      +'// https://juguetinstore.github.io/juguetinstore/ — nadie necesita editar este archivo a mano.\n'
       +'window.CONFIG_PUBLICADA = '+JSON.stringify(cuerpo,null,2)+';\n';
     const b64=ab64(new TextEncoder().encode(contenido));
     const encabezados={Authorization:"Bearer "+token,Accept:"application/vnd.github+json"};

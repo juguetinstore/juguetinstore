@@ -1,7 +1,7 @@
-# JUGA — Plan de Auditoría E2E y QA
+# Juguetinstore — Plan de Auditoría E2E y QA
 
-**Versión:** 1.0 · **Fecha:** octubre 2026 · **Alcance:** todo el sistema publicado
-(https://tiendalunaria.github.io/juga/) y su pipeline.
+**Versión:** 1.1 · **Fecha:** octubre 2026 · **Alcance:** todo el sistema publicado
+(https://juguetinstore.github.io/juguetinstore/) y su pipeline.
 
 > Objetivo: garantizar que la tienda venda bien, cobre bien y no se caiga.
 > Prioridad de riesgos: (1) cobrar mal, (2) catálogo roto, (3) pedido no llega
@@ -31,9 +31,10 @@
   `style="…" "Cormorant Garamond"…` rompía el atributo sin romper la página).
 - `node --check` sobre JS inline extraído y sobre `catalogo.js`.
 - Todos los recursos locales existen: `logo_120.png`, `logo_512*.png`,
-  `favicon*`, `apple-touch-icon.png`, `og.png`, `qr_juga.png`.
-- Cero referencias a la marca vieja: grep `C99BA6|4B4141|FFF9F2|E9D9C8|Cormorant|Montserrat|LUNARIA|La comodidad comienza en casa`
-  debe dar 0 en `index.html`/`legal.html` (en MDs solo permitido como línea secundaria).
+  `favicon*`, `apple-touch-icon.png`, `og.png`, `qr_juguetinstore.png`.
+- Cero referencias a las marcas viejas (LUNARIA y JUGA): grep `C99BA6|4B4141|FFF9F2|E9D9C8|Cormorant|24558A|F7F3E9|F2B832|EBDFC8|657386|654800|E96D5C|237A57|Baloo 2|LUNARIA|La comodidad comienza en casa|JUGA|Regalos que despiertan sonrisas`
+  debe dar 0 en `index.html`/`legal.html` (en MDs solo permitido como línea
+  histórica del registro de corridas).
 - Secretos: `git ls-files` NO contiene `GitHub.txt`, `Gmail.txt`, tokens `github_pat_…`.
 
 ### L1 — Pipeline del sync (cada cambio del script + 1 vez por semana)
@@ -47,7 +48,7 @@ Verificaciones:
 - [ ] Ningún número `JUG-` reutilizado: nuevos códigos no existen en el histórico del repo.
 - [ ] Precios: `venta == precioFinal(base)` — base = Precio 2 de vitrina, por
   encima de la tienda física (saldosjugueteriataiwan.com vende al Precio 2
-  exacto) — con la estrategia publicada (margen global 30 %, redondeo $100)
+  exacto) — con la estrategia publicada (margen global 40 %, redondeo $100)
   para todo el catálogo.
 - [ ] Sin precios fuera de rango (< $200 o > $600.000) en el catálogo final.
 - [ ] Fuente leída completa (clon local del repo de la juguetería o URL crudo) sin cambios de esquema.
@@ -83,7 +84,7 @@ C0–C6, héroe/favoritos D0–D6…). Complementos NUEVOS:
   `pull --rebase` del workflow absorbe sin conflicto (simular con 2 commits).
 
 ### L4 — Producción (smoke después de cada deploy + 1 vez/día)
-Contra https://tiendalunaria.github.io/juga/ (solo lectura, sin comprar):
+Contra https://juguetinstore.github.io/juguetinstore/ (solo lectura, sin comprar):
 - [ ] HTTP 200 en `/`, `/catalogo.js`, `/data/configuracion.js`, `/legal.html` y los 10 activos de marca.
 - [ ] `catalogo.js` parsea con ≥ 1500 juguetes; vitrina dentro de rango ($200–$600.000).
 - [ ] Precio FINAL (vitrina × (1+margen publicado) + redondeo) dentro de rango: el
@@ -95,7 +96,7 @@ Contra https://tiendalunaria.github.io/juga/ (solo lectura, sin comprar):
 
 ### L5 — No funcionales (1 vez por mes y antes de cada temporada)
 - **Móvil real**: iPhone SE y Android gama media (Chrome): carrito, checkout, WhatsApp.
-- **Accesibilidad**: contraste AA (texto `#654800` sobre amarillo `#F2B832` ✓; azul `#24558A` sobre crema `#F7F3E9` ✓),
+- **Accesibilidad**: contraste AA (texto `#1F2A44` sobre amarillo `#FFC107` ✓; azul profundo `#1F2A44` sobre blanco nube `#F5F7FB` ✓; botones azules `#377DFF` con texto blanco en peso 600),
   foco visible, navegación por teclado del checkout completo, `aria-label` en iconos.
 - **Performance Lighthouse (móvil)**: objetivo ≥ 85; imágenes webp ~46 KB ya optimizadas;
   fuentes con `display=swap`; héroe solo descarga en escritorio (lazy en móvil).
@@ -111,11 +112,11 @@ Contra https://tiendalunaria.github.io/juga/ (solo lectura, sin comprar):
 |---|---|---|
 | Local | `index.html` directo + `catalogo.js` vigente | L0–L3 |
 | Staging | rama `qa/` con Pages de repositorio espejo | L3 (publicación real sin riesgo) |
-| Producción | tiendalunaria.github.io/juga | L4 smoke (solo lectura) |
+| Producción | juguetinstore.github.io/juguetinstore | L4 smoke (solo lectura) |
 | Datos | WhatsApp de prueba `573001112222` (patrón de la suite A/B); clon del catálogo recortado a 10 ítems para iterar rápido | suites |
 
 Reglas: nunca publicar a producción desde QA; nunca comprar real en pruebas;
-el WhatsApp de pedidos real (573132434760) solo se valida leyendo el enlace
+el WhatsApp de pedidos real (573122513972) solo se valida leyendo el enlace
 generado, no enviándolo.
 
 ---
@@ -181,6 +182,7 @@ Decisión:           PUBLICAR / NO PUBLICAR (motivo)
 
 | Fecha | Corrida | Resultado | Acción |
 |---|---|---|---|
+| 26-oct-2026 | **Clonación JUGA → Juguetinstore** — rebranding completo: paleta azul eléctrico/rosa/amarillo sol/azul profundo, tipografías Nunito + Montserrat, eslogan "¡Cada juguete, una nueva aventura!", WhatsApp 312 251 3972, margen global 40 % + redondeo $100 (fábrica y publicado), URLs y repositorio propios (juguetinstore/juguetinstore), activos de marca regenerados | Base lista | Correr auditoría L0–L4 tras el primer deploy |
 | 25-oct-2026 | **Ajustes de tienda + estrategia de precios**: filtros en una fila (la barra pegajosa tapaba las tarjetas), héroe con el emblema al centro (placa azul retirada), orden por defecto mayor→menor, scroll instantáneo en saltos largos, margen 30 % + redondeo $100 publicado por config, base Precio 5 experimentada y revertida a Precio 2 (con P5, 32 % del catálogo quedaba por debajo de la tienda física) | **L0/L1 TODO OK · panel 47/47 · aterrizajes 45/45 · smoke L4 25/25** (producción sana tras cada deploy) | `AGENTS.md` creado; suites con expectativas dinámicas (motor de precios) |
 | 25-oct-2026 | **Rebranding JUGA** — sistema clonado de LUNARIA; catálogo de juguetes real (fuente: repo de la juguetería, ~1.938 ítems); activos de marca y URLs propios | Base lista | Correr auditoría L0–L4 tras el primer deploy |
 | 22-oct-2026 | **Auditoría de secretos** (tree + historial completo de git) | **0 fugas.** Tokens/credenciales ausentes en repo e historial; config publicada sin `claveAdmin` ni token; `.gitignore` cubre archivos locales. 2 hallazgos evaluados como aceptados: clave `sb_publishable_` del proveedor (pública por diseño) y clave de fábrica del panel en HTML (por diseño; publicar exige token, nunca en código) | Ninguna obligatoria; rotación de clave de fábrica opcional |

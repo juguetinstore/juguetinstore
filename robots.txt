@@ -1,7 +1,7 @@
-# JUGA — rastreo abierto para buscadores
+# Juguetinstore — rastreo abierto para buscadores
 # Al mover al dominio oficial: actualizar la linea Sitemap.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://tiendalunaria.github.io/juga/sitemap.xml
+Sitemap: https://juguetinstore.github.io/juguetinstore/sitemap.xml
