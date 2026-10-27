@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py
-// (2026-10-27 12:35). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-10-27 18:36). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
@@ -837,7 +837,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"helicoptero-en-bolsa-3-colores",n:"Helicoptero en Bolsa 3 Colores",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-0836",img:"img/p/980d1ef4672de00f.webp",sku:"6603888922842"},
 {id:"lanza-agua-moderno",n:"Lanza Agua Moderno",p:8000,cat:"piñateria",prov:"tw",cid:"JUG-0837",img:"img/p/061cfe0b0256c7bc.webp",sku:"05997"},
 {id:"sonajero-bebe-bolsa-x3",n:"Sonajero Bebe Bolsa X3",p:8000,cat:"bebe",prov:"tw",cid:"JUG-0838",img:"img/p/6418d693fcf58218.webp",sku:"7709096951038"},
-{id:"conejo-peluche-juguete-de-pila",n:"Conejo Peluche Juguete de Pila",p:18000,cat:"peluches",prov:"tw",cid:"JUG-0839",img:"img/p/1b844f11ff4e81a1.webp",imgs:["img/p/85f6899e57ea5387.webp"],sku:"2023090102049"},
+{id:"conejo-peluche-juguete-de-pila",n:"Conejo Peluche Juguete de Pila",p:18000,cat:"peluches",prov:"tw",cid:"JUG-0839",img:"img/p/85f6899e57ea5387.webp",imgs:["img/p/1b844f11ff4e81a1.webp"],sku:"2023090102049"},
 {id:"caja-juego-de-mesa-caja-8-lenos-madera",n:"Caja Juego de Mesa Caja 8 Leños Madera",p:18000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0840",img:"img/p/64453553aabf28df.webp",sku:"01414"},
 {id:"balotera-de-bingo-metalica-con-pimpones",n:"Balotera de Bingo Metalica con Pimpones",p:90000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0841",img:"img/p/d7bc8e30988a93c3.webp",sku:"01178"},
 {id:"bingo-caribe-100-tablas-fichas-de-plastcio",n:"Bingo Caribe 100 Tablas Fichas de Plastcio",p:45000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0842",img:"img/p/57b50928e698f048.webp",sku:"7707353151801"},
@@ -935,7 +935,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"juguete-animales-de-selva-caja-x12",n:"Juguete Animales de Selva Caja X12",p:8000,cat:"animales",prov:"tw",cid:"JUG-0935",img:"img/p/e15ddd724154f1f3.webp",sku:"01304"},
 {id:"sobre-arena-quinetica-300gr-1",n:"Sobre Arena Quinetica 300gr",p:14000,cat:"slime",prov:"tw",cid:"JUG-0936",img:"img/p/7df6036ba6709513.webp",sku:"8920906233949"},
 {id:"tatuco",n:"Tatuco",p:12000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0937",img:"img/p/1b628ffb4c61d72f.webp",sku:"01439"},
-{id:"tambor-colombiano-2-la-caucanita-14x16cm",n:"Tambor Colombiano # 2 la Caucanita 14x16cm",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-0938",img:"img/p/381bfa4c76c3ef6d.webp",imgs:["img/p/41be94eb7d71735d.webp"],sku:"01181"},
+{id:"tambor-colombiano-2-la-caucanita-14x16cm",n:"Tambor Colombiano # 2 la Caucanita 14x16cm",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-0938",img:"img/p/41be94eb7d71735d.webp",imgs:["img/p/381bfa4c76c3ef6d.webp"],sku:"01181"},
 {id:"bolsa-armatodo-ficha-pequena-x55-fichas",n:"Bolsa Armatodo Ficha Pequeña X55 Fichas",p:18000,cat:"armatodo",prov:"tw",cid:"JUG-0939",img:"img/p/801f8e714da5f57a.webp",sku:"00776"},
 {id:"parques-viajero-mini-4-6-doblar-en-4",n:"Parques Viajero Mini 4-6 Doblar en 4",p:30000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0940",img:"img/p/90791d1f821184b1.webp",sku:"03100"},
 {id:"cuadro-gemas-20cm20cm-con-tripode",n:"Cuadro Gemas 20cm*20cm con Tripode",p:11000,cat:"cacharro",prov:"tw",cid:"JUG-0941",img:"img/p/385d656fcb85d8d3.webp",sku:"9210250301081"},
@@ -1221,7 +1221,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"maleta-gato-3-colores",n:"Maleta Gato 3 Colores",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1222",img:"img/p/ec160179b543253f.webp",sku:"02226"},
 {id:"volqueta-dinosaurio-en-bolsa-1",n:"Volqueta Dinosaurio en Bolsa",p:15000,cat:"jugueteria",prov:"tw",cid:"JUG-1223",img:"img/p/99e91dfe890c15fc.webp",sku:"6603888922538"},
 {id:"set-arqueologia-caja",n:"Set Arqueologia Caja",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-1224",img:"img/p/8097d8c5e9ddca0d.webp",sku:"7702240012913"},
-{id:"bolsa-munecos-tortuga-x4",n:"Bolsa Muñecos Tortuga X4",p:100000,cat:"colecciones",prov:"tw",cid:"JUG-1225",img:"img/p/ad7950f4ee9c4716.webp",imgs:["img/p/f9326f2341c371c9.webp"],sku:"01847"},
+{id:"bolsa-munecos-tortuga-x4",n:"Bolsa Muñecos Tortuga X4",p:100000,cat:"colecciones",prov:"tw",cid:"JUG-1225",img:"img/p/f9326f2341c371c9.webp",imgs:["img/p/ad7950f4ee9c4716.webp"],sku:"01847"},
 {id:"ficha-casino-x160",n:"Ficha Casino X160",p:25000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1226",img:"img/p/64d763acdd963804.webp",sku:"01362"},
 {id:"caja-marimba-de-colores-madera",n:"Caja Marimba de Colores Madera",p:15000,cat:"didactico",prov:"tw",cid:"JUG-1227",img:"img/p/4b6bc50e9f5bdb76.webp",sku:"00742"},
 {id:"carrito-de-helados-con-accesorios",n:"Carrito de Helados con Accesorios",p:50000,cat:"jugueteria",prov:"tw",cid:"JUG-1228",img:"img/p/d476a64fa022ed10.webp",sku:"6921202506029"},
@@ -1299,7 +1299,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"capibara-camina-y-sonido-con-tortuga",n:"Capibara Camina y Sonido con Tortuga",p:15000,cat:"peluches",prov:"tw",cid:"JUG-1301",img:"img/p/e79dbb6014155b7f.webp",sku:"7702202514400"},
 {id:"bloques-magneticos-minecraft-x96-pcs",n:"Bloques Magneticos Minecraft X96 Pcs",p:90000,cat:"armatodo",prov:"tw",cid:"JUG-1302",img:"img/p/03c661a39a43bd12.webp",sku:"FOX-2404"},
 {id:"bolsa-munecos-chaqueta-cafe-x6",n:"Bolsa Muñecos Chaqueta Cafe X6",p:90000,cat:"colecciones",prov:"tw",cid:"JUG-1303",img:"img/p/4329bf3797668276.webp",sku:"01810"},
-{id:"caja-lampara-piza",n:"Caja Lampara Piza",p:15000,cat:"cacharro",prov:"tw",cid:"JUG-1304",img:"img/p/63b9c980f4684a21.webp",imgs:["img/p/3f3ca82fad624da3.webp"],sku:"6973295330173"},
+{id:"caja-lampara-piza",n:"Caja Lampara Piza",p:15000,cat:"cacharro",prov:"tw",cid:"JUG-1304",img:"img/p/3f3ca82fad624da3.webp",imgs:["img/p/63b9c980f4684a21.webp"],sku:"6973295330173"},
 {id:"plancha-masajeadora-en-madera",n:"Plancha Masajeadora en Madera",p:30000,cat:"hogar",prov:"tw",cid:"JUG-1305",img:"img/p/d272dec7303de59d.webp",sku:"01131"},
 {id:"tabla-juego-de-mesa-solitario-en-cruz-madera",n:"Tabla Juego de Mesa Solitario en Cruz Madera",p:15000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1306",img:"img/p/90457ae7b35b904c.webp",sku:"01435"},
 {id:"set-cubiertos",n:"Set Cubiertos",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1307",img:"img/p/927b8f1966d96d56.webp",sku:"7709976330137"},
@@ -1317,7 +1317,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"lego-vengador-caja-4-modelos",n:"Lego Vengador Caja 4 Modelos",p:15000,cat:"armatodo",prov:"tw",cid:"JUG-1319",img:"img/p/a7251d0b90e63640.webp",sku:"6992989559034"},
 {id:"base-luz-esferas",n:"Base Luz Esferas",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-1320",img:"img/p/2aa52327e0932e34.webp",sku:"05563"},
 {id:"goku-pequeno-x2",n:"Goku Pequeño X2",p:60000,cat:"colecciones",prov:"tw",cid:"JUG-1321",img:"img/p/9891ba098d09b596.webp",sku:"04569"},
-{id:"paloma-de-equilibrio-x12",n:"Paloma de Equilibrio X12",p:15000,cat:"piñateria",prov:"tw",cid:"JUG-1322",img:"img/p/ab4d6c9147ce8ad5.webp",imgs:["img/p/5eb91cda632f398e.webp"],sku:"01226"},
+{id:"paloma-de-equilibrio-x12",n:"Paloma de Equilibrio X12",p:15000,cat:"piñateria",prov:"tw",cid:"JUG-1322",img:"img/p/5eb91cda632f398e.webp",imgs:["img/p/ab4d6c9147ce8ad5.webp"],sku:"01226"},
 {id:"dragon-verde",n:"Dragon Verde",p:60000,cat:"colecciones",prov:"tw",cid:"JUG-1323",img:"img/p/23e79d70de0dbf3d.webp",sku:"04966"},
 {id:"transforme-metalico-luz-y-sonido-2-motivos",n:"Transforme Metalico Luz y Sonido 2 Motivos",p:60000,cat:"jugueteria",prov:"tw",cid:"JUG-1324",img:"img/p/a44f1272f753874f.webp",sku:"04097"},
 {id:"coleccion-demon-slayer-x6",n:"Coleccion Demon Slayer X6",p:60000,cat:"colecciones",prov:"tw",cid:"JUG-1325",img:"img/p/cee1c5a75785abe8.webp",sku:"05556"},
@@ -1416,7 +1416,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"muneco-pilar-con-dos-espadas-y-base",n:"Muñeco Pilar con Dos Espadas y Base",p:100000,cat:"colecciones",prov:"tw",cid:"JUG-1419",img:"img/p/da7d6a2a6cb5458f.webp",sku:"01919"},
 {id:"lanza-balines-zm03",n:"Lanza Balines Zm03",p:40000,cat:"deporte",prov:"tw",cid:"JUG-1420",img:"img/p/c17b6990828ad0a8.webp",sku:"05859"},
 {id:"caja-juego-de-mesa-batalla-naval-grande",n:"Caja Juego de Mesa Batalla Naval Grande",p:40000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1421",img:"img/p/416dbbda33976f78.webp",sku:"01297"},
-{id:"llavero-luz",n:"Llavero Luz",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1422",img:"img/p/e3e9ab5ff2234a08.webp",imgs:["img/p/b87b589d7b45a1e3.webp"],sku:"03119"},
+{id:"llavero-luz",n:"Llavero Luz",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1422",img:"img/p/b87b589d7b45a1e3.webp",imgs:["img/p/e3e9ab5ff2234a08.webp"],sku:"03119"},
 {id:"bolsa-juguete-caballo-de-baterias-con-accesorio",n:"Bolsa Juguete Caballo de Baterias con Accesorio",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1423",img:"img/p/3706bfae98c1d03f.webp",sku:"6954000000024"},
 {id:"carro-didactico-construccion-x2-en-bolsa",n:"Carro Didactico Construccion X2 en Bolsa",p:18000,cat:"jugueteria",prov:"tw",cid:"JUG-1424",img:"img/p/4c5709af05d857b8.webp",sku:"6603888892527"},
 {id:"maquillaje-treza-con-accesorios",n:"Maquillaje Treza con Accesorios",p:50000,cat:"jugueteria",prov:"tw",cid:"JUG-1425",img:"img/p/b4cd856ee5326af1.webp",sku:"6603888924457"},
@@ -1854,7 +1854,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"estufa-plastica-con-pitadora",n:"Estufa Plastica con Pitadora",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1857",img:"img/p/2bf040f559e90bb9.webp",sku:"01256"},
 {id:"ajedrez-madera-no-3-30cmx30cm",n:"Ajedrez Madera No. 3 30cmx30cm",p:50000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1858",img:"img/p/7025cca3411eb57e.webp",sku:"01409"},
 {id:"estuche-plumones-y-micropunta-x120-piezas",n:"Estuche Plumones y Micropunta X120 Piezas",p:100000,cat:"escolar",prov:"tw",cid:"JUG-1859",img:"img/p/2fea919f8dd1db1d.webp",sku:"6940324109796"},
-{id:"tabla-juego-didactico-rompecabeza-alto-relieve-de-4-piezas-dinosaurio-madera",n:"Tabla Juego Didactico Rompecabeza Alto Relieve de 4 Piezas Dinosaurio Madera",p:25000,cat:"didactico",prov:"tw",cid:"JUG-1860",img:"img/p/e2574c93ebec65d1.webp",imgs:["img/p/6c6729e7abecdbb6.webp"],sku:"7702202261151"},
+{id:"tabla-juego-didactico-rompecabeza-alto-relieve-de-4-piezas-dinosaurio-madera",n:"Tabla Juego Didactico Rompecabeza Alto Relieve de 4 Piezas Dinosaurio Madera",p:25000,cat:"didactico",prov:"tw",cid:"JUG-1860",img:"img/p/6c6729e7abecdbb6.webp",imgs:["img/p/e2574c93ebec65d1.webp"],sku:"7702202261151"},
 {id:"termo-surtido-estampado-500ml-3",n:"Termo Surtido Estampado 500ml",p:25000,cat:"termos",prov:"tw",cid:"JUG-1861",img:"img/p/a25155bff46bc8db.webp",sku:"7702202411204"},
 {id:"ajedrez-magnetico-caja-roja-195-x-195-cm",n:"Ajedrez Magnetico Caja Roja 19.5 x 19.5 Cm",p:10000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1862",img:"img/p/be6fa645febbadc0.webp",sku:"7702202584083"},
 {id:"rompecabeza-frutas-caja",n:"Rompecabeza Frutas Caja",p:50000,cat:"didactico",prov:"tw",cid:"JUG-1863",img:"img/p/4eff4c8f3af12dfa.webp",sku:"04516"},
@@ -1881,7 +1881,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"bolsa-lanzadardos-amarillo-con-gris-con-accesorios",n:"Bolsa Lanzadardos Amarillo con Gris con Accesorios",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-1884",img:"img/p/76bcb718d9fdbfa8.webp",sku:"01522"},
 {id:"sobre-sorpresa-la-bubu-caja-x6",n:"Sobre Sorpresa la Bubu Caja X6",p:30000,cat:"peluches",prov:"tw",cid:"JUG-1885",img:"img/p/1d103f4f56272ab1.webp",sku:"03313"},
 {id:"champinon-grande-masajeador-en-madera",n:"Champiñon Grande Masajeador en Madera",p:12000,cat:"hogar",prov:"tw",cid:"JUG-1886",img:"img/p/3f8e3264d6acbb95.webp",imgs:["img/p/aee11db8105609a4.webp","img/p/fa86e187ebbd9a05.webp","img/p/0c9ca46633286e19.webp"],sku:"01123"},
-{id:"juguete-pelota-saltarina",n:"Juguete Pelota Saltarina",p:6000,cat:"piñateria",prov:"tw",cid:"JUG-1887",img:"img/p/518643dcd0f9c8ca.webp",imgs:["img/p/36c3b25f88303fb5.webp"],sku:"00955"},
+{id:"juguete-pelota-saltarina",n:"Juguete Pelota Saltarina",p:6000,cat:"piñateria",prov:"tw",cid:"JUG-1887",img:"img/p/36c3b25f88303fb5.webp",imgs:["img/p/518643dcd0f9c8ca.webp"],sku:"00955"},
 {id:"blister-bateria-beston-aaa-x4",n:"Blister Bateria Beston Aaa X4",p:3000,cat:"cacharro",prov:"tw",cid:"JUG-1888",img:"img/p/82f861e4de3928bd.webp",sku:"00983"},
 {id:"caja-cubo-rubik-3x3-caritas-transparente-the-ever",n:"Caja Cubo Rubik 3x3 Caritas Transparente The Ever",p:12000,cat:"cubo-rubik",prov:"tw",cid:"JUG-1889",img:"img/p/ca2f3b3441a3ed72.webp",sku:"2023100275152"},
 {id:"malvavisco",n:"Malvavisco",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-1890",img:"img/p/54f91fa20784a515.webp",sku:"04647"},
@@ -1917,7 +1917,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"caja-juguete-muneco-con-base-anime-2",n:"Caja Juguete Muñeco con Base Anime",p:170000,cat:"colecciones",prov:"tw",cid:"JUG-1920",img:"img/p/b6300c039f377909.webp",sku:"00980"},
 {id:"tabla-rompecabezas-numeros-manos-o-pies",n:"Tabla Rompecabezas Numeros Manos O Pies",p:15000,cat:"didactico",prov:"tw",cid:"JUG-1921",img:"img/p/9b90d1a95c31e194.webp",sku:"7702202260406"},
 {id:"bolsa-ollas-en-aluminio-con-licuadora-cocina",n:"Bolsa Ollas en Aluminio con Licuadora Cocina",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1922",img:"img/p/5efb026064561b32.webp",sku:"01251"},
-{id:"bolsa-ollas-en-aluminio-con-vianda-cocina",n:"Bolsa Ollas en Aluminio con Vianda Cocina",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1923",img:"img/p/7fdfc979b0772901.webp",imgs:["img/p/ced02cfad2896518.webp"],sku:"01250"},
+{id:"bolsa-ollas-en-aluminio-con-vianda-cocina",n:"Bolsa Ollas en Aluminio con Vianda Cocina",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1923",img:"img/p/ced02cfad2896518.webp",imgs:["img/p/7fdfc979b0772901.webp"],sku:"01250"},
 {id:"bolsa-valla-entrenamiento",n:"Bolsa Valla Entrenamiento",p:25000,cat:"deporte",prov:"tw",cid:"JUG-1924",img:"img/p/7b22fa118d2aa15d.webp",imgs:["img/p/754f8d5c5cda050c.webp"],sku:"7707193622943"},
 {id:"caja-juego-de-mesa-3-en-1-ajedrez-pasques-damas-carton",n:"Caja Juego de Mesa 3 en 1 Ajedrez Pasques Damas Carton",p:20000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1925",img:"img/p/c74e188cc58eb2ef.webp",sku:"7707193623346"},
 {id:"bolsa-armatubos-x100-fichas",n:"Bolsa Armatubos X100 Fichas",p:35000,cat:"armatodo",prov:"tw",cid:"JUG-1926",img:"img/p/9a0b05b3224a8315.webp",sku:"01757"},
