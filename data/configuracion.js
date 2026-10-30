@@ -2,7 +2,7 @@
 // (botón "Publicar para TODOS"). Se aplica a TODOS los visitantes de
 // https://juguetinstore.github.io/juguetinstore/ — nadie necesita editar este archivo a mano.
 window.CONFIG_PUBLICADA = {
-  "version": 1793388548111,
+  "version": 1793388687018,
   "tienda": {
     "nombre": "Juguetinstore",
     "logo": "logo_120.png",
@@ -27,7 +27,7 @@ window.CONFIG_PUBLICADA = {
     "catalogosOcultos": ""
   },
   "precios": {
-    "margenGlobal": 0.4,
+    "margenGlobal": 0.3,
     "multiplicadorBase": 1,
     "redondeo": 100,
     "margenesPorCategoria": {},
