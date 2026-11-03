@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py
-// (2026-11-03 00:47). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-11-03 06:55). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
@@ -397,7 +397,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"mini-robot-en-bolsa-4-colores",n:"Mini Robot en Bolsa 4 Colores",p:1500,cat:"piñateria",prov:"tw",cid:"JUG-0397",img:"img/p/2741832883876403.webp",sku:"6603888930014"},
 {id:"lanza-avion-x20-carton",n:"Lanza Avion X20 Carton",p:15000,cat:"piñateria",prov:"tw",cid:"JUG-0398",img:"img/p/7288452372d31169.webp",sku:"SE10403"},
 {id:"jenga-numeros-caja-azul-grande-22-5cm",n:"Jenga Numeros Caja Azul Grande 22*5cm",p:15000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0164",img:"img/p/032cafde76cba22e.webp",sku:"04582"},
-{id:"sobre-sorpresa-pokemon",n:"Sobre Sorpresa Pokemon",p:8000,cat:"piñateria",prov:"tw",cid:"JUG-0399",img:"img/p/a9313ddd1a7390af.webp",imgs:["img/p/93757e89174f0626.webp"],sku:"6920660547476"},
+{id:"sobre-sorpresa-pokemon",n:"Sobre Sorpresa Pokemon",p:8000,cat:"piñateria",prov:"tw",cid:"JUG-0399",img:"img/p/93757e89174f0626.webp",imgs:["img/p/a9313ddd1a7390af.webp"],sku:"6920660547476"},
 {id:"tabla-magica-85-5-colores",n:"Tabla Magica 85\\",p:8000,cat:"piñateria",prov:"tw",cid:"JUG-0400",img:"img/p/c018633ba5c35e96.webp",sku:"2025115250179"},
 {id:"slime-con-carro",n:"Slime con Carro",p:7000,cat:"slime",prov:"tw",cid:"JUG-0401",img:"img/p/6291e15400ccdc62.webp",sku:"7702202306982"},
 {id:"granada-balines-plasticos-caja-por-24-und",n:"Granada Balines Plasticos Caja por 24 Und",p:7000,cat:"deporte",prov:"tw",cid:"JUG-0402",img:"img/p/40b0e00a04e45f12.webp",sku:"04748"},
@@ -1466,7 +1466,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"avion-de-impulso-luz-y-sonido-en-bolsa-mediano",n:"Avion de Impulso Luz y Sonido en Bolsa Mediano",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1476",img:"img/p/473d0b810f47a279.webp",sku:"6603888928738"},
 {id:"guitarra-grande-la-caucana-en-madera",n:"Guitarra Grande la Caucana en Madera",p:50000,cat:"jugueteria",prov:"tw",cid:"JUG-1477",img:"img/p/70d010370e473357.webp",sku:"01225"},
 {id:"tabla-control-bingo-plegable-68cmx26cm",n:"Tabla Control Bingo Plegable 68cmx26cm",p:50000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1478",img:"img/p/715b19bbd91ca399.webp",sku:"01237"},
-{id:"termo-surtido-en-colores-350ml-1",n:"Termo Surtido en Colores 350ml",p:25000,cat:"termos",prov:"tw",cid:"JUG-1479",img:"img/p/beced7fa7e07ded9.webp",imgs:["img/p/81cfd421d908e911.webp"],sku:"7702202411181"},
+{id:"termo-surtido-en-colores-350ml-1",n:"Termo Surtido en Colores 350ml",p:25000,cat:"termos",prov:"tw",cid:"JUG-1479",img:"img/p/81cfd421d908e911.webp",imgs:["img/p/beced7fa7e07ded9.webp"],sku:"7702202411181"},
 {id:"camion-de-construccion",n:"Camion de Construccion",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1480",img:"img/p/3a1ee801b3a82e70.webp",sku:"01527"},
 {id:"nezuko",n:"Nezuko",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-1481",img:"img/p/64d1524010917b8a.webp",sku:"04613"},
 {id:"bulma",n:"Bulma",p:25000,cat:"colecciones",prov:"tw",cid:"JUG-1482",img:"img/p/292146ea51cf41fd.webp",sku:"04615"},
@@ -1909,7 +1909,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"caja-juguete-muneco-con-base-anime-2",n:"Caja Juguete Muñeco con Base Anime",p:170000,cat:"colecciones",prov:"tw",cid:"JUG-1920",img:"img/p/b6300c039f377909.webp",sku:"00980"},
 {id:"tabla-rompecabezas-numeros-manos-o-pies",n:"Tabla Rompecabezas Numeros Manos O Pies",p:15000,cat:"didactico",prov:"tw",cid:"JUG-1921",img:"img/p/9b90d1a95c31e194.webp",sku:"7702202260406"},
 {id:"bolsa-ollas-en-aluminio-con-licuadora-cocina",n:"Bolsa Ollas en Aluminio con Licuadora Cocina",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1922",img:"img/p/5efb026064561b32.webp",sku:"01251"},
-{id:"bolsa-ollas-en-aluminio-con-vianda-cocina",n:"Bolsa Ollas en Aluminio con Vianda Cocina",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1923",img:"img/p/7fdfc979b0772901.webp",imgs:["img/p/ced02cfad2896518.webp"],sku:"01250"},
+{id:"bolsa-ollas-en-aluminio-con-vianda-cocina",n:"Bolsa Ollas en Aluminio con Vianda Cocina",p:12000,cat:"jugueteria",prov:"tw",cid:"JUG-1923",img:"img/p/ced02cfad2896518.webp",imgs:["img/p/7fdfc979b0772901.webp"],sku:"01250"},
 {id:"bolsa-valla-entrenamiento",n:"Bolsa Valla Entrenamiento",p:25000,cat:"deporte",prov:"tw",cid:"JUG-1924",img:"img/p/7b22fa118d2aa15d.webp",imgs:["img/p/754f8d5c5cda050c.webp"],sku:"7707193622943"},
 {id:"caja-juego-de-mesa-3-en-1-ajedrez-pasques-damas-carton",n:"Caja Juego de Mesa 3 en 1 Ajedrez Pasques Damas Carton",p:20000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1925",img:"img/p/c74e188cc58eb2ef.webp",sku:"7707193623346"},
 {id:"bolsa-armatubos-x100-fichas",n:"Bolsa Armatubos X100 Fichas",p:35000,cat:"armatodo",prov:"tw",cid:"JUG-1926",img:"img/p/9a0b05b3224a8315.webp",sku:"01757"},
