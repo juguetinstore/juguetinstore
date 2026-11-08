@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py
-// (2026-11-08 12:38). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-11-08 18:33). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
@@ -917,7 +917,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"juguete-animales-de-selva-caja-x12",n:"Juguete Animales de Selva Caja X12",p:8000,cat:"animales",prov:"tw",cid:"JUG-0935",img:"img/p/e15ddd724154f1f3.webp",sku:"01304"},
 {id:"sobre-arena-quinetica-300gr-1",n:"Sobre Arena Quinetica 300gr",p:14000,cat:"slime",prov:"tw",cid:"JUG-0936",img:"img/p/7df6036ba6709513.webp",sku:"8920906233949"},
 {id:"tatuco",n:"Tatuco",p:12000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0937",img:"img/p/1b628ffb4c61d72f.webp",sku:"01439"},
-{id:"tambor-colombiano-2-la-caucanita-14x16cm",n:"Tambor Colombiano # 2 la Caucanita 14x16cm",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-0938",img:"img/p/381bfa4c76c3ef6d.webp",imgs:["img/p/41be94eb7d71735d.webp"],sku:"01181"},
+{id:"tambor-colombiano-2-la-caucanita-14x16cm",n:"Tambor Colombiano # 2 la Caucanita 14x16cm",p:30000,cat:"jugueteria",prov:"tw",cid:"JUG-0938",img:"img/p/41be94eb7d71735d.webp",imgs:["img/p/381bfa4c76c3ef6d.webp"],sku:"01181"},
 {id:"bolsa-armatodo-ficha-pequena-x55-fichas",n:"Bolsa Armatodo Ficha Pequeña X55 Fichas",p:18000,cat:"armatodo",prov:"tw",cid:"JUG-0939",img:"img/p/801f8e714da5f57a.webp",sku:"00776"},
 {id:"parques-viajero-mini-4-6-doblar-en-4",n:"Parques Viajero Mini 4-6 Doblar en 4",p:30000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0940",img:"img/p/90791d1f821184b1.webp",sku:"03100"},
 {id:"stop-caja",n:"Stop Caja",p:18000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0943",img:"img/p/ab1b2401e6fe1221.webp",sku:"04421"},
@@ -1393,7 +1393,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"parques-grande-imanado-6-8-jugadores-51cmx51cm",n:"Parques Grande Imanado 6-8 Jugadores 51cmx51cm",p:40000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1418",img:"img/p/7d3d66a246fe1d0e.webp",sku:"01258"},
 {id:"muneco-pilar-con-dos-espadas-y-base",n:"Muñeco Pilar con Dos Espadas y Base",p:100000,cat:"colecciones",prov:"tw",cid:"JUG-1419",img:"img/p/da7d6a2a6cb5458f.webp",sku:"01919"},
 {id:"caja-juego-de-mesa-batalla-naval-grande",n:"Caja Juego de Mesa Batalla Naval Grande",p:40000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1421",img:"img/p/416dbbda33976f78.webp",sku:"01297"},
-{id:"llavero-luz",n:"Llavero Luz",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1422",img:"img/p/e3e9ab5ff2234a08.webp",imgs:["img/p/b87b589d7b45a1e3.webp"],sku:"03119"},
+{id:"llavero-luz",n:"Llavero Luz",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1422",img:"img/p/b87b589d7b45a1e3.webp",imgs:["img/p/e3e9ab5ff2234a08.webp"],sku:"03119"},
 {id:"lanza-balines-zm03",n:"Lanza Balines Zm03",p:40000,cat:"deporte",prov:"tw",cid:"JUG-1420",img:"img/p/c17b6990828ad0a8.webp",sku:"05859"},
 {id:"bolsa-juguete-caballo-de-baterias-con-accesorio",n:"Bolsa Juguete Caballo de Baterias con Accesorio",p:10000,cat:"jugueteria",prov:"tw",cid:"JUG-1423",img:"img/p/3706bfae98c1d03f.webp",sku:"6954000000024"},
 {id:"carro-didactico-construccion-x2-en-bolsa",n:"Carro Didactico Construccion X2 en Bolsa",p:18000,cat:"jugueteria",prov:"tw",cid:"JUG-1424",img:"img/p/4c5709af05d857b8.webp",sku:"6603888892527"},
@@ -1506,7 +1506,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"caja-juguete-muneco-anime-con-base",n:"Caja Juguete Muñeco Anime con Base",p:35000,cat:"colecciones",prov:"tw",cid:"JUG-1534",img:"img/p/d805e426321c752b.webp",sku:"01082"},
 {id:"bolsa-munecos-y-muneco-base-anime-x3",n:"Bolsa Muñecos y Muñeco Base Anime X3",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1535",img:"img/p/20fc330d3891ecb9.webp",sku:"01209"},
 {id:"caja-juguete-muneco-cuervos-con-base-anime",n:"Caja Juguete Muñeco Cuervos con Base Anime",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1536",img:"img/p/9aa3362e26b0a772.webp",sku:"01284"},
-{id:"caja-juguete-dinosaurio-con-malumeta",n:"Caja Juguete Dinosaurio con Malumeta",p:35000,cat:"animales",prov:"tw",cid:"JUG-1537",img:"img/p/a99965b6618898b7.webp",imgs:["img/p/4e618698a1073df6.webp"],sku:"00888"},
+{id:"caja-juguete-dinosaurio-con-malumeta",n:"Caja Juguete Dinosaurio con Malumeta",p:35000,cat:"animales",prov:"tw",cid:"JUG-1537",img:"img/p/4e618698a1073df6.webp",imgs:["img/p/a99965b6618898b7.webp"],sku:"00888"},
 {id:"lanza-agua-espuma",n:"Lanza Agua Espuma",p:7000,cat:"deporte",prov:"tw",cid:"JUG-1538",img:"img/p/d23b6bb57c3d01a4.webp",sku:"6957738203262"},
 {id:"demon-x5-2",n:"Demon X5",p:35000,cat:"colecciones",prov:"tw",cid:"JUG-1539",img:"img/p/33e2033f6b0df07b.webp",sku:"04623"},
 {id:"seilor-moon-x-8",n:"Seilor Moon x 8",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1540",img:"img/p/4e859d170b243c44.webp",sku:"05103"},
@@ -1600,7 +1600,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"trompo-madera-x12-grande-malla",n:"Trompo Madera X12 Grande Malla",p:18000,cat:"jugueteria",prov:"tw",cid:"JUG-1628",img:"img/p/493553156b429583.webp",sku:"02419"},
 {id:"set-bomberos-mascara-en-bolsa",n:"Set Bomberos Mascara en Bolsa",p:18000,cat:"jugueteria",prov:"tw",cid:"JUG-1629",img:"img/p/0b962ea5b719c27a.webp",sku:"6603888891575"},
 {id:"mascota-perro-de-pilas-con-guacal-verde-rosado",n:"Mascota Perro de Pilas con Guacal Verde/ Rosado",p:50000,cat:"jugueteria",prov:"tw",cid:"JUG-1630",img:"img/p/97356b037d427dbe.webp",sku:"6603888903940"},
-{id:"termo-surtido-estampado-de-500ml",n:"Termo Surtido Estampado de 500ml",p:28000,cat:"termos",prov:"tw",cid:"JUG-1631",img:"img/p/a435d45981d1e4fc.webp",imgs:["img/p/79561a5f3e2f5e38.webp"],sku:"7702202411211"},
+{id:"termo-surtido-estampado-de-500ml",n:"Termo Surtido Estampado de 500ml",p:28000,cat:"termos",prov:"tw",cid:"JUG-1631",img:"img/p/79561a5f3e2f5e38.webp",imgs:["img/p/a435d45981d1e4fc.webp"],sku:"7702202411211"},
 {id:"termo-3-en-1-colores-mate",n:"Termo 3 en 1 Colores Mate",p:28000,cat:"termos",prov:"tw",cid:"JUG-1632",img:"img/p/98b69996893cb96b.webp",sku:"6953124106513"},
 {id:"dron-control-remoto-camara-y-luces",n:"Dron Control Remoto Camara y Luces",p:210000,cat:"jugueteria",prov:"tw",cid:"JUG-1633",img:"img/p/ba924c7f7dfd8ecc.webp",sku:"6603888898918"},
 {id:"banera-con-bebe-y-accesorios-en-bolsa-7",n:"Bañera con Bebe y Accesorios en Bolsa",p:15000,cat:"jugueteria",prov:"tw",cid:"JUG-1634",img:"img/p/657f33ddbec392a3.webp",sku:"6603888927007"},
@@ -1662,7 +1662,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"lego-magnetico-morado-108-pc",n:"Lego Magnetico Morado 108 Pc",p:75000,cat:"armatodo",prov:"tw",cid:"JUG-1689",img:"img/p/7b45f5bc5d4462c9.webp",sku:"6916102032655"},
 {id:"malla-juego-didactico-dona-apilable-x9-niveles-1",n:"Malla Juego Didactico Dona Apilable X9 Niveles",p:20000,cat:"bebe",prov:"tw",cid:"JUG-1691",img:"img/p/3eecdfbdd7250cd2.webp",sku:"01912"},
 {id:"llavero-metalico-superheroes-pequeno",n:"Llavero Metalico Superheroes Pequeño",p:2500,cat:"cacharro",prov:"tw",cid:"JUG-1692",img:"img/p/796a30dd6747a2b0.webp",imgs:["img/p/289ae261339aaae8.webp","img/p/bf6c88d28bc8780a.webp","img/p/8716cb283ececad5.webp"],sku:"01394"},
-{id:"caja-lampara-dinosaurio-recargable-3-colores",n:"Caja Lampara Dinosaurio Recargable 3 Colores",p:20000,cat:"cacharro",prov:"tw",cid:"JUG-1693",img:"img/p/fb2c92cb7439bf6e.webp",imgs:["img/p/e275506bdd4082af.webp"],sku:"6973529467354"},
+{id:"caja-lampara-dinosaurio-recargable-3-colores",n:"Caja Lampara Dinosaurio Recargable 3 Colores",p:20000,cat:"cacharro",prov:"tw",cid:"JUG-1693",img:"img/p/e275506bdd4082af.webp",imgs:["img/p/fb2c92cb7439bf6e.webp"],sku:"6973529467354"},
 {id:"tabla-juego-didactico-abecedario-minuscula-colores-madera",n:"Tabla Juego Didactico Abecedario Minuscula Colores Madera",p:20000,cat:"didactico",prov:"tw",cid:"JUG-1694",img:"img/p/5654dfe28194d941.webp",sku:"7702202013101"},
 {id:"caja-juego-didactico-libro-argollado-stroke-line-con-marcador-borrable-36-pcs",n:"Caja Juego Didactico Libro Argollado Stroke Line con Marcador Borrable 36 Pcs",p:20000,cat:"didactico",prov:"tw",cid:"JUG-1695",img:"img/p/33dd501bcdeee001.webp",sku:"7702202397546"},
 {id:"tabla-encajable-abecedario-numeros-o-figuras-1",n:"Tabla Encajable Abecedario, Numeros O Figuras",p:18000,cat:"didactico",prov:"tw",cid:"JUG-1696",img:"img/p/9824fb5de95d4ee1.webp",sku:"7702202260215"},
@@ -1724,7 +1724,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"carton-truco-de-magia-copa-y-bolita-x20",n:"Carton Truco de Magia Copa y Bolita X20",p:35000,cat:"piñateria",prov:"tw",cid:"JUG-1752",img:"img/p/e877d1031719ff37.webp",sku:"00799"},
 {id:"bolsa-munecos-con-base-x2-anime",n:"Bolsa Muñecos con Base X2 Anime",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-1753",img:"img/p/3a9ac5f9b04f313e.webp",sku:"01375"},
 {id:"caja-armable-harry-2",n:"Caja Armable Harry",p:260000,cat:"armatodo",prov:"tw",cid:"JUG-1754",img:"img/p/27bceaac4fa654d3.webp",sku:"01977"},
-{id:"caja-masajeador-delfin",n:"Caja Masajeador Delfin",p:55000,cat:"hogar",prov:"tw",cid:"JUG-1755",img:"img/p/ed8213cfe6cbf288.webp",imgs:["img/p/24279dabd6485db4.webp"],sku:"01275"},
+{id:"caja-masajeador-delfin",n:"Caja Masajeador Delfin",p:55000,cat:"hogar",prov:"tw",cid:"JUG-1755",img:"img/p/24279dabd6485db4.webp",imgs:["img/p/ed8213cfe6cbf288.webp"],sku:"01275"},
 {id:"muneco-bebe",n:"Muñeco Bebe",p:18000,cat:"jugueteria",prov:"tw",cid:"JUG-1756",img:"img/p/a59b4239a94f6bf4.webp",sku:"2026888807768"},
 {id:"juego-de-lanzamiento-con-accesorios-1",n:"Juego de Lanzamiento con Accesorios",p:250000,cat:"jugueteria",prov:"tw",cid:"JUG-1757",img:"img/p/e1aaef22b163c5e4.webp",sku:"6603888931134"},
 {id:"pista-carros-monster-tiburon-caja",n:"Pista Carros Monster Tiburon Caja",p:80000,cat:"jugueteria",prov:"tw",cid:"JUG-1758",img:"img/p/65864344b5901310.webp",sku:"2025041084923"},
@@ -1828,7 +1828,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"estufa-plastica-con-pitadora",n:"Estufa Plastica con Pitadora",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1857",img:"img/p/2bf040f559e90bb9.webp",sku:"01256"},
 {id:"ajedrez-madera-no-3-30cmx30cm",n:"Ajedrez Madera No. 3 30cmx30cm",p:50000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1858",img:"img/p/7025cca3411eb57e.webp",sku:"01409"},
 {id:"estuche-plumones-y-micropunta-x120-piezas",n:"Estuche Plumones y Micropunta X120 Piezas",p:100000,cat:"escolar",prov:"tw",cid:"JUG-1859",img:"img/p/2fea919f8dd1db1d.webp",sku:"6940324109796"},
-{id:"tabla-juego-didactico-rompecabeza-alto-relieve-de-4-piezas-dinosaurio-madera",n:"Tabla Juego Didactico Rompecabeza Alto Relieve de 4 Piezas Dinosaurio Madera",p:25000,cat:"didactico",prov:"tw",cid:"JUG-1860",img:"img/p/e2574c93ebec65d1.webp",imgs:["img/p/6c6729e7abecdbb6.webp"],sku:"7702202261151"},
+{id:"tabla-juego-didactico-rompecabeza-alto-relieve-de-4-piezas-dinosaurio-madera",n:"Tabla Juego Didactico Rompecabeza Alto Relieve de 4 Piezas Dinosaurio Madera",p:25000,cat:"didactico",prov:"tw",cid:"JUG-1860",img:"img/p/6c6729e7abecdbb6.webp",imgs:["img/p/e2574c93ebec65d1.webp"],sku:"7702202261151"},
 {id:"termo-surtido-estampado-500ml-3",n:"Termo Surtido Estampado 500ml",p:25000,cat:"termos",prov:"tw",cid:"JUG-1861",img:"img/p/a25155bff46bc8db.webp",sku:"7702202411204"},
 {id:"ajedrez-magnetico-caja-roja-195-x-195-cm",n:"Ajedrez Magnetico Caja Roja 19.5 x 19.5 Cm",p:10000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1862",img:"img/p/be6fa645febbadc0.webp",sku:"7702202584083"},
 {id:"rompecabeza-frutas-caja",n:"Rompecabeza Frutas Caja",p:50000,cat:"didactico",prov:"tw",cid:"JUG-1863",img:"img/p/4eff4c8f3af12dfa.webp",sku:"04516"},
