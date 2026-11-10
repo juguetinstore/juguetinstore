@@ -7,6 +7,7 @@
    ============================================================ */
 const BASE = (process.env.QA_TIENDA_URL || "https://juguetinstore.github.io/juguetinstore/").replace(/\/?$/, "/");
 const UA = { "User-Agent": "juguetinstore-qa-smoke" };
+const GH_TOKEN = process.env.GITHUB_TOKEN || ""; // en Actions sube el limite de la API
 
 const res = [];
 const check = (ok, id, msg, extra) => {
@@ -86,7 +87,8 @@ const vivo = async (u) => { try { const r = await pedir(u, { method: "HEAD" }); 
 
   /* 6. Deploy reciente de Pages (aviso, no bloquea si la API esta limitada) */
   try {
-    const r = await fetch("https://api.github.com/repos/juguetinstore/juguetinstore/actions/runs?per_page=15", { headers: UA });
+    const cab = GH_TOKEN ? { ...UA, Authorization: "Bearer " + GH_TOKEN } : UA;
+    const r = await fetch("https://api.github.com/repos/juguetinstore/juguetinstore/actions/runs?per_page=15", { headers: cab });
     if (r.ok) {
       const runs = (await r.json()).workflow_runs || [];
       const last = runs.find(x => x.name === "pages build and deployment");

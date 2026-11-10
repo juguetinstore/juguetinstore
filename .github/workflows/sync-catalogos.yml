@@ -7,8 +7,9 @@
 # fuente de juguetes es el repo jugueteriataiwanoficial/jugueteriataiwan
 # (maestro); este sync lo absorbe tal cual: precios de vitrina finales.
 #
-# Requisito (una sola vez): Settings > Actions > General > Workflow permissions
-# debe estar en "Read and write permissions" para que el bot pueda hacer push.
+# El workflow declara permissions: contents: write (abajo), que basta para el
+# push; solo si la organizacion/repo restringe por politica habria que revisar
+# Settings > Actions > General > Workflow permissions.
 name: Sincronizar catalogo
 
 on:
@@ -26,6 +27,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,25 +36,51 @@ jobs:
       - name: Clonar la fuente de juguetes (catalogo maestro de la jugueteria)
         run: git clone --depth 1 https://github.com/jugueteriataiwanoficial/jugueteriataiwan /tmp/jugueteria
       - name: Sincronizar catalogo
+        id: sync
         env:
           JUGUETINSTORE_FUENTE_LOCAL: /tmp/jugueteria
-        run: python scripts/sync_catalogos.py
+        run: |
+          set +e
+          python scripts/sync_catalogos.py
+          codigo=$?
+          set -e
+          echo "codigo=$codigo" >> "$GITHUB_OUTPUT"
+          if [ "$codigo" -eq 1 ]; then
+            echo "El sync fallo: sin catalogo fuente. No se toca nada."
+            exit 1
+          fi
+          if [ "$codigo" -ne 0 ] && [ "$codigo" -ne 2 ]; then
+            echo "Fallo inesperado del sync (codigo $codigo)."
+            exit "$codigo"
+          fi
+      - name: Guarda-red activo (se conserva el catalogo vigente)
+        if: steps.sync.outputs.codigo == '2'
+        run: echo "La fuente vino incompleta; NO se publica nada y el catalogo vigente queda intacto."
       - name: Publicar cambios (si los hay)
+        if: steps.sync.outputs.codigo == '0'
         run: |
           git config user.name  "juguetinstore-bot"
           git config user.email "juguetinstore@users.noreply.github.com"
           git add catalogo.js img
           if ! git diff --cached --quiet; then
+            # Sanity-check: un catalogo que no parsea NO se publica
+            # (el guarda-red del script solo compara conteos).
+            node --check catalogo.js
             git commit -m "sync: actualiza catalogo de juguetes [skip ci]"
             # Si el panel publico la configuracion mientras este cron corria,
-            # el repositorio quedo adelante: se absorbe con rebase (el panel
-            # solo toca data/configuracion.js, nunca catalogo.js ni img/,
-            # asi que no hay conflicto posible) y se reintenta el push.
-            if ! git pull --rebase origin main; then
-              echo "No se pudo absorber lo publicado por el panel; el catalogo se regenera en la proxima corrida."
-              exit 1
-            fi
-            git push
+            # el repositorio quedo adelante: se absorbe con rebase y se
+            # reintenta (el panel solo toca data/configuracion.js, nunca
+            # catalogo.js ni img/, asi que no hay conflicto posible).
+            ok=0
+            for intento in 1 2 3; do
+              if ! git pull --rebase origin main; then
+                echo "No se pudo absorber lo publicado por el panel; el catalogo se regenera en la proxima corrida."
+                break
+              fi
+              if git push; then ok=1; break; fi
+              echo "push rechazado (intento $intento): el remoto se movio de nuevo; reabsorbiendo..."
+            done
+            [ "$ok" -eq 1 ] || exit 1
           else
             echo "Sin cambios: el catalogo ya estaba al dia."
           fi

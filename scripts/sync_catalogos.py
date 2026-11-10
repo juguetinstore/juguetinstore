@@ -27,6 +27,7 @@ Que hace:
 
 Ejecutar:  python scripts/sync_catalogos.py
 Cron:      .github/workflows/sync-catalogos.yml (cada 6 horas + manual)
+Salida:    0 OK; 1 sin catalogo fuente; 2 guarda-red aborto (se conserva el vigente).
 """
 import hashlib
 import io
@@ -295,4 +296,8 @@ if __name__ == "__main__":
 
     print("== catalogo.js ==")
     total = escribir_catalogo_js(productos)
-    print("== Sincronizacion completa ==" if total else "== Abortada (se conserva el vigente) ==")
+    if total == 0:
+        # Guarda-red aborto (o fuente vacia): catalogo vigente intacto; el
+        # workflow distingue este codigo de salida y NO publica nada.
+        sys.exit(2)
+    print("== Sincronizacion completa ==")

@@ -20,12 +20,15 @@ concurrency:
 jobs:
   smoke:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
       - name: Smoke L4 contra produccion
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # sube el limite de la API (check 6.1)
         run: node qa_smoke_produccion.js
 
       - name: Abrir o actualizar issue si fallo
@@ -34,9 +37,14 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const log = fs.readFileSync('smoke_resultado.txt', 'utf8').slice(-3000);
+            let log = '';
+            try {
+              log = fs.readFileSync('smoke_resultado.txt', 'utf8').slice(-3000);
+            } catch (e) {
+              log = 'smoke_resultado.txt no existe: el smoke fallo antes de escribirlo. Ver el log completo de la corrida.';
+            }
             const {data: abiertas} = await github.rest.issues.listForRepo({
-              ...context.repo, state: 'open', labels: 'qa-smoke', per_page: 1});
+              ...context.repo, state: 'open', labels: 'qa-smoke', per_page: 100});
             const cuerpo = '### 🔴 Smoke L4 de producción falló\n'
               + 'Corrida: ' + new Date().toISOString() + ' ([log completo]('
               + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo
