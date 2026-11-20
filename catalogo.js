@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py
-// (2026-11-20 07:03). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-11-20 12:58). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
@@ -1175,8 +1175,8 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"parques-y-escalera-viajero-pequeno-con-borde-doblar-en-2",n:"Parques y Escalera Viajero Pequeño con Borde Doblar en 2",p:25000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1239",img:"img/p/8394781f03471f9b.webp",sku:"04543"},
 {id:"lego-my-world-diner-restaurante",n:"Lego My World Diner Restaurante",p:100000,cat:"armatodo",prov:"tw",cid:"JUG-1240",img:"img/p/4743393c687b36e7.webp",sku:"05487"},
 {id:"llavero-esfera-x-7-mediana",n:"Llavero Esfera x 7 Mediana",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-1237",img:"img/p/91ab52b3cfba800f.webp",sku:"04974"},
-{id:"rengoku-q-posket",n:"Rengoku Q Posket",p:25000,cat:"colecciones",prov:"tw",cid:"JUG-1241",img:"img/p/a9a6c38dbb382706.webp",sku:"04628"},
 {id:"domino-color-solido-estuche-1",n:"Domino Color Solido Estuche",p:25000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1243",img:"img/p/65a69b2de27e03ba.webp",sku:"04145"},
+{id:"rengoku-q-posket",n:"Rengoku Q Posket",p:25000,cat:"colecciones",prov:"tw",cid:"JUG-1241",img:"img/p/a9a6c38dbb382706.webp",sku:"04628"},
 {id:"tanjiro-q-posket",n:"Tanjiro Q Posket",p:25000,cat:"colecciones",prov:"tw",cid:"JUG-1242",img:"img/p/478eea994bb03b27.webp",sku:"04627"},
 {id:"lufy-carne",n:"Lufy Carne",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-1244",img:"img/p/19c45f79c47ec449.webp",sku:"04805"},
 {id:"tablero-madera-cognitivo-de-letras-mayusculas",n:"Tablero Madera Cognitivo de Letras Mayusculas",p:25000,cat:"didactico",prov:"tw",cid:"JUG-1246",img:"img/p/88f49f567c77fe6d.webp",sku:"03736"},
