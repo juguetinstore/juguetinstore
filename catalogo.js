@@ -1,6 +1,6 @@
 // ======================================================================
 // catalogo.js de Juguetinstore - generado automaticamente por scripts/sync_catalogos.py
-// (2026-11-22 00:49). NO editar a mano: el cron de GitHub Actions lo regenera.
+// (2026-11-22 06:57). NO editar a mano: el cron de GitHub Actions lo regenera.
 // Fuente: inventario de juguetes publicado por la jugueteria
 // (github.com/jugueteriataiwanoficial/jugueteriataiwan). Precio de vitrina (Precio 2) tal cual; el margen del panel se aplica en la tienda.
 // ======================================================================
@@ -254,8 +254,8 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"franky",n:"Franky",p:25000,cat:"colecciones",prov:"tw",cid:"JUG-0271",img:"img/p/36c0f79db963308a.webp",sku:"04641"},
 {id:"muneco-luffy-pequeno",n:"Muñeco Luffy Pequeño",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-0272",img:"img/p/3a5d2dae56493eb4.webp",sku:"05044"},
 {id:"nezuco-bambu",n:"Nezuco Bambu",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-0273",img:"img/p/51cb686c3892f1cb.webp",sku:"03592"},
-{id:"piccolo",n:"Piccolo",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-0274",img:"img/p/da3d896a1e9cc064.webp",sku:"05109"},
 {id:"lufy-capa-negra",n:"Lufy Capa Negra",p:70000,cat:"colecciones",prov:"tw",cid:"JUG-0275",img:"img/p/98c763a9fe3c0632.webp",sku:"05097"},
+{id:"piccolo",n:"Piccolo",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-0274",img:"img/p/da3d896a1e9cc064.webp",sku:"05109"},
 {id:"goku-mono",n:"Goku Mono",p:40000,cat:"colecciones",prov:"tw",cid:"JUG-0276",img:"img/p/ab4bb440cd2c8e35.webp",sku:"05112"},
 {id:"muneco-pilar-2",n:"Muñeco Pilar",p:100000,cat:"colecciones",prov:"tw",cid:"JUG-0278",img:"img/p/5672abe87b923a3a.webp",sku:"05253"},
 {id:"lufy-rayo",n:"Lufy Rayo",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-0277",img:"img/p/8f605dbb4b47f690.webp",sku:"05096"},
@@ -527,7 +527,7 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"moto-de-carreras-x-4",n:"Moto de Carreras x 4",p:35000,cat:"jugueteria",prov:"tw",cid:"JUG-0581",img:"img/p/970188a69def1777.webp",sku:"6905112060161"},
 {id:"bolsa-flotador-dona",n:"Bolsa Flotador Dona",p:11000,cat:"cacharro",prov:"tw",cid:"JUG-0147",img:"img/p/3bdd7860f123c922.webp",sku:"6941057452425"},
 {id:"nezuco-1",n:"Nezuco",p:55000,cat:"colecciones",prov:"tw",cid:"JUG-0582",img:"img/p/eac02fd324748e06.webp",sku:"04626"},
-{id:"tanjiro-en-caja",n:"Tanjiro",p:55000,cat:"colecciones",prov:"tw",cid:"JUG-0583",img:"img/p/2a327fa44db9364d.webp",sku:"04621"},
+{id:"tanjiro-en-caja",n:"Tanjiro",p:55000,cat:"colecciones",prov:"tw",cid:"JUG-0583",img:"img/p/14b1ea749cb78114.webp",sku:"04620"},
 {id:"caja-juego-de-mesa-por-que-siempre-yo-madera",n:"Caja Juego de Mesa por Que Siempre Yo Madera",p:18000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0584",img:"img/p/22bec013bd0dacf1.webp",sku:"01016"},
 {id:"pistola-lanza-agua-27cm",n:"Pistola Lanza Agua 27cm",p:9000,cat:"piñateria",prov:"tw",cid:"JUG-0585",img:"img/p/41e8096620ba6f41.webp",sku:"04235"},
 {id:"muneco-luffy",n:"Muñeco Luffy",p:90000,cat:"colecciones",prov:"tw",cid:"JUG-0586",img:"img/p/eb14ee0e8b8271fc.webp",sku:"05052"},
@@ -899,13 +899,13 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"set-musical",n:"Set Musical",p:70000,cat:"didactico",prov:"tw",cid:"JUG-0975",img:"img/p/195b2a520c273c4c.webp",sku:"7899800245017"},
 {id:"animales-de-granja-x12-blister",n:"Animales de Granja X12 Blister",p:8000,cat:"animales",prov:"tw",cid:"JUG-0973",img:"img/p/a4ccccb5e80735d9.webp",sku:"6603888893128"},
 {id:"abanico-de-mano-seda-y-madera",n:"Abanico de Mano Seda y Madera",p:3000,cat:"cacharro",prov:"tw",cid:"JUG-0976",img:"img/p/4ffe59ace8949bff.webp",sku:"6900024109250"},
-{id:"termono-metalico-corazon-4-colores",n:"Termono Metalico Corazon 4 Colores",p:25000,cat:"termos",prov:"tw",cid:"JUG-0977",img:"img/p/a26fccfcc86af59b.webp",sku:"6983527143242"},
 {id:"carta-uno-h2o",n:"Carta Uno H2o",p:15000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0980",img:"img/p/3d47e19078adbe81.webp",sku:"6978598795605"},
 {id:"huevo-sorpresa-naruto-x12",n:"Huevo Sorpresa Naruto X12",p:8000,cat:"jugueteria",prov:"tw",cid:"JUG-0981",img:"img/p/13c1e71a2c546e6e.webp",sku:"01544"},
-{id:"termo-diseno-surtido-5-colores",n:"Termo Diseño Surtido 5 Colores",p:25000,cat:"termos",prov:"tw",cid:"JUG-0979",img:"img/p/e2f4192990d5a499.webp",sku:"6983527143266"},
 {id:"futbolista-balon-caja-6-motivos",n:"Futbolista Balon Caja 6 Motivos",p:26000,cat:"colecciones",prov:"tw",cid:"JUG-0983",img:"img/p/871c5605b1be3ea6.webp",sku:"6968553270209"},
 {id:"bolso-capibara-con-llavero",n:"Bolso Capibara con Llavero",p:40000,cat:"peluches",prov:"tw",cid:"JUG-0982",img:"img/p/2bc19b6cab4881e9.webp",sku:"03055"},
+{id:"termono-metalico-corazon-4-colores",n:"Termono Metalico Corazon 4 Colores",p:25000,cat:"termos",prov:"tw",cid:"JUG-0977",img:"img/p/a26fccfcc86af59b.webp",sku:"6983527143242"},
 {id:"rompecabeza-encajable-tabla-18cm18cm",n:"Rompecabeza Encajable Tabla 18cm*18cm",p:12000,cat:"didactico",prov:"tw",cid:"JUG-0985",img:"img/p/89caadcb1a299630.webp",sku:"04541"},
+{id:"termo-diseno-surtido-5-colores",n:"Termo Diseño Surtido 5 Colores",p:25000,cat:"termos",prov:"tw",cid:"JUG-0979",img:"img/p/e2f4192990d5a499.webp",sku:"6983527143266"},
 {id:"lapicero-capibara-10-minas",n:"Lapicero Capibara 10 Minas",p:4000,cat:"escolar",prov:"tw",cid:"JUG-0986",img:"img/p/b7b3c211db7a714f.webp",sku:"6981688024035"},
 {id:"bingo-ruleta-pequeno",n:"Bingo Ruleta Pequeño",p:50000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-0984",img:"img/p/7df3524e7381bc44.webp",sku:"05145"},
 {id:"jujutsu-kaisen-x6",n:"Jujutsu Kaisen X6",p:30000,cat:"colecciones",prov:"tw",cid:"JUG-0989",img:"img/p/c7a7eafdfe83df11.webp",sku:"04787"},
@@ -916,7 +916,6 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"binoculares-bolsa-1817cm",n:"Binoculares Bolsa 18*17cm",p:4000,cat:"piñateria",prov:"tw",cid:"JUG-0990",img:"img/p/bd74cd866a5096e7.webp",sku:"7706888877637"},
 {id:"bolsa-pelota-pequena-para-gato-x9",n:"Bolsa Pelota Pequeña para Gato X9",p:5000,cat:"cacharro",prov:"tw",cid:"JUG-0996",img:"img/p/89b44066a80b63ac.webp",imgs:["img/p/a443f282bc319dfd.webp"],sku:"8809275397790"},
 {id:"caja-juego-didacticopliego-para-colorear-surtido",n:"Caja Juego Didacticopliego para Colorear Surtido",p:8000,cat:"didactico",prov:"tw",cid:"JUG-0997",img:"img/p/7ae3d2bd6021aa71.webp",imgs:["img/p/672b5634ea37204c.webp"],sku:"7702202313720"},
-{id:"lego-sonic-sl89301",n:"Lego Sonic Sl89301",p:15000,cat:"armatodo",prov:"tw",cid:"JUG-0998",img:"img/p/a464da96bee423ed.webp",sku:"FOX-2419"},
 {id:"shenlong-dorado",n:"Shenlong Dorado",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-1001",img:"img/p/be49dcf82dbae0e9.webp",sku:"05107"},
 {id:"tabla-didactica-verduras",n:"Tabla Didactica Verduras",p:15000,cat:"didactico",prov:"tw",cid:"JUG-1003",img:"img/p/23ccea6963deb578.webp",sku:"4891001002782"},
 {id:"labubu-peluche-corazon-alitas-blister-2-motivos",n:"Labubu Peluche Corazon Alitas Blister 2 Motivos",p:60000,cat:"peluches",prov:"tw",cid:"JUG-1004",img:"img/p/61dcbe3fed051331.webp",sku:"03643"},
@@ -1373,8 +1372,8 @@ const CATALOGO_JUGUETINSTORE=[
 {id:"bolsa-armatodo-ficha-grande-x33-fichas",n:"Bolsa Armatodo Ficha Grande X33 Fichas",p:25000,cat:"armatodo",prov:"tw",cid:"JUG-1474",img:"img/p/275c716acc4ae275.webp",sku:"01166"},
 {id:"bolsa-armatodo-tubos-uniones-100-pcs",n:"Bolsa Armatodo Tubos Uniones 100 Pcs",p:50000,cat:"armatodo",prov:"tw",cid:"JUG-1475",img:"img/p/17cb9f0dd69243ce.webp",sku:"6973244204920"},
 {id:"guitarra-grande-la-caucana-en-madera",n:"Guitarra Grande la Caucana en Madera",p:50000,cat:"jugueteria",prov:"tw",cid:"JUG-1477",img:"img/p/70d010370e473357.webp",sku:"01225"},
-{id:"avion-de-impulso-luz-y-sonido-en-bolsa-mediano",n:"Avion de Impulso Luz y Sonido en Bolsa Mediano",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1476",img:"img/p/473d0b810f47a279.webp",sku:"6603888928738"},
 {id:"tabla-control-bingo-plegable-68cmx26cm",n:"Tabla Control Bingo Plegable 68cmx26cm",p:50000,cat:"juego-de-mesa",prov:"tw",cid:"JUG-1478",img:"img/p/715b19bbd91ca399.webp",sku:"01237"},
+{id:"avion-de-impulso-luz-y-sonido-en-bolsa-mediano",n:"Avion de Impulso Luz y Sonido en Bolsa Mediano",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1476",img:"img/p/473d0b810f47a279.webp",sku:"6603888928738"},
 {id:"termo-surtido-en-colores-350ml-1",n:"Termo Surtido en Colores 350ml",p:25000,cat:"termos",prov:"tw",cid:"JUG-1479",img:"img/p/beced7fa7e07ded9.webp",imgs:["img/p/81cfd421d908e911.webp"],sku:"7702202411181"},
 {id:"camion-de-construccion",n:"Camion de Construccion",p:25000,cat:"jugueteria",prov:"tw",cid:"JUG-1480",img:"img/p/3a1ee801b3a82e70.webp",sku:"01527"},
 {id:"nezuko",n:"Nezuko",p:50000,cat:"colecciones",prov:"tw",cid:"JUG-1481",img:"img/p/64d1524010917b8a.webp",sku:"04613"},
